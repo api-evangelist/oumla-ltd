@@ -1,0 +1,927 @@
+openapi: 3.0.0
+info:
+  title: Oumla Core Server addresses wallets API
+  description: 'Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.'
+  version: '1.0'
+  contact: {}
+servers:
+- url: https://sandbox.oumla.com
+  description: Mainnet
+  x-fern-server-name: Mainnet
+tags:
+- name: wallets
+paths:
+  /api/v1/wallets/generate:
+    post:
+      description: Generate a new wallet for the given reference and network. Requires wallet/address policy.
+      operationId: createWallet
+      parameters:
+      - $ref: '#/components/parameters/SdkVersionHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateWalletRequestBodyDTO'
+      responses:
+        '201':
+          description: Wallet created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateWalletResponseBodyDTO'
+        '400':
+          description: 'Bad request or validation failed.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-010 | The request could not be processed. |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_010
+                    description: 'One of: ERR-010: The request could not be processed.'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_010
+                  message: The request could not be processed.
+                  category: VALIDATION
+                  statusCode: 400
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+        '401':
+          description: 'Unauthorized – invalid or missing token.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-008 | You need to sign in to continue. |
+
+            | ERR-011 | Your session is invalid or expired. Please sign in again. |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_008
+                    - ERR_011
+                    description: 'One of: ERR-008: You need to sign in to continue.; ERR-011: Your session is invalid or expired. Please sign in again.'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_008
+                  message: You need to sign in to continue.
+                  category: AUTHORIZATION
+                  statusCode: 401
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+        '403':
+          description: 'Forbidden – insufficient permissions.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-009 | You don''t have permission to do that. |
+
+            | ERR-410 | Error occurred |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_009
+                    - ERR_410
+                    description: 'One of: ERR-009: You don''t have permission to do that.; ERR-410: Error occurred'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_009
+                  message: You don't have permission to do that.
+                  category: AUTHORIZATION
+                  statusCode: 403
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+        '500':
+          description: 'Internal server error.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-019 | Something went wrong on our side. |
+
+            | ERR-999 | An unexpected error occurred. Please try again. |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_019
+                    - ERR_999
+                    description: 'One of: ERR-019: Something went wrong on our side.; ERR-999: An unexpected error occurred. Please try again.'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_019
+                  message: Something went wrong on our side.
+                  category: SYSTEM
+                  statusCode: 500
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+      security:
+      - x-api-key: []
+      summary: Create wallet
+      tags:
+      - wallets
+  /api/v1/wallets/profile/{reference}:
+    get:
+      description: List wallets for a profile by reference with pagination.
+      operationId: getWalletsByProfile
+      parameters:
+      - name: reference
+        required: true
+        in: path
+        description: Profile reference
+        schema:
+          type: string
+      - name: skip
+        required: false
+        in: query
+        schema:
+          default: 0
+          example: 0
+          type: number
+      - name: take
+        required: false
+        in: query
+        schema:
+          default: 10
+          example: 10
+          type: number
+      - $ref: '#/components/parameters/SdkVersionHeader'
+      responses:
+        '200':
+          description: Paginated wallets for the profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWalletsListResponseBodyDTO'
+        '400':
+          description: 'Bad request or validation failed.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-010 | The request could not be processed. |
+
+            | ERR-022 | Invalid pagination parameters. |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_010
+                    - ERR_022
+                    description: 'One of: ERR-010: The request could not be processed.; ERR-022: Invalid pagination parameters.'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_010
+                  message: The request could not be processed.
+                  category: VALIDATION
+                  statusCode: 400
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+        '401':
+          description: 'Unauthorized – invalid or missing token.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-008 | You need to sign in to continue. |
+
+            | ERR-011 | Your session is invalid or expired. Please sign in again. |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_008
+                    - ERR_011
+                    description: 'One of: ERR-008: You need to sign in to continue.; ERR-011: Your session is invalid or expired. Please sign in again.'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_008
+                  message: You need to sign in to continue.
+                  category: AUTHORIZATION
+                  statusCode: 401
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+        '403':
+          description: 'Forbidden – insufficient permissions.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-009 | You don''t have permission to do that. |
+
+            | ERR-410 | Error occurred |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_009
+                    - ERR_410
+                    description: 'One of: ERR-009: You don''t have permission to do that.; ERR-410: Error occurred'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_009
+                  message: You don't have permission to do that.
+                  category: AUTHORIZATION
+                  statusCode: 403
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+        '404':
+          description: 'Resource not found.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-006 | The requested resource was not found. |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_006
+                    description: 'One of: ERR-006: The requested resource was not found.'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_006
+                  message: The requested resource was not found.
+                  category: RESOURCE
+                  statusCode: 404
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+        '500':
+          description: 'Internal server error.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-019 | Something went wrong on our side. |
+
+            | ERR-999 | An unexpected error occurred. Please try again. |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_019
+                    - ERR_999
+                    description: 'One of: ERR-019: Something went wrong on our side.; ERR-999: An unexpected error occurred. Please try again.'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_019
+                  message: Something went wrong on our side.
+                  category: SYSTEM
+                  statusCode: 500
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+      security:
+      - x-api-key: []
+      summary: List wallets for the profile
+      tags:
+      - wallets
+  /api/v1/wallets/organization:
+    get:
+      description: List wallets for the authenticated user's organization with pagination.
+      operationId: getWalletsForOrganization
+      parameters:
+      - name: skip
+        required: false
+        in: query
+        schema:
+          default: 0
+          example: 0
+          type: number
+      - name: take
+        required: false
+        in: query
+        schema:
+          default: 10
+          example: 10
+          type: number
+      - $ref: '#/components/parameters/SdkVersionHeader'
+      responses:
+        '200':
+          description: Paginated wallets for the organization
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWalletsListResponseBodyDTO'
+        '400':
+          description: 'Bad request or validation failed.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-010 | The request could not be processed. |
+
+            | ERR-022 | Invalid pagination parameters. |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_010
+                    - ERR_022
+                    description: 'One of: ERR-010: The request could not be processed.; ERR-022: Invalid pagination parameters.'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_010
+                  message: The request could not be processed.
+                  category: VALIDATION
+                  statusCode: 400
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+        '401':
+          description: 'Unauthorized – invalid or missing token.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-008 | You need to sign in to continue. |
+
+            | ERR-011 | Your session is invalid or expired. Please sign in again. |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_008
+                    - ERR_011
+                    description: 'One of: ERR-008: You need to sign in to continue.; ERR-011: Your session is invalid or expired. Please sign in again.'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_008
+                  message: You need to sign in to continue.
+                  category: AUTHORIZATION
+                  statusCode: 401
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+        '403':
+          description: 'Forbidden – insufficient permissions.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-009 | You don''t have permission to do that. |
+
+            | ERR-410 | Error occurred |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_009
+                    - ERR_410
+                    description: 'One of: ERR-009: You don''t have permission to do that.; ERR-410: Error occurred'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_009
+                  message: You don't have permission to do that.
+                  category: AUTHORIZATION
+                  statusCode: 403
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+        '500':
+          description: 'Internal server error.
+
+
+            **Applicable error codes and client messages**
+
+
+            The response body contains one of the following error codes and the corresponding client-facing message.
+
+
+            | Code | Client message |
+
+            |------|----------------|
+
+            | ERR-019 | Something went wrong on our side. |
+
+            | ERR-999 | An unexpected error occurred. Please try again. |'
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ApiErrorResponseDto'
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - ERR_019
+                    - ERR_999
+                    description: 'One of: ERR-019: Something went wrong on our side.; ERR-999: An unexpected error occurred. Please try again.'
+                  message:
+                    type: string
+                    description: Client-facing message for this error code (see table above).
+                example:
+                  code: ERR_019
+                  message: Something went wrong on our side.
+                  category: SYSTEM
+                  statusCode: 500
+                  path: /api/v1/example
+                  timestamp: '2025-02-20T12:00:00.000Z'
+                  requestId: req-example-id
+      security:
+      - x-api-key: []
+      summary: List wallets for the organization
+      tags:
+      - wallets
+components:
+  schemas:
+    GetWalletsListResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          type: array
+          items:
+            $ref: '#/components/schemas/WalletDataDTO'
+        pagination:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/PaginationMetaDto'
+      required:
+      - data
+      - pagination
+    CreateWalletDataDTO:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Wallet UUID
+        reference:
+          type: string
+          description: Profile reference that owns this wallet
+        networkId:
+          type: string
+          format: uuid
+          description: Network UUID
+        type:
+          type: string
+          description: Profile type (User | Department | Merchant)
+        date:
+          type: string
+          format: date-time
+          description: Wallet creation timestamp
+      required:
+      - id
+      - reference
+      - networkId
+      - type
+    CreateWalletResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/CreateWalletDataDTO'
+      required:
+      - data
+    ApiErrorResponseDto:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Human-readable error message for the client (see ErrorClientMessage per code)
+          example: Organization not found.
+        code:
+          type: string
+          enum:
+          - ERR_000
+          - ERR_001
+          - ERR_002
+          - ERR_003
+          - ERR_006
+          - ERR_008
+          - ERR_009
+          - ERR_010
+          - ERR_011
+          - ERR_012
+          - ERR_013
+          - ERR_014
+          - ERR_015
+          - ERR_016
+          - ERR_017
+          - ERR_018
+          - ERR_019
+          - ERR_020
+          - ERR_021
+          - ERR_022
+          - ERR_888
+          - ERR_999
+          - ERR_023
+          - ERR_026
+          - ERR_036
+          - ERR_046
+          - ERR_056
+          - ERR_066
+          - ERR_068
+          - ERR_067
+          - ERR_076
+          - ERR_086
+          - ERR_096
+          - ERR_106
+          - ERR_116
+          - ERR_126
+          - ERR_136
+          - ERR_146
+          - ERR_147
+          - ERR_156
+          - ERR_166
+          - ERR_176
+          - ERR_186
+          - ERR_196
+          - ERR_200
+          - ERR_201
+          - ERR_202
+          - ERR_203
+          - ERR_204
+          - ERR_205
+          - ERR_206
+          - ERR_207
+          - ERR_208
+          - ERR_209
+          - ERR_210
+          - ERR_211
+          - ERR_212
+          - ERR_213
+          - ERR_214
+          - ERR_215
+          - ERR_216
+          - ERR_217
+          - ERR_226
+          - ERR_236
+          - ERR_237
+          - ERR_238
+          - ERR_239
+          - ERR_240
+          - ERR_241
+          - ERR_242
+          - ERR_246
+          - ERR_256
+          - ERR_266
+          - ERR_276
+          - ERR_286
+          - ERR_296
+          - ERR_300
+          - ERR_301
+          - ERR_302
+          - ERR_303
+          - ERR_304
+          - ERR_305
+          - ERR_310
+          - ERR_311
+          - ERR_312
+          - ERR_313
+          - ERR_320
+          - ERR_321
+          - ERR_322
+          - ERR_323
+          - ERR_324
+          - ERR_325
+          - ERR_326
+          - ERR_327
+          - ERR_328
+          - ERR_400
+          - ERR_401
+          - ERR_402
+          - ERR_403
+          - ERR_404
+          - ERR_405
+          - ERR_410
+          - ERR_411
+          - ERR_412
+          - ERR_500
+          - ERR_501
+          - ERR_502
+          - ERR_503
+          - ERR_600
+          - ERR_601
+          - ERR_602
+          - ERR_603
+          - ERR_604
+          - ERR_701
+          - ERR_702
+          - ERR_703
+          - ERR_704
+          - ERR_705
+          - ERR_706
+          - ERR_707
+          - ERR_708
+          - ERR_709
+          - ERR_710
+          - ERR_711
+          description: Application error code. Possible values are listed per endpoint in the response schema (e.g. ERR_013, ERR_008).
+        category:
+          type: string
+          enum:
+          - CONFLICT
+          - VALIDATION
+          - CRYPTOGRAPHIC
+          - NETWORK
+          - DATABASE
+          - EXTERNAL_SERVICE
+          - UNKNOWN_ERROR
+          - RESOURCE
+          - AUTHORIZATION
+          - SYSTEM
+          description: Error category for grouping and handling.
+        statusCode:
+          type: number
+          description: HTTP status code
+          example: 404
+          minimum: 400
+        path:
+          type: string
+          description: Request path that produced the error
+          example: /api/v1/wallets
+        timestamp:
+          type: string
+          description: ISO 8601 timestamp
+          example: '2025-02-20T12:00:00.000Z'
+        requestId:
+          type: string
+          description: Request ID for tracing
+      required:
+      - code
+      - category
+      - statusCode
+      - path
+      - timestamp
+    PaginationMetaDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
+    WalletDataDTO:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Wallet UUID
+        date:
+          type: string
+          format: date-time
+          description: Wallet creation timestamp
+        organizationId:
+          type: string
+          format: uuid
+          description: Owning organization UUID
+        reference:
+          type: string
+          description: Profile reference that owns this wallet
+        type:
+          type: string
+          description: Profile type (User | Department | Merchant)
+        networkId:
+          type: string
+          format: uuid
+          description: Network UUID
+        currentDeepIndex:
+          type: number
+        index:
+          type: number
+      required:
+      - id
+      - organizationId
+      - reference
+      - type
+      - networkId
+      - index
+    CreateWalletRequestBodyDTO:
+      type: object
+      properties:
+        reference:
+          type: string
+        networkId:
+          type: string
+      required:
+      - reference
+      - networkId
+  parameters:
+    SdkVersionHeader:
+      name: x-sdk-version
+      in: header
+      description: SDK version header
+      required: true
+      schema:
+        type: string
+        default: 1.0.0
+  securitySchemes:
+    x-api-key:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: API key for authentication

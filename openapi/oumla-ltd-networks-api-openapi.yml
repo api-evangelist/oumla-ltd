@@ -1,0 +1,197 @@
+openapi: 3.0.0
+info:
+  title: Oumla Core Server addresses networks API
+  description: 'Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.'
+  version: '1.0'
+  contact: {}
+servers:
+- url: https://sandbox.oumla.com
+  description: Mainnet
+  x-fern-server-name: Mainnet
+tags:
+- name: networks
+paths:
+  /api/v1/network/enabled:
+    get:
+      description: Returns the enabled-networks catalog (ID, name, alias) from cache. Accessible to any authenticated user — exposes only non-sensitive metadata. On cache miss, rebuilds the index from the database.
+      operationId: getEnabledNetworks
+      parameters:
+      - $ref: '#/components/parameters/SdkVersionHeader'
+      responses:
+        '200':
+          description: Enabled networks index
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetEnabledNetworksResponseDto'
+      security:
+      - x-api-key: []
+      summary: Get all enabled networks
+      tags:
+      - networks
+  /api/v1/network/organization:
+    get:
+      description: Get networks available for your organization.
+      operationId: getNetworks
+      parameters:
+      - name: skip
+        required: true
+        in: query
+        schema:
+          default: 0
+          example: 0
+          type: number
+      - name: take
+        required: true
+        in: query
+        schema:
+          default: 10
+          example: 10
+          type: number
+      - name: enabled
+        required: false
+        in: query
+        description: Filter by enabled status (true = only enabled networks)
+        schema:
+          type: boolean
+      - name: name
+        required: false
+        in: query
+        description: Filter by network name
+        schema:
+          type: string
+      - $ref: '#/components/parameters/SdkVersionHeader'
+      responses:
+        '200':
+          description: Your available networks
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetOrgNetworksResponseDto'
+      security:
+      - x-api-key: []
+      summary: Get networks available for your organization
+      tags:
+      - networks
+components:
+  schemas:
+    PaginationMetaDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
+    EnabledNetworkItemDto:
+      type: object
+      properties:
+        networkId:
+          type: string
+          description: Network UUID
+        name:
+          type: string
+          description: Human-readable network name
+        alias:
+          type: string
+          description: Network alias used by event producers
+      required:
+      - networkId
+      - name
+      - alias
+    GetOrgNetworksResponseDto:
+      type: object
+      properties:
+        networks:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrgNetworkItemDto'
+        pagination:
+          $ref: '#/components/schemas/PaginationMetaDto'
+      required:
+      - networks
+      - pagination
+    OrgNetworkItemDto:
+      type: object
+      properties:
+        id:
+          type: string
+        enabled:
+          type: boolean
+          description: Whether this network is usable by the organization (Network.enabled AND OrganizationNetwork.enabled)
+        name:
+          type: string
+        globalAccess:
+          type: boolean
+        chainId:
+          type: number
+        isMainnet:
+          type: boolean
+        isGasless:
+          type: boolean
+          description: Whether the network sponsors gas fees
+        addressFamily:
+          type: string
+          enum:
+          - EVM
+          - BITCOIN
+          - MOVE
+          - SOLANA
+          - COSMOS
+          - TRON
+          - STARKNET
+        decimals:
+          type: number
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+      required:
+      - id
+      - enabled
+      - name
+      - globalAccess
+      - isMainnet
+      - isGasless
+      - addressFamily
+      - decimals
+    GetEnabledNetworksResponseDto:
+      type: object
+      properties:
+        networks:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnabledNetworkItemDto'
+      required:
+      - networks
+  parameters:
+    SdkVersionHeader:
+      name: x-sdk-version
+      in: header
+      description: SDK version header
+      required: true
+      schema:
+        type: string
+        default: 1.0.0
+  securitySchemes:
+    x-api-key:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: API key for authentication
