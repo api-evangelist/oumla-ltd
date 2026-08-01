@@ -1,0 +1,31 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Oumla Core Server
+  version: 1.0.0
+extends: openapi/oumla-ltd-openapi-original.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-20'
+      x-apievangelist-provider: oumla-ltd
+      x-api-key-header: x-api-key
+      x-error-catalog: errors/oumla-ltd-error-codes.yml
+      x-conventions: conventions/oumla-ltd-conventions.yml
+      x-data-model: data-model/oumla-ltd-data-model.yml
+      description: >-
+        Oumla Core Server API for enterprise-grade digital asset infrastructure:
+        MPC-based wallet and address management, portfolio/asset balances, on-chain
+        transactions, smart-contract templates and deployment, contract read/write
+        interactions, and tokenization (collections, issue/mint/burn). Authentication
+        is via the x-api-key header. Long-running mutations return a workflowId and
+        complete asynchronously (poll /api/v1/workflows/{workflowId}/status).
+  - target: $.servers
+    update:
+      - url: https://sandbox.oumla.com
+        description: Sandbox (testnets tBTC / tETH-Sepolia). Mainnet access requires support approval.
+  - target: $.info
+    update:
+      x-agent-readiness-notes: >-
+        No idempotency-key mechanism; retries are handled via the async workflow
+        polling model. No rate-limit signaling documented. Offset pagination
+        (skip/take, take<=100). Stable ERR_* error codes with a requestId for tracing.

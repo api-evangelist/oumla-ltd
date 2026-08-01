@@ -1,7 +1,16 @@
 aid: oumla-ltd
 name: Oumla Ltd
-description: Oumla Ltd is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Oumla is a Saudi-based provider of enterprise-grade digital asset infrastructure for
+  regulated institutions. Its Core API delivers MPC-based wallet and address management,
+  portfolio and native-balance queries, on-chain transaction tracking, smart-contract
+  templates plus deployment and read/write interactions, and tokenization (collections,
+  issue, mint, burn) for tokenized securities, fund units, sukuk, and NFTs. Products span
+  Digital Assets Infrastructure (custody, policy engines, lifecycle), Capital Markets
+  Tokenization, the Oumla Financial Chain for Shariah-compliant interbank settlement, and
+  Bahith blockchain monitoring and compliance analytics built for Saudi data sovereignty.
+  Authentication is via the x-api-key header; long-running mutations run as async workflows.
+  Oumla is SOC 2 Type II and ISO 27001 certified.
 url: https://raw.githubusercontent.com/api-evangelist/oumla-ltd/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,17 +18,308 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://oumla.com/logo.png
 tags:
 - Company
-apis: []
+- Blockchain
+- Digital Assets
+- Wallet Infrastructure
+- Custody
+- Tokenization
+- Smart Contracts
+- Web3
+- Fintech
+- Saudi Arabia
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: oumla-ltd:oumla-ltd-addresses-api
+  name: Oumla Ltd addresses API
+  description: The addresses API from Oumla Ltd — 5 operation(s) for addresses.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - addresses
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-addresses-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-assets-api
+  name: Oumla Ltd assets API
+  description: The assets API from Oumla Ltd — 2 operation(s) for assets.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - assets
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-assets-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-contract-interactions-api
+  name: Oumla Ltd contract-interactions API
+  description: The contract-interactions API from Oumla Ltd — 4 operation(s) for contract-interactions.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - contract-interactions
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-contract-interactions-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-contract-templates-api
+  name: Oumla Ltd contract-templates API
+  description: The contract-templates API from Oumla Ltd — 5 operation(s) for contract-templates.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - contract-templates
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-contract-templates-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-deployed-contracts-api
+  name: Oumla Ltd deployed-contracts API
+  description: The deployed-contracts API from Oumla Ltd — 5 operation(s) for deployed-contracts.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - deployed-contracts
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-deployed-contracts-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-networks-api
+  name: Oumla Ltd networks API
+  description: The networks API from Oumla Ltd — 2 operation(s) for networks.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - networks
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-networks-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-profiles-api
+  name: Oumla Ltd profiles API
+  description: The profiles API from Oumla Ltd — 1 operation(s) for profiles.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - profiles
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-profiles-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-tokenization-api
+  name: Oumla Ltd tokenization API
+  description: The tokenization API from Oumla Ltd — 9 operation(s) for tokenization.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - tokenization
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-tokenization-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-transactions-api
+  name: Oumla Ltd transactions API
+  description: The transactions API from Oumla Ltd — 4 operation(s) for transactions.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-transactions-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-wallets-api
+  name: Oumla Ltd wallets API
+  description: The wallets API from Oumla Ltd — 3 operation(s) for wallets.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - wallets
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-wallets-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-withdraw-api
+  name: Oumla Ltd withdraw API
+  description: The withdraw API from Oumla Ltd — 1 operation(s) for withdraw.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - withdraw
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-withdraw-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
+- aid: oumla-ltd:oumla-ltd-workflows-api
+  name: Oumla Ltd workflows API
+  description: The workflows API from Oumla Ltd — 1 operation(s) for workflows.
+  humanURL: https://docs.oumla.com/api-reference/introduction
+  baseURL: https://sandbox.oumla.com
+  tags:
+  - workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/oumla-ltd-workflows-api-openapi.yml
+  - type: Authentication
+    url: authentication/oumla-ltd-authentication.yml
+  - type: ErrorCatalog
+    url: errors/oumla-ltd-error-codes.yml
+  - type: Conventions
+    url: conventions/oumla-ltd-conventions.yml
+  - type: DataModel
+    url: data-model/oumla-ltd-data-model.yml
 common:
 - type: Website
   url: https://oumla.com
+- type: DeveloperPortal
+  url: https://docs.oumla.com
+- type: Documentation
+  url: https://docs.oumla.com
+- type: APIReference
+  url: https://docs.oumla.com/api-reference/introduction
+- type: GettingStarted
+  url: https://docs.oumla.com/guides/quickstart
+- type: Authentication
+  url: authentication/oumla-ltd-authentication.yml
+- type: SDKs
+  url: packages/oumla-ltd-packages.yml
+- type: Packages
+  url: packages/oumla-ltd-packages.yml
+- type: Sandbox
+  url: sandbox/oumla-ltd-sandbox.yml
+- type: MCPServer
+  url: mcp/oumla-ltd-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: ChangeLog
+  url: https://docs.oumla.com/changelog
+- type: Lifecycle
+  url: lifecycle/oumla-ltd-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/oumla-ltd-error-codes.yml
+- type: Conventions
+  url: conventions/oumla-ltd-conventions.yml
+- type: DataModel
+  url: data-model/oumla-ltd-data-model.yml
+- type: Conformance
+  url: conformance/oumla-ltd-conformance.yml
+- type: Compliance
+  url: https://oumla.com/blog/oumla-achieves-soc-2-type-ii-certification
+- type: LLMsTxt
+  url: llms/oumla-ltd-llms.txt
+- type: DomainSecurity
+  url: security/oumla-ltd-domain-security.yml
+- type: Support
+  url: https://docs.oumla.com/guides/faqs
+- type: Blog
+  url: https://oumla.com/blog
+- type: GitHubOrganization
+  url: https://github.com/oumla
+- type: SignUp
+  url: https://dashboard.oumla.com
+- type: PrivacyPolicy
+  url: https://oumla.com/privacy-policy
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1

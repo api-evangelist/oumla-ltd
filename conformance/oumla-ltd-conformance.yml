@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.oumla.com/api-reference/openapi.json
+docs: https://oumla.com/
+standards:
+  - id: openapi-3.0
+    conforms: true
+    evidence: "Publishes OpenAPI 3.0.0 at docs.oumla.com/api-reference/openapi.json (49 operations)"
+  - id: apikey-auth
+    conforms: true
+    evidence: "securityScheme type apiKey in header (x-api-key)"
+  - id: oauth2
+    conforms: false
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: "Errors use a custom JSON envelope (success/code/category/statusCode), not application/problem+json"
+  - id: pagination-offset
+    conforms: true
+    evidence: "skip/take offset pagination with totalElements/totalPages meta"
+  - id: rfc8594-sunset
+    conforms: false
+    evidence: "No Sunset/Deprecation header policy documented"
+compliance:
+  soc2_type2:
+    certified: true
+    evidence: https://oumla.com/blog/oumla-achieves-soc-2-type-ii-certification
+    announced: '2026-03-30'
+  iso_27001:
+    certified: true
+    evidence: https://oumla.com/blog/oumla-achieves-iso-27001-certification
+    announced: '2026-04-21'
+  cst_certified_saudi_technology_company:
+    certified: true
+    evidence: https://oumla.com/blog/oumla-is-now-a-certified-saudi-technology-company-by-cst
+    announced: '2026-01-14'
+  data_sovereignty:
+    notes: "Bahith compliance analytics designed for Saudi data sovereignty (data stays in-Kingdom)."

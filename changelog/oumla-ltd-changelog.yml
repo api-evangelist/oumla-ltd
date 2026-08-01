@@ -1,0 +1,51 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.oumla.com/changelog
+scheme: semver
+tracks: "@oumla/sdk npm package + Oumla Core API"
+current_version: 2.2.0
+entries:
+  - version: 2.2.0
+    date: '2026-05'
+    breaking: false
+    highlights:
+      - "Added the Get Address by ID method"
+      - "Wallet creation now returns a UUID identifier"
+  - version: 2.1.0
+    date: '2026-04'
+    breaking: true
+    additions:
+      - "Introduced enabled networks endpoint"
+      - "Gasless network support"
+      - "Token issuance made asynchronous"
+    breaking_changes:
+      - "Removed the `path` field from address and wallet responses"
+  - version: 2.0.0
+    date: '2026-03'
+    breaking: true
+    breaking_changes:
+      - "Renamed `portfolio` to `assets`"
+      - "Renamed `withdrawals` to `withdraw`"
+      - "Restructured all request/response types to DTO naming conventions"
+    additions:
+      - "Dynamic network support"
+  - version: 1.3.0
+    date: '2026-01'
+    breaking: false
+    highlights:
+      - "Enhanced error handling with specific exception types"
+      - "Added portfolio getNativeBalance() method"
+  - version: 1.2.0
+    date: '2025-12'
+    breaking: false
+    additions:
+      - "Workflow status tracking"
+      - "V2 address generation"
+      - "Collection management endpoints"
+      - "Token unlinking"
+      - "Transaction receipt retrieval"
+  - version: 1.0.0
+    date: '2025-11'
+    breaking: false
+    highlights:
+      - "Initial TypeScript SDK release with coverage for profiles, wallets, contracts, and tokenization"

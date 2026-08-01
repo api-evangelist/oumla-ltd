@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.oumla.com/guides/quickstart
+environments:
+  - name: sandbox
+    base_url: https://sandbox.oumla.com
+    description: Testing environment; SDK selects it via OumlaSdkApiEnvironment.Sandbox
+    available: true
+  - name: mainnet
+    description: >-
+      Production. Mainnet access for Bitcoin (BTC) and Ethereum (ETH) requires
+      explicit approval from the Oumla support team.
+    activation: contact support@oumla.com for approval
+test_networks:
+  - {network: tBTC, description: "Bitcoin Testnet", address_format: "Bech32 (tb1q...)", available: true}
+  - {network: tETH, description: "Ethereum Sepolia Testnet", address_format: "Hex (0x...)", available: true}
+mainnet_networks:
+  - {network: BTC, description: "Bitcoin Mainnet", address_format: "Bech32 (bc1...)", requires_activation: true}
+  - {network: ETH, description: "Ethereum Mainnet", address_format: "Hex (0x...)", requires_activation: true}
+key_separation:
+  notes: >-
+    Use different API keys for different environments (sandbox vs mainnet). Keys
+    are generated per-organization from the dashboard.
+test_values:
+  documented: false
+  notes: >-
+    The docs use placeholder identifiers only (reference "user-123", api key
+    "your-api-key-here", "your-client-share-here"); no fixed magic test values,
+    test cards, or hosted test tokens are published. Test funds come from public
+    Bitcoin/Sepolia testnet faucets, not Oumla-issued fixtures.

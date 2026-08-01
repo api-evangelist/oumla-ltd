@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/oumla-ltd-openapi-original.json
+skills:
+  - file: oumla-ltd-create-wallet-and-address.md
+    name: Create a wallet and receive address
+    api: openapi/oumla-ltd-openapi-original.json
+    operations: [createProfile, createWallet, createAddress, createAddressV2, getNativeBalance]
+  - file: oumla-ltd-tokenize-asset.md
+    name: Tokenize an asset (collection, issue, mint)
+    api: openapi/oumla-ltd-openapi-original.json
+    operations: [createCollection, issueNewToken, mintToken, getWorkflowStatus, getCollectionById, getTokens]
+  - file: oumla-ltd-deploy-and-interact-contract.md
+    name: Deploy and interact with a smart contract
+    api: openapi/oumla-ltd-openapi-original.json
+    operations: [createContract, deployContract, getWorkflowStatus, readCallFunction, writeCallFunction, getTransactionReceipt, getDeployedContractAbi]
+  - file: oumla-ltd-withdraw-and-track.md
+    name: Withdraw funds and track the workflow
+    api: openapi/oumla-ltd-openapi-original.json
+    operations: [getNativeBalance, createWithdraw, getWorkflowStatus, getTransactionsByAddress]

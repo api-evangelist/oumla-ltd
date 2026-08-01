@@ -1,0 +1,61 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.oumla.com/guides/error-reference
+spec_source: openapi/oumla-ltd-openapi-original.json
+format: custom-json
+description: >-
+  Oumla returns a structured JSON error envelope on failure. The catalog below is
+  the documented ERR_* registry; the OpenAPI declares 130+ ERR_* codes on the
+  ApiErrorResponseDto.code enum, of which the error-reference documents the
+  developer-facing subset captured here.
+envelope:
+  fields:
+    - {field: success, type: boolean, description: "Always false on error"}
+    - {field: message, type: string, description: "Human-readable client-facing error message"}
+    - {field: code, type: string, description: "Stable ERR_* error code (see error_codes)"}
+    - {field: category, type: string, description: "Error category: CONFLICT / RESOURCE / VALIDATION / NETWORK / UNKNOWN_ERROR"}
+    - {field: statusCode, type: integer, description: "HTTP status code"}
+    - {field: path, type: string, description: "Request path that produced the error"}
+    - {field: timestamp, type: string, description: "ISO-8601 timestamp"}
+    - {field: requestId, type: string, description: "Correlation id to include in support requests"}
+  example: |
+    {
+      "success": false,
+      "message": "The requested resource was not found",
+      "code": "ERR_006",
+      "category": "RESOURCE",
+      "statusCode": 404,
+      "path": "/api/v1/endpoint",
+      "timestamp": "2024-01-01T00:00:00.000Z",
+      "requestId": "req_123456789"
+    }
+categories: [CONFLICT, RESOURCE, VALIDATION, NETWORK, UNKNOWN_ERROR]
+support: support@oumla.com
+error_codes:
+  - {code: ERR_000, status: 409, category: CONFLICT, message: "Already exists", cause: "Resource creation duplicate", remediation: "Verify non-existence; use update for modifications"}
+  - {code: ERR_001, status: 409, category: CONFLICT, message: "Profile already exists", cause: "Duplicate profile reference", remediation: "Use unique identifier; verify via list endpoint"}
+  - {code: ERR_006, status: 404, category: RESOURCE, message: "The requested resource was not found", cause: "Missing resource or invalid ID", remediation: "Confirm ID accuracy; verify access permissions"}
+  - {code: ERR_008, status: 401, category: UNKNOWN_ERROR, message: "You need to sign in to continue", cause: "Missing/invalid/expired API key", remediation: "Regenerate key; verify x-api-key header inclusion"}
+  - {code: ERR_009, status: 403, category: UNKNOWN_ERROR, message: "You don't have permission to do that", cause: "Insufficient permissions", remediation: "Check org membership; contact support"}
+  - {code: ERR_010, status: 400, category: VALIDATION, message: "Bad Request", cause: "Invalid format/missing fields", remediation: "Review documentation; validate parameters"}
+  - {code: ERR_014, status: 409, category: RESOURCE, message: "Master wallet already generated", cause: "Generation already performed", remediation: "Master wallet single-generation limit applies"}
+  - {code: ERR_015, status: 400, category: RESOURCE, message: "Master wallet not generated", cause: "Pre-generation access attempt", remediation: "Complete onboarding; generate shares first"}
+  - {code: ERR_022, status: 400, category: VALIDATION, message: "Invalid pagination parameters", cause: "Bad skip/take values", remediation: "Use non-negative skip; keep take <= 100"}
+  - {code: ERR_056, status: 404, category: RESOURCE, message: "Contract template not found", cause: "Missing template ID", remediation: "Verify ID; list available templates"}
+  - {code: ERR_066, status: 404, category: RESOURCE, message: "Contract not found", cause: "Invalid deployment ID/address", remediation: "Confirm address; check deployment status"}
+  - {code: ERR_068, status: 404, category: RESOURCE, message: "Collection not found", cause: "Missing collection ID", remediation: "Verify ID; list collections"}
+  - {code: ERR_076, status: 404, category: RESOURCE, message: "Contract function not found", cause: "Function missing from ABI", remediation: "Review ABI; confirm name/signature match"}
+  - {code: ERR_096, status: 404, category: RESOURCE, message: "Address not found", cause: "Invalid address reference", remediation: "Verify reference; generate if needed"}
+  - {code: ERR_126, status: 500, category: RESOURCE, message: "Contract deployment failed", cause: "Transaction failure/gas/bytecode issues", remediation: "Check status; verify balance; review bytecode"}
+  - {code: ERR_146, status: 400, category: RESOURCE, message: "Contract deployment not completed", cause: "Workflow in progress or failed", remediation: "Monitor workflow status endpoint; retry if needed"}
+  - {code: ERR_176, status: 400, category: VALIDATION, message: "Invalid contract address", cause: "Format/network mismatch", remediation: "Validate against network requirements"}
+  - {code: ERR_186, status: 500, category: RESOURCE, message: "Failed to issue token", cause: "Collection/network/workflow issues", remediation: "Verify deployment; check connectivity"}
+  - {code: ERR_196, status: 404, category: RESOURCE, message: "Token not found", cause: "Missing/burned token", remediation: "Confirm token ID; verify collection status"}
+  - {code: ERR_200, status: 500, category: NETWORK, message: "Network error", cause: "Connection/timeout/service unavailable", remediation: "Retry; verify network status"}
+  - {code: ERR_216, status: 404, category: RESOURCE, message: "Balance not found", cause: "Address unindexed or no funds", remediation: "Confirm address; await indexing"}
+  - {code: ERR_226, status: 400, category: RESOURCE, message: "No unspent transactions", cause: "No UTXOs available (Bitcoin)", remediation: "Verify funding; await confirmation"}
+  - {code: ERR_236, status: 400, category: RESOURCE, message: "Not enough balance", cause: "Insufficient funds for transaction", remediation: "Account for fees; check balance"}
+  - {code: ERR_302, status: 400, category: VALIDATION, message: "Required field is missing", cause: "Omitted required parameter", remediation: "Supply all required fields per docs"}
+  - {code: ERR_303, status: 400, category: VALIDATION, message: "Invalid format provided", cause: "Format/type/validation mismatch", remediation: "Verify field formats; check data types"}
+  - {code: ERR_304, status: 400, category: VALIDATION, message: "Value out of valid range", cause: "Numeric/amount constraints exceeded", remediation: "Confirm value ranges per documentation"}
+http_statuses_in_spec: [200, 201, 202, 400, 401, 403, 404, 409, 500]

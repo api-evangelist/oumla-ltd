@@ -1,0 +1,65 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/oumla-ltd-openapi-original.json
+description: >-
+  Entity-relationship graph derived from the Oumla Core OpenAPI schemas and
+  id-reference fields. Core hierarchy: Organization -> Profile -> Wallet -> Address -> Transaction.
+entities:
+  - name: Organization
+    description: Top-level tenant that owns profiles, wallets, networks, contracts, and collections.
+    id_fields: [id, organizationId]
+  - name: Profile
+    description: Represents a user, department, or merchant within an organization.
+    fields: [type, reference]
+    id_fields: [reference]
+  - name: Wallet
+    description: A wallet bound to a profile (via reference) and a blockchain network.
+    fields: [id, date, organizationId, reference, type, networkId, currentDeepIndex, index]
+    id_fields: [id]
+  - name: Address
+    description: A receive/send address under a wallet on a specific network.
+    fields: [id, address, reference, networkId, date, label, sub, balance, miniWalletId]
+    id_fields: [id, address, miniWalletId]
+  - name: Transaction
+    description: An on-chain transaction observed for an address/wallet.
+    fields: [addressFrom, addressTo, amount, date, status, type, networkId, txid, contractAddress, tokenId, txType, fee]
+    id_fields: [txid]
+  - name: Network
+    description: A supported blockchain network (testnet or mainnet).
+    fields: [id, name, alias, chainId, decimals, isMainnet, enabled, addressFamily, slip44CoinType, explorerUrl]
+    id_fields: [id, alias, chainId]
+  - name: ContractTemplate
+    description: Reusable smart-contract template (ABI, bytecode, metadata) for deployment.
+    id_fields: [templateId]
+  - name: DeployedContract
+    description: An on-chain deployed contract instance.
+    id_fields: [deploymentId, contractAddress]
+  - name: Collection
+    description: A tokenization collection (NFT/token grouping).
+    fields: [id, status, type, displayName, network, collectionMetadata]
+    id_fields: [id]
+  - name: Token
+    description: A token issued/minted within a collection.
+    fields: [id, status, type, displayName, tokenMetadata]
+    id_fields: [id, tokenId]
+  - name: Withdrawal
+    description: An outbound transfer of funds; returns pending status.
+    id_fields: [id]
+  - name: Workflow
+    description: Async operation tracker returned by long-running mutations.
+    id_fields: [workflowId]
+relationships:
+  - {from: Profile, to: Organization, kind: belongs_to, via: organizationId}
+  - {from: Wallet, to: Profile, kind: belongs_to, via: reference}
+  - {from: Wallet, to: Network, kind: belongs_to, via: networkId}
+  - {from: Address, to: Wallet, kind: belongs_to, via: miniWalletId}
+  - {from: Address, to: Network, kind: belongs_to, via: networkId}
+  - {from: Transaction, to: Address, kind: belongs_to, via: addressFrom/addressTo}
+  - {from: Transaction, to: Network, kind: belongs_to, via: networkId}
+  - {from: DeployedContract, to: ContractTemplate, kind: belongs_to, via: templateId}
+  - {from: DeployedContract, to: Network, kind: belongs_to, via: networkId}
+  - {from: Token, to: Collection, kind: belongs_to, via: collectionId}
+  - {from: Token, to: DeployedContract, kind: belongs_to, via: contractAddress}
+  - {from: Collection, to: Network, kind: belongs_to, via: network}
+  - {from: Withdrawal, to: Address, kind: belongs_to, via: address}
+  - {from: Workflow, to: Organization, kind: belongs_to, via: organizationId}

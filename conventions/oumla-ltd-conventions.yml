@@ -1,0 +1,61 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.oumla.com/api-reference/introduction
+spec_source: openapi/oumla-ltd-openapi-original.json
+authentication:
+  style: api-key
+  header: x-api-key
+  notes: >-
+    All requests require the x-api-key header containing an API key generated from
+    the dashboard (https://dashboard.oumla.com/dashboard/apikeys). Use separate
+    keys per environment (sandbox vs mainnet). See authentication/oumla-ltd-authentication.yml.
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key mechanism is documented or present in the OpenAPI. Mutating
+    operations (token issue/mint/burn, contract deploy, collection create, withdraw)
+    are modeled as asynchronous workflows that return a workflowId; clients poll
+    GET /api/v1/workflows/{workflowId}/status for the result rather than retrying.
+pagination:
+  style: offset
+  request_params:
+    - {name: skip, type: integer, description: "Number of items to skip (non-negative)"}
+    - {name: take, type: integer, description: "Page size (max 100)"}
+  response_fields:
+    - {name: totalElements, description: Total number of items}
+    - {name: totalPages, description: Total number of pages}
+    - {name: skip, description: Echoed skip}
+    - {name: take, description: Echoed take}
+  notes: "Bad skip/take values return ERR_022 (Invalid pagination parameters)."
+response_envelope:
+  success_shape:
+    fields: [message, data, success, status]
+    notes: "Successful responses wrap the resource in a `data` object alongside a human-readable `message`."
+  error_shape:
+    notes: "See errors/oumla-ltd-error-codes.yml for the full ERR_* envelope (success/message/code/category/statusCode/path/timestamp/requestId)."
+request_tracing:
+  request_id_field: requestId
+  notes: "A requestId correlation id is returned in the error envelope; include it in support requests to support@oumla.com."
+versioning:
+  scheme: uri-path
+  versions: [v1, v2]
+  notes: >-
+    Most operations are under /api/v1/; v2 introduces /api/v2/addresses/generate
+    which auto-creates a wallet if one does not exist. See changelog/oumla-ltd-changelog.yml.
+async_workflows:
+  pattern: workflow-polling
+  notes: >-
+    Long-running operations (create collection, issue/mint/burn token, deploy
+    contract, contract write, withdraw) return a workflowId and complete
+    asynchronously. Poll GET /api/v1/workflows/{workflowId}/status for status/result.
+rate_limiting:
+  documented: false
+  notes: "No rate-limit headers or policy are documented in the OpenAPI or docs."
+resource_model:
+  hierarchy: "Profile -> Wallet -> Address -> Transaction"
+  notes: "See data-model/oumla-ltd-data-model.yml."
+cross_links:
+  errors: errors/oumla-ltd-error-codes.yml
+  lifecycle: lifecycle/oumla-ltd-lifecycle.yml
+  authentication: authentication/oumla-ltd-authentication.yml
+  data_model: data-model/oumla-ltd-data-model.yml

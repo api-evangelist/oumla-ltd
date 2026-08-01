@@ -1,0 +1,15 @@
+generated: '2026-07-20'
+method: searched
+source: https://registry.npmjs.org/@oumla/sdk
+packages:
+- language: typescript
+  registry: npm
+  name: "@oumla/sdk"
+  url: https://www.npmjs.com/package/@oumla/sdk
+  install: npm install @oumla/sdk
+  version: 2.2.0
+  license: MIT
+  repository: https://github.com/oumla/sdk
+  homepage: https://docs.oumla.com
+  description: Official TypeScript SDK for Oumla - Blockchain integration made simple
+  official: true

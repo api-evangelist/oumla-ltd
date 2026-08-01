@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.oumla.com/changelog
+spec_source: openapi/oumla-ltd-openapi-original.json
+versioning:
+  scheme: uri-path
+  current: v2
+  active_versions: [v1, v2]
+  docs: https://docs.oumla.com/api-reference/introduction
+  notes: >-
+    URI-path versioning. Most operations under /api/v1/; v2 adds
+    /api/v2/addresses/generate. The @oumla/sdk package tracks semver (current 2.2.0).
+changelog:
+  url: https://docs.oumla.com/changelog
+  artifact: changelog/oumla-ltd-changelog.yml
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No formal deprecation/Sunset (RFC 8594) policy is published. Breaking changes
+    have been announced via the changelog (e.g. v2.0.0 renamed portfolio->assets,
+    withdrawals->withdraw; v2.1.0 removed the `path` field).
+deprecated_operations: []
+sla:
+  url: null
+  uptime_target: null
+  notes: "No published SLA / uptime target found."
+status_page:
+  url: null
+  notes: "No public status page found (status.oumla.com does not resolve)."
+support:
+  email: support@oumla.com
+  availability: "24/7 customer support (per oumla.com)"

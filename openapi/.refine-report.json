@@ -1,0 +1,36 @@
+{
+  "provider": "oumla-ltd",
+  "sources": [
+    "oumla-ltd-addresses-api-openapi.yml",
+    "oumla-ltd-assets-api-openapi.yml",
+    "oumla-ltd-contract-interactions-api-openapi.yml",
+    "oumla-ltd-contract-templates-api-openapi.yml",
+    "oumla-ltd-deployed-contracts-api-openapi.yml",
+    "oumla-ltd-networks-api-openapi.yml",
+    "oumla-ltd-profiles-api-openapi.yml",
+    "oumla-ltd-tokenization-api-openapi.yml",
+    "oumla-ltd-transactions-api-openapi.yml",
+    "oumla-ltd-wallets-api-openapi.yml",
+    "oumla-ltd-withdraw-api-openapi.yml",
+    "oumla-ltd-workflows-api-openapi.yml"
+  ],
+  "outputs": [
+    "oumla-ltd-addresses-api-openapi.yml",
+    "oumla-ltd-assets-api-openapi.yml",
+    "oumla-ltd-contract-interactions-api-openapi.yml",
+    "oumla-ltd-contract-templates-api-openapi.yml",
+    "oumla-ltd-deployed-contracts-api-openapi.yml",
+    "oumla-ltd-networks-api-openapi.yml",
+    "oumla-ltd-profiles-api-openapi.yml",
+    "oumla-ltd-tokenization-api-openapi.yml",
+    "oumla-ltd-transactions-api-openapi.yml",
+    "oumla-ltd-wallets-api-openapi.yml",
+    "oumla-ltd-withdraw-api-openapi.yml",
+    "oumla-ltd-workflows-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

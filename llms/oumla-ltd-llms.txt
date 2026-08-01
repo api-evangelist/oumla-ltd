@@ -1,0 +1,88 @@
+GENERATED-BY: api-evangelist-enrichment
+METHOD: searched
+SOURCE: https://docs.oumla.com/llms.txt
+FETCHED: 2026-07-20
+---
+# Oumla API Documentation
+
+## Docs
+
+- [Create address](https://docs.oumla.com/api-reference/addresses/create-address.md): Generate a new address for the given network and reference. Requires wallet/address policy.
+- [Generate wallet if not exists and create address (v2)](https://docs.oumla.com/api-reference/addresses/generate-wallet-if-not-exists-and-create-address-v2.md): V2: creates wallet if needed, then generates address for the given network and reference.
+- [Get address by ID](https://docs.oumla.com/api-reference/addresses/get-address-by-id.md): Retrieve a single address by its UUID.
+- [List addresses for organization](https://docs.oumla.com/api-reference/addresses/list-addresses-for-organization.md): List addresses for the authenticated user's organization with pagination.
+- [List addresses for profile](https://docs.oumla.com/api-reference/addresses/list-addresses-for-profile.md): List addresses for a profile by reference with pagination.
+- [Get Native balance for address](https://docs.oumla.com/api-reference/assets/get-native-balance-for-address.md): Get native (e.g. ETH/BTC) balance for a given address and optional network.
+- [Retrieved assets for address](https://docs.oumla.com/api-reference/assets/retrieved-assets-for-address.md): Get asset balances for a given address, optionally filtered by network.
+- [Call read function](https://docs.oumla.com/api-reference/contract-interactions/call-read-function.md): Execute a read-only contract call (no gas).
+- [Call write function](https://docs.oumla.com/api-reference/contract-interactions/call-write-function.md): Start a write/send transaction workflow. Requires interact contract policy.
+- [Get deployed contract ABI/functions](https://docs.oumla.com/api-reference/contract-interactions/get-deployed-contract-abifunctions.md): Get ABI and callable functions for a deployed contract.
+- [Get transaction receipt](https://docs.oumla.com/api-reference/contract-interactions/get-transaction-receipt.md): Get the receipt for a contract write transaction.
+- [Create contract template](https://docs.oumla.com/api-reference/contract-templates/create-contract-template.md): Create a new contract template (ABI, bytecode, metadata).
+- [Delete contract template](https://docs.oumla.com/api-reference/contract-templates/delete-contract-template.md): Delete a contract template by ID.
+- [Deploy Contract](https://docs.oumla.com/api-reference/contract-templates/deploy-contract.md): Deploy a contract from a template to the specified network.
+- [Get contract constructor by template ID](https://docs.oumla.com/api-reference/contract-templates/get-contract-constructor-by-template-id.md): Get constructor info (params, ABI) for a contract template.
+- [Get contract function by template ID](https://docs.oumla.com/api-reference/contract-templates/get-contract-function-by-template-id.md): Get function metadata/ABI for a contract template.
+- [Get contract template by ID](https://docs.oumla.com/api-reference/contract-templates/get-contract-template-by-id.md): Get a contract template by its ID.
+- [List contract templates](https://docs.oumla.com/api-reference/contract-templates/list-contract-templates.md): List contract templates for the organization with pagination.
+- [Add Contract ABI](https://docs.oumla.com/api-reference/deployed-contracts/add-contract-abi.md): Add or update ABI for a deployed contract.
+- [Fetch contract ABI](https://docs.oumla.com/api-reference/deployed-contracts/fetch-contract-abi.md): Fetch contract ABI from chain/relayer by address and network.
+- [Get deployed contract by address and networkId](https://docs.oumla.com/api-reference/deployed-contracts/get-deployed-contract-by-address-and-networkid.md): Get a deployed contract by contract address and networkId.
+- [Get deployed contract by deployment ID](https://docs.oumla.com/api-reference/deployed-contracts/get-deployed-contract-by-deployment-id.md): Get a deployed contract by its deployment ID.
+- [List Deployed contracts](https://docs.oumla.com/api-reference/deployed-contracts/list-deployed-contracts.md): List deployed contracts with optional filters and pagination.
+- [Introduction](https://docs.oumla.com/api-reference/introduction.md): Oumla API Reference - Blockchain wallet management, tokenization, and smart contracts
+- [Get all enabled networks](https://docs.oumla.com/api-reference/networks/get-all-enabled-networks.md): Returns the enabled-networks catalog (ID, name, alias) from cache. Accessible to any authenticated user — exposes only non-sensitive metadata. On cache miss, rebuilds the index from the database.
+- [Get networks available for your organization](https://docs.oumla.com/api-reference/networks/get-networks-available-for-your-organization.md): Get networks available for your organization.
+- [Create Profile](https://docs.oumla.com/api-reference/profiles/create-profile.md): Create a new profile for the organization.
+- [List of profiles](https://docs.oumla.com/api-reference/profiles/list-of-profiles.md): List profiles for the authenticated user's organization with pagination.
+- [Burn token](https://docs.oumla.com/api-reference/tokenization/burn-token.md): Start burn workflow for tokens in a collection. Requires burn policy.
+- [Create new Collection](https://docs.oumla.com/api-reference/tokenization/create-new-collection.md): Start the create-collection workflow. Returns workflow ID; collection is created asynchronously.
+- [Delete collection by ID](https://docs.oumla.com/api-reference/tokenization/delete-collection-by-id.md): Delete a collection and its associated data.
+- [Get collection by ID](https://docs.oumla.com/api-reference/tokenization/get-collection-by-id.md): Get a single collection by its ID.
+- [Get Collection token details](https://docs.oumla.com/api-reference/tokenization/get-collection-token-details.md): Get details of a specific token within a collection.
+- [Get collection tokens by ID or type](https://docs.oumla.com/api-reference/tokenization/get-collection-tokens-by-id-or-type.md): List tokens in a collection, optionally filtered by type, with pagination.
+- [Get linked token by ID](https://docs.oumla.com/api-reference/tokenization/get-linked-token-by-id.md): Get a linked token by its ID.
+- [Issue Token](https://docs.oumla.com/api-reference/tokenization/issue-token.md): Start the issue-token workflow. Returns the workflowId, tokenId, and status.
+- [Link Contract](https://docs.oumla.com/api-reference/tokenization/link-contract.md): Link an existing deployed contract to the organization for tokenization.
+- [List Collections](https://docs.oumla.com/api-reference/tokenization/list-collections.md): List tokenization collections for the organization with pagination.
+- [List Tokens](https://docs.oumla.com/api-reference/tokenization/list-tokens.md): List issued tokens for the organization with pagination.
+- [Mint token](https://docs.oumla.com/api-reference/tokenization/mint-token.md): Start mint workflow for a collection. Requires mint policy.
+- [Unlink Token](https://docs.oumla.com/api-reference/tokenization/unlink-token.md): Unlink a token from the organization.
+- [List transactions by address](https://docs.oumla.com/api-reference/transactions/list-transactions-by-address.md): List transactions for a given address with pagination.
+- [List Transactions by mini wallet](https://docs.oumla.com/api-reference/transactions/list-transactions-by-mini-wallet.md): List transactions for a mini wallet with pagination.
+- [List Transactions by organization](https://docs.oumla.com/api-reference/transactions/list-transactions-by-organization.md): List transactions for the authenticated user's organization with pagination.
+- [List Transactions by profile](https://docs.oumla.com/api-reference/transactions/list-transactions-by-profile.md): List transactions for a profile by reference with pagination.
+- [Create wallet](https://docs.oumla.com/api-reference/wallets/create-wallet.md): Generate a new wallet for the given reference and network. Requires wallet/address policy.
+- [List wallets for the organization](https://docs.oumla.com/api-reference/wallets/list-wallets-for-the-organization.md): List wallets for the authenticated user's organization with pagination.
+- [List wallets for the profile](https://docs.oumla.com/api-reference/wallets/list-wallets-for-the-profile.md): List wallets for a profile by reference with pagination.
+- [Withdraw](https://docs.oumla.com/api-reference/withdraw/withdraw.md): Initiate a withdrawal. Returns pending status; supports BTC, tBTC, ETH, tETH.
+- [Get Workflow status and result](https://docs.oumla.com/api-reference/workflows/get-workflow-status-and-result.md): Get the status and result of a workflow by ID.
+- [Changelog](https://docs.oumla.com/changelog.md): Product updates and announcements for the Oumla API
+- [Authentication](https://docs.oumla.com/guides/authentication.md): Learn how to authenticate with the Oumla API
+- [Error Reference](https://docs.oumla.com/guides/error-reference.md): Complete reference for Oumla API error codes and troubleshooting
+- [FAQs](https://docs.oumla.com/guides/faqs.md): Frequently asked questions about Oumla API
+- [Supported Networks](https://docs.oumla.com/guides/networks.md): Explore the blockchain networks supported by Oumla
+- [Ethereum transaction nonce explained](https://docs.oumla.com/guides/nonce-management/ethereum-transaction-nonce-explained.md)
+- [Solution](https://docs.oumla.com/guides/nonce-management/solution.md)
+- [Quick Start](https://docs.oumla.com/guides/quickstart.md): Get started with Oumla API in 5 minutes
+- [Security](https://docs.oumla.com/guides/security.md): Learn about Oumla's hybrid key management model and security best practices
+- [Use Cases](https://docs.oumla.com/guides/use-cases.md): Discover what you can build with Oumla API
+- [Contract Deployment Workflow](https://docs.oumla.com/guides/workflows/contract-deployment.md): Complete guide to deploying smart contracts using templates
+- [Tokenization Workflow](https://docs.oumla.com/guides/workflows/tokenization.md): Complete guide to creating collections, minting tokens, and managing NFTs
+- [Withdrawal Workflow](https://docs.oumla.com/guides/workflows/withdrawal.md): Complete guide to withdrawing funds from Oumla addresses
+- [Addresses](https://docs.oumla.com/sdk-reference/addresses.md): SDK methods for generating and managing addresses
+- [Contract Interactions](https://docs.oumla.com/sdk-reference/contract-interactions.md): SDK methods for calling contract functions and reading transaction receipts
+- [Contract Templates](https://docs.oumla.com/sdk-reference/contract-templates.md): SDK methods for managing smart contract templates
+- [Deployed Contracts](https://docs.oumla.com/sdk-reference/deployed-contracts.md): SDK methods for managing deployed contracts
+- [SDK Reference](https://docs.oumla.com/sdk-reference/introduction.md): Complete TypeScript SDK reference for Oumla API
+- [Portfolio](https://docs.oumla.com/sdk-reference/portfolio.md): SDK methods for viewing assets and balances
+- [Profiles](https://docs.oumla.com/sdk-reference/profiles.md): SDK methods for managing user profiles
+- [Tokenization](https://docs.oumla.com/sdk-reference/tokenization.md): SDK methods for creating collections, minting tokens, and managing NFTs
+- [Transactions](https://docs.oumla.com/sdk-reference/transactions.md): SDK methods for querying transaction history
+- [Wallets](https://docs.oumla.com/sdk-reference/wallets.md): SDK methods for creating and managing wallets
+- [Withdrawals](https://docs.oumla.com/sdk-reference/withdrawals.md): SDK methods for creating withdrawal requests
+- [Workflows](https://docs.oumla.com/sdk-reference/workflows.md): SDK methods for tracking async workflow status
+
+## OpenAPI Specs
+
+- [openapi](https://docs.oumla.com/api-reference/openapi.json)
