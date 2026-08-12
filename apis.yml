@@ -268,6 +268,8 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 common:
+- type: Overlay
+  url: overlays/oumla-ltd-openapi-overlay.yaml
 - type: Website
   url: https://oumla.com
 - type: DeveloperPortal
