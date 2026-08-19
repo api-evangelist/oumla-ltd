@@ -1,0 +1,949 @@
+{
+  "item": [
+    {
+      "id": "8b41400f-1900-45dd-b637-8f98600c1859",
+      "name": "profiles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "23438dc0-8995-45e4-9cb1-0cf5ef158e5c",
+          "name": "Create Profile",
+          "request": {
+            "name": "Create Profile",
+            "description": {
+              "content": "Create a new profile for the organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "profiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reference\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba8ccb8a-2887-4658-a549-bb2582fa0314",
+              "name": "Profile created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reference\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"type\": \"string\",\n    \"reference\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "36bb72a9-a256-44ff-a7b4-014d77090c61",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |\n| ERR-300 | Invalid input provided. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reference\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "711ad506-d43c-4d50-8e99-1f10313cafdd",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reference\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f3c6b539-1006-4e03-817b-36dc7a620b70",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reference\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff74ad2a-33d7-4711-9c20-0e8795ea9b41",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-013 | Organization not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reference\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_013\",\n  \"message\": \"Organization not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "24076ee8-b1a9-4113-8a39-b53f1a74700e",
+              "name": "Conflict – resource already exists or state conflict.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-001 | An account with these details already exists. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reference\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_001\",\n  \"message\": \"An account with these details already exists.\",\n  \"category\": \"CONFLICT\",\n  \"statusCode\": 409,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a060cb70-3231-48b6-904c-4983f1529498",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reference\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31c9c87f-3b5c-4f7c-8015-e9eae5d659b2",
+          "name": "List of profiles",
+          "request": {
+            "name": "List of profiles",
+            "description": {
+              "content": "List profiles for the authenticated user's organization with pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "profiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8193321f-afd4-4294-8bb5-8484bca52ffe",
+              "name": "Paginated list of profiles",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"type\": \"string\",\n      \"reference\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"reference\": \"string\"\n    }\n  ],\n  \"pagination\": {\n    \"totalElements\": 100,\n    \"totalPages\": 10,\n    \"skip\": 0,\n    \"take\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b397f711-5192-4afe-a8ff-3408655f116c",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |\n| ERR-022 | Invalid pagination parameters. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b564f577-853d-4f4b-a3cb-ac5f2dd7229a",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06853b0f-049c-4a85-b41e-8ae1b7e9db7c",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cd6abfbb-d26a-48ef-8d49-750de6c5a67f",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-013 | Organization not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_013\",\n  \"message\": \"Organization not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01a37dbb-30ab-4683-8cd6-18a0b9b72377",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://sandbox.oumla.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "602e4981-a217-475c-b2ec-a078c39f8001",
+    "name": "Oumla Core Server addresses profiles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.",
+      "type": "text/plain"
+    }
+  }
+}

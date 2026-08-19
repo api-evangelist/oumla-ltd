@@ -1,0 +1,2127 @@
+{
+  "item": [
+    {
+      "id": "9cb99c0c-51f2-4615-9721-ddfe07f469bf",
+      "name": "deployed-contracts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "184ca696-f3f0-4309-b2ee-9c2b10ee7adb",
+          "name": "List Deployed contracts",
+          "request": {
+            "name": "List Deployed contracts",
+            "description": {
+              "content": "List deployed contracts with optional filters and pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "deployed-contracts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "contractAddress",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "networkId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contractTemplateId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ded896e7-1e0a-4e35-ba11-74023bff3d64",
+              "name": "Deployed contracts (paginated)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "contractAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "networkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractTemplateId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deployedContracts\": {\n    \"contracts\": [\n      {\n        \"id\": \"string\",\n        \"contractAddress\": \"string\",\n        \"network\": \"string\",\n        \"contractTemplateId\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"contractAddress\": \"string\",\n        \"network\": \"string\",\n        \"contractTemplateId\": \"string\"\n      }\n    ],\n    \"total\": 3352.4593093160147,\n    \"skip\": 1057.03250074206,\n    \"take\": 8351.72484007853\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5974780-234a-4302-852e-b96e36612016",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |\n| ERR-022 | Invalid pagination parameters. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "contractAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "networkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractTemplateId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0574ef3f-662f-4c9c-8c31-7adee3561c8f",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "contractAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "networkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractTemplateId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8df43933-f8e6-491e-91fe-e1872263512d",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "contractAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "networkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractTemplateId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f3e9cc88-c766-426a-aa35-056f36152cd8",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "contractAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "networkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contractTemplateId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dc4afb5f-ddb9-494c-9526-11dceba9c1b2",
+          "name": "Get deployed contract by deployment ID",
+          "request": {
+            "name": "Get deployed contract by deployment ID",
+            "description": {
+              "content": "Get a deployed contract by its deployment ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "deployed-contracts",
+                ":deploymentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "deploymentId",
+                  "description": "(Required) Deployment ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f651090a-aebe-44c3-8574-d29959ff8ef9",
+              "name": "Get deployed contract by deployment ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    ":deploymentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "deploymentId",
+                      "description": "(Required) Deployment ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deployedContract\": {\n    \"id\": \"string\",\n    \"contractAddress\": \"string\",\n    \"network\": \"string\",\n    \"contractTemplateId\": \"string\",\n    \"deployerAddressId\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "63a385cb-883c-474a-a605-40a63ce637c7",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    ":deploymentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "deploymentId",
+                      "description": "(Required) Deployment ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e89a06a-596a-4a27-809a-78d52bdcdc54",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    ":deploymentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "deploymentId",
+                      "description": "(Required) Deployment ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b13956b4-34ed-4ab8-9e09-6e5ff8609e4e",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-066 | Contract not found. |\n| ERR-146 | Contract deployment is still in progress. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    ":deploymentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "deploymentId",
+                      "description": "(Required) Deployment ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_066\",\n  \"message\": \"Contract not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e153b931-4845-4969-9564-a41c066ed902",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    ":deploymentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "deploymentId",
+                      "description": "(Required) Deployment ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c34ef56-8f21-4e1d-b404-00dfc4dcf611",
+          "name": "Get deployed contract by address and networkId",
+          "request": {
+            "name": "Get deployed contract by address and networkId",
+            "description": {
+              "content": "Get a deployed contract by contract address and networkId.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "deployed-contracts",
+                ":contractAddress",
+                ":networkId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "contractAddress",
+                  "description": "(Required) Contract address"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "networkId",
+                  "description": "(Required) Network Id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2d72eaae-8200-49df-aa4c-c97315caa2a7",
+              "name": "Deployed contract by address and networkId",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    ":contractAddress",
+                    ":networkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deployedContract\": {\n    \"id\": \"string\",\n    \"contractAddress\": \"string\",\n    \"network\": \"string\",\n    \"contractTemplateId\": \"string\",\n    \"vauldAccountId\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f6d12125-c732-4681-9479-ba852ebecda0",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    ":contractAddress",
+                    ":networkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ca4e3af-f736-4419-b102-8e60234dd86e",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    ":contractAddress",
+                    ":networkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d743eb0-54a8-4c3c-80eb-d2c635745bf8",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-066 | Contract not found. |\n| ERR-146 | Contract deployment is still in progress. |\n| ERR-156 | Organization not found for this tenant. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    ":contractAddress",
+                    ":networkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_066\",\n  \"message\": \"Contract not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6261a8c5-8a94-4346-9481-a6a6355982cf",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    ":contractAddress",
+                    ":networkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9da205f-615c-453b-857c-f668d4859f53",
+          "name": "Fetch contract ABI",
+          "request": {
+            "name": "Fetch contract ABI",
+            "description": {
+              "content": "Fetch contract ABI from chain/relayer by address and network.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "deployed-contracts",
+                "fetch-abi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6c7d74ad-12a4-41f2-a846-943300220733",
+              "name": "Fetched contract ABI",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "fetch-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contractAbi\": {\n    \"abi\": {},\n    \"contractAddress\": \"string\",\n    \"network\": \"string\",\n    \"status\": \"string\",\n    \"source\": \"string\",\n    \"tenantId\": \"string\",\n    \"userId\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0e846e1e-e4a0-477d-9d06-2f599707dce6",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "fetch-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32ba47e3-d533-4be2-a5f7-388c00ab5456",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "fetch-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f55b43a7-a032-4619-aff8-2ee931b3c1c4",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "fetch-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f686dc8-aee4-4cae-8ee4-29ef6a614239",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-066 | Contract not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "fetch-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_066\",\n  \"message\": \"Contract not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19e96208-e2df-4549-8a8f-52afc0a83590",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "fetch-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81fcd5fb-3a34-486d-b68e-913d3b650dd8",
+          "name": "Add Contract ABI",
+          "request": {
+            "name": "Add Contract ABI",
+            "description": {
+              "content": "Add or update ABI for a deployed contract.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "deployed-contracts",
+                "add-abi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"abi\": [\n    \"<array>\",\n    \"<array>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "91305f62-d776-4854-921c-60844be0e545",
+              "name": "Contract ABI added",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "add-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"abi\": [\n    \"<array>\",\n    \"<array>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {\n    \"contractAddress\": \"string\",\n    \"network\": \"string\",\n    \"name\": \"string\",\n    \"abi\": {},\n    \"status\": \"string\",\n    \"source\": \"string\",\n    \"message\": \"string\",\n    \"tenantId\": \"string\",\n    \"userId\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "afec312f-2b11-4474-a2a5-71aee7491d23",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "add-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"abi\": [\n    \"<array>\",\n    \"<array>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34ab051d-ca73-4726-9f57-4008c7f89465",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "add-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"abi\": [\n    \"<array>\",\n    \"<array>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e83f36b9-4068-4dd3-8ad7-a0bb0efed3bb",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "add-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"abi\": [\n    \"<array>\",\n    \"<array>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "817064d9-10ac-4180-8162-b1fed1033e31",
+              "name": "Conflict – resource already exists or state conflict.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-501 | Resource conflict |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "add-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"abi\": [\n    \"<array>\",\n    \"<array>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_501\",\n  \"message\": \"Resource conflict\",\n  \"category\": \"CONFLICT\",\n  \"statusCode\": 409,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "915b3b81-193d-4a2c-b189-c9386cdcdf25",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deployed-contracts",
+                    "add-abi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contractAddress\": \"<string>\",\n  \"networkId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"abi\": [\n    \"<array>\",\n    \"<array>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://sandbox.oumla.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ba885a2f-d620-4647-9261-2c63ce4760c9",
+    "name": "Oumla Core Server addresses deployed-contracts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.",
+      "type": "text/plain"
+    }
+  }
+}

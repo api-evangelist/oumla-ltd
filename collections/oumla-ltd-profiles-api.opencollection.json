@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oumla Core Server addresses profiles API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "profiles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List of profiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/profiles",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List profiles for the authenticated user's organization with pagination."
+        },
+        {
+          "info": {
+            "name": "Create Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.oumla.com/api/v1/profiles",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a new profile for the organization."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

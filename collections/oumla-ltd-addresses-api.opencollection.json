@@ -1,0 +1,179 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oumla Core Server addresses API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "addresses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create address",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.oumla.com/api/v1/addresses/generate",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Generate a new address for the given network and reference. Requires wallet/address policy."
+        },
+        {
+          "info": {
+            "name": "Generate wallet if not exists and create address (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.oumla.com/api/v2/addresses/generate",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "V2: creates wallet if needed, then generates address for the given network and reference."
+        },
+        {
+          "info": {
+            "name": "List addresses for organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/addresses/organization",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List addresses for the authenticated user's organization with pagination."
+        },
+        {
+          "info": {
+            "name": "Get address by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/addresses",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Address UUID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieve a single address by its UUID."
+        },
+        {
+          "info": {
+            "name": "List addresses for profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/addresses/:reference",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reference",
+                "value": "",
+                "type": "path",
+                "description": "Profile reference"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List addresses for a profile by reference with pagination."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

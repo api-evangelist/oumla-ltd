@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oumla Core Server addresses networks API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "networks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all enabled networks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/network/enabled",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns the enabled-networks catalog (ID, name, alias) from cache. Accessible to any authenticated user — exposes only non-sensitive metadata. On cache miss, rebuilds the index from the database."
+        },
+        {
+          "info": {
+            "name": "Get networks available for your organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/network/organization",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "Filter by enabled status (true = only enabled networks)"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by network name"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get networks available for your organization."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

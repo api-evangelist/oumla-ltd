@@ -1,0 +1,1908 @@
+{
+  "item": [
+    {
+      "id": "249c6e4e-3164-49dd-881f-83a706efeebf",
+      "name": "transactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d5d09c6a-d6ee-48bf-a0bc-ba305443f776",
+          "name": "List transactions by address",
+          "request": {
+            "name": "List transactions by address",
+            "description": {
+              "content": "List transactions for a given address with pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "transactions",
+                "address",
+                ":address"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "address",
+                  "description": "(Required) Address"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ecda9b00-0a3b-494a-ad86-9b5a0657dddf",
+              "name": "Transactions by address (paginated)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "address",
+                    ":address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "address",
+                      "description": "(Required) Address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"addressFrom\": \"string\",\n      \"addressTo\": \"string\",\n      \"amount\": \"string\",\n      \"date\": \"string\",\n      \"isMempool\": true,\n      \"isSpent\": false,\n      \"status\": \"string\",\n      \"updatedAt\": \"string\",\n      \"createdAt\": \"string\",\n      \"type\": \"string\",\n      \"networkId\": \"string\",\n      \"txid\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenId\": \"string\",\n      \"txType\": \"string\",\n      \"fee\": \"string\"\n    },\n    {\n      \"addressFrom\": \"string\",\n      \"addressTo\": \"string\",\n      \"amount\": \"string\",\n      \"date\": \"string\",\n      \"isMempool\": true,\n      \"isSpent\": true,\n      \"status\": \"string\",\n      \"updatedAt\": \"string\",\n      \"createdAt\": \"string\",\n      \"type\": \"string\",\n      \"networkId\": \"string\",\n      \"txid\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenId\": \"string\",\n      \"txType\": \"string\",\n      \"fee\": \"string\"\n    }\n  ],\n  \"pagination\": {\n    \"totalElements\": 100,\n    \"totalPages\": 10,\n    \"skip\": 0,\n    \"take\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "004a2a52-229d-4982-86cb-4c24fa2581bc",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |\n| ERR-022 | Invalid pagination parameters. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "address",
+                    ":address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "address",
+                      "description": "(Required) Address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "286c6bc0-962e-4d8a-aa74-5b0c70e21f65",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "address",
+                    ":address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "address",
+                      "description": "(Required) Address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89e0d150-eeac-4391-b820-f6cb5c425af9",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "address",
+                    ":address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "address",
+                      "description": "(Required) Address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c37b7ad8-2f5e-4058-9e23-ce5d2bd372e5",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-096 | Address not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "address",
+                    ":address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "address",
+                      "description": "(Required) Address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_096\",\n  \"message\": \"Address not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca197ed1-5210-4f6a-9347-7809678d658b",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "address",
+                    ":address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "address",
+                      "description": "(Required) Address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "388ae5ae-9c73-469d-86a9-f1229cef8494",
+          "name": "List Transactions by mini wallet",
+          "request": {
+            "name": "List Transactions by mini wallet",
+            "description": {
+              "content": "List transactions for a mini wallet with pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "transactions",
+                "wallet",
+                ":miniWalletId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "miniWalletId",
+                  "description": "(Required) Mini wallet ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "39ca5057-9a6d-4eab-abf5-65a19148d46d",
+              "name": "Transactions by mini wallet (paginated)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "wallet",
+                    ":miniWalletId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "miniWalletId",
+                      "description": "(Required) Mini wallet ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"addressFrom\": \"string\",\n      \"addressTo\": \"string\",\n      \"amount\": \"string\",\n      \"date\": \"string\",\n      \"isMempool\": false,\n      \"isSpent\": true,\n      \"status\": \"string\",\n      \"updatedAt\": \"string\",\n      \"createdAt\": \"string\",\n      \"type\": \"string\",\n      \"networkId\": \"string\",\n      \"txid\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenId\": \"string\",\n      \"txType\": \"string\",\n      \"fee\": \"string\"\n    },\n    {\n      \"addressFrom\": \"string\",\n      \"addressTo\": \"string\",\n      \"amount\": \"string\",\n      \"date\": \"string\",\n      \"isMempool\": false,\n      \"isSpent\": false,\n      \"status\": \"string\",\n      \"updatedAt\": \"string\",\n      \"createdAt\": \"string\",\n      \"type\": \"string\",\n      \"networkId\": \"string\",\n      \"txid\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenId\": \"string\",\n      \"txType\": \"string\",\n      \"fee\": \"string\"\n    }\n  ],\n  \"pagination\": {\n    \"totalElements\": 100,\n    \"totalPages\": 10,\n    \"skip\": 0,\n    \"take\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e2a0469f-58fa-4364-a21f-f53af21f3211",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |\n| ERR-022 | Invalid pagination parameters. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "wallet",
+                    ":miniWalletId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "miniWalletId",
+                      "description": "(Required) Mini wallet ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0efd6df0-86ec-4ca4-9666-4a36746a2332",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "wallet",
+                    ":miniWalletId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "miniWalletId",
+                      "description": "(Required) Mini wallet ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ee1635e-6cea-451e-91fe-139d8e053411",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "wallet",
+                    ":miniWalletId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "miniWalletId",
+                      "description": "(Required) Mini wallet ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e722475-edf0-43a5-bac7-490ee7fe6b54",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-096 | Address not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "wallet",
+                    ":miniWalletId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "miniWalletId",
+                      "description": "(Required) Mini wallet ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_096\",\n  \"message\": \"Address not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5c90d5e-9ceb-4c81-95e2-8903b94c5461",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "wallet",
+                    ":miniWalletId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "miniWalletId",
+                      "description": "(Required) Mini wallet ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "59c2d2cf-26f0-41c3-801b-75f5ee745d86",
+          "name": "List Transactions by organization",
+          "request": {
+            "name": "List Transactions by organization",
+            "description": {
+              "content": "List transactions for the authenticated user's organization with pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "transactions",
+                "organization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4d02a784-ab8b-4e5b-a505-cb220d2f202b",
+              "name": "Transactions by organization (paginated)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "organization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"addressFrom\": \"string\",\n      \"addressTo\": \"string\",\n      \"amount\": \"string\",\n      \"date\": \"string\",\n      \"isMempool\": false,\n      \"isSpent\": true,\n      \"status\": \"string\",\n      \"updatedAt\": \"string\",\n      \"createdAt\": \"string\",\n      \"type\": \"string\",\n      \"networkId\": \"string\",\n      \"txid\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenId\": \"string\",\n      \"txType\": \"string\",\n      \"fee\": \"string\"\n    },\n    {\n      \"addressFrom\": \"string\",\n      \"addressTo\": \"string\",\n      \"amount\": \"string\",\n      \"date\": \"string\",\n      \"isMempool\": false,\n      \"isSpent\": false,\n      \"status\": \"string\",\n      \"updatedAt\": \"string\",\n      \"createdAt\": \"string\",\n      \"type\": \"string\",\n      \"networkId\": \"string\",\n      \"txid\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenId\": \"string\",\n      \"txType\": \"string\",\n      \"fee\": \"string\"\n    }\n  ],\n  \"pagination\": {\n    \"totalElements\": 100,\n    \"totalPages\": 10,\n    \"skip\": 0,\n    \"take\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8f17284-3ceb-4158-8a25-d45a5a83de93",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |\n| ERR-022 | Invalid pagination parameters. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "organization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9167bf50-e5d9-4024-b503-320618811302",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "organization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9093595f-ecf1-4c95-a699-ea2c70a6f1e4",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "organization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7e96e23a-eb51-4aac-9c7f-3a5429fad8c7",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "organization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "957c3dc8-23a3-4e55-9e19-8f0d49f16ccf",
+          "name": "List Transactions by profile",
+          "request": {
+            "name": "List Transactions by profile",
+            "description": {
+              "content": "List transactions for a profile by reference with pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "transactions",
+                "profile",
+                ":reference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference",
+                  "description": "(Required) Profile reference"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1e21c844-b195-4db3-bd81-de19551d84c8",
+              "name": "Transactions by profile (paginated)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "profile",
+                    ":reference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reference",
+                      "description": "(Required) Profile reference"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"transactions\": [\n    {\n      \"addressFrom\": \"string\",\n      \"addressTo\": \"string\",\n      \"amount\": \"string\",\n      \"date\": \"string\",\n      \"isMempool\": true,\n      \"isSpent\": true,\n      \"status\": \"string\",\n      \"updatedAt\": \"string\",\n      \"createdAt\": \"string\",\n      \"type\": \"string\",\n      \"networkId\": \"string\",\n      \"txid\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenId\": \"string\",\n      \"txType\": \"string\",\n      \"fee\": \"string\"\n    },\n    {\n      \"addressFrom\": \"string\",\n      \"addressTo\": \"string\",\n      \"amount\": \"string\",\n      \"date\": \"string\",\n      \"isMempool\": true,\n      \"isSpent\": false,\n      \"status\": \"string\",\n      \"updatedAt\": \"string\",\n      \"createdAt\": \"string\",\n      \"type\": \"string\",\n      \"networkId\": \"string\",\n      \"txid\": \"string\",\n      \"contractAddress\": \"string\",\n      \"tokenId\": \"string\",\n      \"txType\": \"string\",\n      \"fee\": \"string\"\n    }\n  ],\n  \"pagination\": {\n    \"totalElements\": 100,\n    \"totalPages\": 10,\n    \"skip\": 0,\n    \"take\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7150a8f7-97ab-4d6c-ad98-7d84dc418a29",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |\n| ERR-022 | Invalid pagination parameters. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "profile",
+                    ":reference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reference",
+                      "description": "(Required) Profile reference"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba7529c6-7575-4598-aa21-a4b21759cca2",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "profile",
+                    ":reference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reference",
+                      "description": "(Required) Profile reference"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dec857ed-d826-4a10-8dec-157a4107d76d",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "profile",
+                    ":reference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reference",
+                      "description": "(Required) Profile reference"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca5dbb6d-402c-49d8-8ba5-9b872ffd3044",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-096 | Address not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "profile",
+                    ":reference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reference",
+                      "description": "(Required) Profile reference"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_096\",\n  \"message\": \"Address not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33f4962f-57b7-491a-b469-6208d5dd4485",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions",
+                    "profile",
+                    ":reference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reference",
+                      "description": "(Required) Profile reference"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://sandbox.oumla.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fb9d632c-b5ff-4ee4-905e-e0ed74a9ad69",
+    "name": "Oumla Core Server addresses transactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.",
+      "type": "text/plain"
+    }
+  }
+}

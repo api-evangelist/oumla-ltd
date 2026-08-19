@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oumla Core Server addresses transactions API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List transactions by address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/transactions/address/:address",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "path",
+                "description": "Address"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List transactions for a given address with pagination."
+        },
+        {
+          "info": {
+            "name": "List Transactions by mini wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/transactions/wallet/:miniWalletId",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "miniWalletId",
+                "value": "",
+                "type": "path",
+                "description": "Mini wallet ID"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List transactions for a mini wallet with pagination."
+        },
+        {
+          "info": {
+            "name": "List Transactions by organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/transactions/organization",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List transactions for the authenticated user's organization with pagination."
+        },
+        {
+          "info": {
+            "name": "List Transactions by profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/transactions/profile/:reference",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reference",
+                "value": "",
+                "type": "path",
+                "description": "Profile reference"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List transactions for a profile by reference with pagination."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

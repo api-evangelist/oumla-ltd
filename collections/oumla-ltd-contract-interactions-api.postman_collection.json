@@ -1,0 +1,2040 @@
+{
+  "item": [
+    {
+      "id": "84626667-a1c3-420a-8705-a61520954ad2",
+      "name": "contract-interactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2dac55be-597a-48fe-a798-6cb955f9d994",
+          "name": "Get deployed contract ABI/functions",
+          "request": {
+            "name": "Get deployed contract ABI/functions",
+            "description": {
+              "content": "Get ABI and callable functions for a deployed contract.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-interactions",
+                "network",
+                ":networkId",
+                "contract-address",
+                ":contractAddress",
+                "functions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "networkId",
+                  "description": "(Required) Network Id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "contractAddress",
+                  "description": "(Required) Contract address"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "aabbba42-355c-4290-bbd3-ba277b107ce3",
+              "name": "Deployed contract ABI / functions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contractAbi\": {\n    \"abi\": [\n      \"string\",\n      \"string\"\n    ],\n    \"contractAddress\": \"string\",\n    \"implementationAddress\": \"string\",\n    \"network\": \"string\",\n    \"status\": \"string\",\n    \"source\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea7a7267-c997-4c4e-8c35-ad1e183a86bb",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cf71dd3f-40ee-4bef-a3a1-0a1aeae9be90",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4590f2f5-40f0-4b69-bf36-ed4f846286b5",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-006 | The requested resource was not found. |\n| ERR-066 | Contract not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_006\",\n  \"message\": \"The requested resource was not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "105da9d7-f6bb-419a-b918-29cff035a87b",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-204 | External service is currently unavailable. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e405b56-00d7-4e5d-99a8-b84d5b099ddd",
+          "name": "Call read function",
+          "request": {
+            "name": "Call read function",
+            "description": {
+              "content": "Execute a read-only contract call (no gas).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-interactions",
+                "network",
+                ":networkId",
+                "contract-address",
+                ":contractAddress",
+                "functions",
+                "read"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "networkId",
+                  "description": "(Required) Network Id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "contractAddress",
+                  "description": "(Required) Contract address"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1c087754-17b2-4f92-aa5c-5afb9379372f",
+              "name": "Read call result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {\n    \"data\": {\n      \"result\": {},\n      \"functionName\": \"string\",\n      \"contractAddress\": \"string\",\n      \"network\": \"string\",\n      \"encodedData\": \"string\"\n    },\n    \"success\": false,\n    \"status\": 9185.655116303788\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10e6f917-5783-4f78-81a0-364b2ca5e413",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5189e553-096a-4d88-9a90-3239ffb3bcce",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13b1bcb7-d129-414b-b812-b1209d631d83",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ed8f982f-989b-4296-b4b1-f7f55802c468",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-006 | The requested resource was not found. |\n| ERR-066 | Contract not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_006\",\n  \"message\": \"The requested resource was not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8580e1ed-47bb-43e8-86b5-de8149002945",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-204 | External service is currently unavailable. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "read"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f64978a5-914b-43b4-ab9e-a8eecece1841",
+          "name": "Call write function",
+          "request": {
+            "name": "Call write function",
+            "description": {
+              "content": "Start a write/send transaction workflow. Requires interact contract policy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-interactions",
+                "network",
+                ":networkId",
+                "contract-address",
+                ":contractAddress",
+                "functions",
+                "write"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "networkId",
+                  "description": "(Required) Network Id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "contractAddress",
+                  "description": "(Required) Contract address"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  },\n  \"amount\": \"<string>\",\n  \"feeLevel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "47699889-2486-4a33-9b1a-25168094b5ce",
+              "name": "Write call started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  },\n  \"amount\": \"<string>\",\n  \"feeLevel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"workflowResult\": {\n    \"workflowId\": \"string\",\n    \"operationId\": \"string\",\n    \"status\": \"started\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c8d95b82-af38-459b-b998-ba87c973f3ac",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  },\n  \"amount\": \"<string>\",\n  \"feeLevel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff352946-90fc-42ed-a8bc-f0dae2945b40",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  },\n  \"amount\": \"<string>\",\n  \"feeLevel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca48fd78-f12a-4d27-9809-fa5300b905c9",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  },\n  \"amount\": \"<string>\",\n  \"feeLevel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d516401-b453-43ed-ba8f-585999d46d6c",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-006 | The requested resource was not found. |\n| ERR-066 | Contract not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  },\n  \"amount\": \"<string>\",\n  \"feeLevel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_006\",\n  \"message\": \"The requested resource was not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a22a7be1-940f-4477-a7c7-cd7dccfc9c75",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-036 | Failed to send transaction. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "contract-address",
+                    ":contractAddress",
+                    "functions",
+                    "write"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contractAddress",
+                      "description": "(Required) Contract address"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"abiFunction\": {\n    \"type\": \"<string>\",\n    \"inputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"stateMutability\": \"<string>\",\n    \"outputs\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"value\": \"<object>\",\n        \"description\": \"<string>\",\n        \"internalType\": \"<string>\",\n        \"components\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"indexed\": \"<boolean>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"anonymous\": \"<boolean>\"\n  },\n  \"amount\": \"<string>\",\n  \"feeLevel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2784fd3b-1be6-4c97-a85b-1dadab476ade",
+          "name": "Get transaction receipt",
+          "request": {
+            "name": "Get transaction receipt",
+            "description": {
+              "content": "Get the receipt for a contract write transaction.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-interactions",
+                "network",
+                ":networkId",
+                "tx",
+                ":txId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "networkId",
+                  "description": "(Required) Network Id"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "txId",
+                  "description": "(Required) Transaction ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c7701aa9-b579-44e4-a25f-64705bfe95ca",
+              "name": "Transaction receipt",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "tx",
+                    ":txId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "txId",
+                      "description": "(Required) Transaction ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"receipt\": {\n    \"blockHash\": \"string\",\n    \"blockNumber\": \"string\",\n    \"contractAddress\": \"string\",\n    \"cumulativeGasUsed\": \"string\",\n    \"effectiveGasPrice\": \"string\",\n    \"from\": \"string\",\n    \"gasUsed\": \"string\",\n    \"logs\": [\n      {\n        \"address\": \"string\",\n        \"topics\": [\n          \"string\",\n          \"string\"\n        ],\n        \"data\": \"string\",\n        \"blockNumber\": \"string\",\n        \"transactionHash\": \"string\",\n        \"transactionIndex\": 2055.5333606061267,\n        \"blockHash\": \"string\",\n        \"logIndex\": 9833.685538107567,\n        \"removed\": true\n      },\n      {\n        \"address\": \"string\",\n        \"topics\": [\n          \"string\",\n          \"string\"\n        ],\n        \"data\": \"string\",\n        \"blockNumber\": \"string\",\n        \"transactionHash\": \"string\",\n        \"transactionIndex\": 4955.578508365297,\n        \"blockHash\": \"string\",\n        \"logIndex\": 3093.025525933417,\n        \"removed\": false\n      }\n    ],\n    \"logsBloom\": \"string\",\n    \"status\": 3662.5536419613304,\n    \"to\": \"string\",\n    \"transactionHash\": \"string\",\n    \"transactionIndex\": 5327.369254526395,\n    \"type\": 3033.8640169362684\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1634f9c-24ac-45f3-999e-83de91628017",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "tx",
+                    ":txId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "txId",
+                      "description": "(Required) Transaction ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c09d0c71-7c40-4670-955e-0e1cc4ee0aec",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "tx",
+                    ":txId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "txId",
+                      "description": "(Required) Transaction ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4b7f88ca-f46c-486f-a4bb-7e21a97a09d8",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-046 | Transaction receipt not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "tx",
+                    ":txId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "txId",
+                      "description": "(Required) Transaction ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_046\",\n  \"message\": \"Transaction receipt not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b0661cc-8c71-4c9e-90bf-51ccd4f618d2",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-046 | Transaction receipt not found. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-interactions",
+                    "network",
+                    ":networkId",
+                    "tx",
+                    ":txId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "networkId",
+                      "description": "(Required) Network Id"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "txId",
+                      "description": "(Required) Transaction ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://sandbox.oumla.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7865a384-7b0f-4ea6-8e5d-6a4689c39ec6",
+    "name": "Oumla Core Server addresses contract-interactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.",
+      "type": "text/plain"
+    }
+  }
+}

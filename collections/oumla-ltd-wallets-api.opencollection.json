@@ -1,0 +1,121 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oumla Core Server addresses wallets API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "wallets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.oumla.com/api/v1/wallets/generate",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Generate a new wallet for the given reference and network. Requires wallet/address policy."
+        },
+        {
+          "info": {
+            "name": "List wallets for the profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/wallets/profile/:reference",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reference",
+                "value": "",
+                "type": "path",
+                "description": "Profile reference"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List wallets for a profile by reference with pagination."
+        },
+        {
+          "info": {
+            "name": "List wallets for the organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/wallets/organization",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List wallets for the authenticated user's organization with pagination."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

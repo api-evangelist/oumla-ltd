@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oumla Core Server addresses contract-interactions API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "contract-interactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get deployed contract ABI/functions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/contract-interactions/network/:networkId/contract-address/:contractAddress/functions",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "Network Id"
+              },
+              {
+                "name": "contractAddress",
+                "value": "",
+                "type": "path",
+                "description": "Contract address"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get ABI and callable functions for a deployed contract."
+        },
+        {
+          "info": {
+            "name": "Call read function",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.oumla.com/api/v1/contract-interactions/network/:networkId/contract-address/:contractAddress/functions/read",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "Network Id"
+              },
+              {
+                "name": "contractAddress",
+                "value": "",
+                "type": "path",
+                "description": "Contract address"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Execute a read-only contract call (no gas)."
+        },
+        {
+          "info": {
+            "name": "Call write function",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.oumla.com/api/v1/contract-interactions/network/:networkId/contract-address/:contractAddress/functions/write",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "Network Id"
+              },
+              {
+                "name": "contractAddress",
+                "value": "",
+                "type": "path",
+                "description": "Contract address"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Start a write/send transaction workflow. Requires interact contract policy."
+        },
+        {
+          "info": {
+            "name": "Get transaction receipt",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/contract-interactions/network/:networkId/tx/:txId",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "Network Id"
+              },
+              {
+                "name": "txId",
+                "value": "",
+                "type": "path",
+                "description": "Transaction ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get the receipt for a contract write transaction."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

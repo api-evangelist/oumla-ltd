@@ -1,0 +1,2808 @@
+{
+  "item": [
+    {
+      "id": "81b776b0-1c57-4d9a-88c3-e614cd2922d4",
+      "name": "contract-templates",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4a40368c-e16b-4dab-9e55-9ac01897ed6b",
+          "name": "List contract templates",
+          "request": {
+            "name": "List contract templates",
+            "description": {
+              "content": "List contract templates for the organization with pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-templates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8718ecd6-4cdf-485c-a6db-a085e5f1e36e",
+              "name": "Contract templates (paginated)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {\n    \"data\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"longDescription\": \"string\",\n        \"bytecode\": \"string\",\n        \"sourceCode\": \"string\",\n        \"type\": \"string\",\n        \"docs\": {}\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"longDescription\": \"string\",\n        \"bytecode\": \"string\",\n        \"sourceCode\": \"string\",\n        \"type\": \"string\",\n        \"docs\": {}\n      }\n    ],\n    \"next\": {},\n    \"count\": 7135.006663661383\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "11f9d0d1-7516-41de-919b-e86671f67824",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |\n| ERR-022 | Invalid pagination parameters. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3dec17ae-2594-49ff-98ed-f53e7e1eb179",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "de3ffed7-d8fe-4b9e-856b-ad5557357079",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e09b27b-8e77-4b15-800e-d07f600baf68",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9fa041c-4fc9-49dc-97b2-1bba658165f4",
+          "name": "Create contract template",
+          "request": {
+            "name": "Create contract template",
+            "description": {
+              "content": "Create a new contract template (ABI, bytecode, metadata).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-templates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"bytecode\": \"<string>\",\n  \"abi\": [\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    }\n  ],\n  \"longDescription\": \"<string>\",\n  \"sourceCode\": \"<string>\",\n  \"type\": \"<string>\",\n  \"docs\": {\n    \"kind\": \"<string>\",\n    \"methods\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 75,\n          \"key_1\": 6949.572374533731,\n          \"key_2\": 2638,\n          \"key_3\": 7110.729120161104\n        },\n        \"returns\": {\n          \"key_0\": 5531\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 2338,\n          \"key_1\": false,\n          \"key_2\": true\n        },\n        \"returns\": {\n          \"key_0\": true,\n          \"key_1\": 6004,\n          \"key_2\": 1973.3142392945658,\n          \"key_3\": 6312\n        }\n      }\n    ],\n    \"version\": \"<string>\",\n    \"details\": \"<string>\",\n    \"events\": \"<string>\"\n  },\n  \"attributes\": {\n    \"useCases\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"standards\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"auditor\": {\n      \"name\": \"<string>\",\n      \"imageURL\": \"<string>\",\n      \"link\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a0fb9ad2-5858-4604-aa98-fcbae27e0d1b",
+              "name": "Contract template created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"bytecode\": \"<string>\",\n  \"abi\": [\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    }\n  ],\n  \"longDescription\": \"<string>\",\n  \"sourceCode\": \"<string>\",\n  \"type\": \"<string>\",\n  \"docs\": {\n    \"kind\": \"<string>\",\n    \"methods\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 7982.447164063433\n        },\n        \"returns\": {\n          \"key_0\": \"string\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 1379,\n          \"key_1\": false\n        },\n        \"returns\": {\n          \"key_0\": true,\n          \"key_1\": false,\n          \"key_2\": 8296,\n          \"key_3\": 6519.422489460344\n        }\n      }\n    ],\n    \"version\": \"<string>\",\n    \"details\": \"<string>\",\n    \"events\": \"<string>\"\n  },\n  \"attributes\": {\n    \"useCases\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"standards\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"auditor\": {\n      \"name\": \"<string>\",\n      \"imageURL\": \"<string>\",\n      \"link\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contract\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"longDescription\": \"string\",\n    \"bytecode\": \"string\",\n    \"sourceCode\": \"string\",\n    \"type\": \"string\",\n    \"docs\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0ccc63eb-57bd-4dd8-8e95-e58afd2dbdb0",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |\n| ERR-300 | Invalid input provided. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"bytecode\": \"<string>\",\n  \"abi\": [\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    }\n  ],\n  \"longDescription\": \"<string>\",\n  \"sourceCode\": \"<string>\",\n  \"type\": \"<string>\",\n  \"docs\": {\n    \"kind\": \"<string>\",\n    \"methods\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 7982.447164063433\n        },\n        \"returns\": {\n          \"key_0\": \"string\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 1379,\n          \"key_1\": false\n        },\n        \"returns\": {\n          \"key_0\": true,\n          \"key_1\": false,\n          \"key_2\": 8296,\n          \"key_3\": 6519.422489460344\n        }\n      }\n    ],\n    \"version\": \"<string>\",\n    \"details\": \"<string>\",\n    \"events\": \"<string>\"\n  },\n  \"attributes\": {\n    \"useCases\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"standards\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"auditor\": {\n      \"name\": \"<string>\",\n      \"imageURL\": \"<string>\",\n      \"link\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "061c28c7-7290-4d04-aa4b-ba5fc5835d21",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"bytecode\": \"<string>\",\n  \"abi\": [\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    }\n  ],\n  \"longDescription\": \"<string>\",\n  \"sourceCode\": \"<string>\",\n  \"type\": \"<string>\",\n  \"docs\": {\n    \"kind\": \"<string>\",\n    \"methods\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 7982.447164063433\n        },\n        \"returns\": {\n          \"key_0\": \"string\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 1379,\n          \"key_1\": false\n        },\n        \"returns\": {\n          \"key_0\": true,\n          \"key_1\": false,\n          \"key_2\": 8296,\n          \"key_3\": 6519.422489460344\n        }\n      }\n    ],\n    \"version\": \"<string>\",\n    \"details\": \"<string>\",\n    \"events\": \"<string>\"\n  },\n  \"attributes\": {\n    \"useCases\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"standards\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"auditor\": {\n      \"name\": \"<string>\",\n      \"imageURL\": \"<string>\",\n      \"link\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5900f553-6626-4515-a3d0-ddf04f47358d",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"bytecode\": \"<string>\",\n  \"abi\": [\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    }\n  ],\n  \"longDescription\": \"<string>\",\n  \"sourceCode\": \"<string>\",\n  \"type\": \"<string>\",\n  \"docs\": {\n    \"kind\": \"<string>\",\n    \"methods\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 7982.447164063433\n        },\n        \"returns\": {\n          \"key_0\": \"string\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 1379,\n          \"key_1\": false\n        },\n        \"returns\": {\n          \"key_0\": true,\n          \"key_1\": false,\n          \"key_2\": 8296,\n          \"key_3\": 6519.422489460344\n        }\n      }\n    ],\n    \"version\": \"<string>\",\n    \"details\": \"<string>\",\n    \"events\": \"<string>\"\n  },\n  \"attributes\": {\n    \"useCases\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"standards\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"auditor\": {\n      \"name\": \"<string>\",\n      \"imageURL\": \"<string>\",\n      \"link\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4fe43abe-6762-4bd0-b296-d40c9ad60b2e",
+              "name": "Conflict – resource already exists or state conflict.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-501 | Resource conflict |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"bytecode\": \"<string>\",\n  \"abi\": [\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    }\n  ],\n  \"longDescription\": \"<string>\",\n  \"sourceCode\": \"<string>\",\n  \"type\": \"<string>\",\n  \"docs\": {\n    \"kind\": \"<string>\",\n    \"methods\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 7982.447164063433\n        },\n        \"returns\": {\n          \"key_0\": \"string\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 1379,\n          \"key_1\": false\n        },\n        \"returns\": {\n          \"key_0\": true,\n          \"key_1\": false,\n          \"key_2\": 8296,\n          \"key_3\": 6519.422489460344\n        }\n      }\n    ],\n    \"version\": \"<string>\",\n    \"details\": \"<string>\",\n    \"events\": \"<string>\"\n  },\n  \"attributes\": {\n    \"useCases\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"standards\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"auditor\": {\n      \"name\": \"<string>\",\n      \"imageURL\": \"<string>\",\n      \"link\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_501\",\n  \"message\": \"Resource conflict\",\n  \"category\": \"CONFLICT\",\n  \"statusCode\": 409,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "243d4a7e-5e49-48b1-a277-cc8acccfff10",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"bytecode\": \"<string>\",\n  \"abi\": [\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"inputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"stateMutability\": \"<string>\",\n      \"outputs\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<object>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\",\n          \"components\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"indexed\": \"<boolean>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"anonymous\": \"<boolean>\"\n    }\n  ],\n  \"longDescription\": \"<string>\",\n  \"sourceCode\": \"<string>\",\n  \"type\": \"<string>\",\n  \"docs\": {\n    \"kind\": \"<string>\",\n    \"methods\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 7982.447164063433\n        },\n        \"returns\": {\n          \"key_0\": \"string\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"params\": {\n          \"key_0\": 1379,\n          \"key_1\": false\n        },\n        \"returns\": {\n          \"key_0\": true,\n          \"key_1\": false,\n          \"key_2\": 8296,\n          \"key_3\": 6519.422489460344\n        }\n      }\n    ],\n    \"version\": \"<string>\",\n    \"details\": \"<string>\",\n    \"events\": \"<string>\"\n  },\n  \"attributes\": {\n    \"useCases\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"standards\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"auditor\": {\n      \"name\": \"<string>\",\n      \"imageURL\": \"<string>\",\n      \"link\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c6af754b-f1eb-46b3-85e5-b85720daffd6",
+          "name": "Get contract template by ID",
+          "request": {
+            "name": "Get contract template by ID",
+            "description": {
+              "content": "Get a contract template by its ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-templates",
+                ":templateId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "templateId",
+                  "description": "(Required) Contract template ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1438d3e4-8af2-4b28-b663-cf507da1877a",
+              "name": "Contract template by ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"longDescription\": \"string\",\n    \"bytecode\": \"string\",\n    \"sourceCode\": \"string\",\n    \"type\": \"string\",\n    \"docs\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f6adf49-968f-4989-bb9b-40498428c88d",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0e0b4a0a-29e5-43dc-a888-b10ac58e7c20",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "890c26d6-3b09-4625-8f2f-140bb58a8049",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-066 | Contract not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_066\",\n  \"message\": \"Contract not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "16e3a832-0af3-4513-b74c-86ef1c0ca199",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "141b6c32-fb4b-4a2d-bf16-395c25e3df49",
+          "name": "Delete contract template",
+          "request": {
+            "name": "Delete contract template",
+            "description": {
+              "content": "Delete a contract template by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-templates",
+                ":templateId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "templateId",
+                  "description": "(Required) Contract template ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "57bb4274-95b1-4197-9188-adc917532a1d",
+              "name": "Contract template deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5cab78a3-81dd-4b9f-bf34-a5ab7dce7b83",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd41cf53-f672-4f36-b545-34e14e6d041f",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a1d0fa0-53dc-4354-a78e-53831be5b286",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-066 | Contract not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_066\",\n  \"message\": \"Contract not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4cb8f30b-d1d3-4d8c-b59a-16ad37fb6f13",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30501264-a83c-4dff-9e69-c4e8f539e92b",
+          "name": "Get contract constructor by template ID",
+          "request": {
+            "name": "Get contract constructor by template ID",
+            "description": {
+              "content": "Get constructor info (params, ABI) for a contract template.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-templates",
+                ":templateId",
+                "getConstructorInfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "templateId",
+                  "description": "(Required) Contract template ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "45a63654-002e-4d6d-a344-96b228b00726",
+              "name": "Contract constructor by template ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "getConstructorInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contractConstructor\": {\n    \"id\": \"string\",\n    \"stateMutability\": \"string\",\n    \"type\": \"string\",\n    \"inputs\": {},\n    \"outputs\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7113760a-a2dc-4213-944f-995450f53d37",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "getConstructorInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a2b7fc04-42b6-4bef-acb5-4dee62b97a15",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "getConstructorInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7705c84c-0185-48f1-970c-abbbb9ebfee8",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-066 | Contract not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "getConstructorInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_066\",\n  \"message\": \"Contract not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fee5ea2a-4232-4cf7-9b0c-45ed927e5fc7",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "getConstructorInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b4478c5b-15d0-4d69-b4f6-9a8772ce893e",
+          "name": "Get contract function by template ID",
+          "request": {
+            "name": "Get contract function by template ID",
+            "description": {
+              "content": "Get function metadata/ABI for a contract template.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-templates",
+                ":templateId",
+                "function"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "templateId",
+                  "description": "(Required) Contract template ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c145ec80-8f20-49de-b977-f8d8a6f42ead",
+              "name": "Contract function by template ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contractFunction\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"stateMutability\": \"string\",\n      \"type\": \"string\",\n      \"inputs\": {},\n      \"outputs\": {}\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"stateMutability\": \"string\",\n      \"type\": \"string\",\n      \"inputs\": {},\n      \"outputs\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "131108c7-c138-4526-9fbe-e0f9e1075e72",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56beb948-415b-46a2-a926-99422e9f26d1",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8619b87a-62a1-4064-94f0-d4aa29d0cd93",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-066 | Contract not found. |\n| ERR-076 | Contract function not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_066\",\n  \"message\": \"Contract not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f54180bd-4ec3-4a2c-aaa8-f1ed8aa84d30",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19a710f1-d5c1-455e-8274-8665da0ac775",
+          "name": "Deploy Contract",
+          "request": {
+            "name": "Deploy Contract",
+            "description": {
+              "content": "Deploy a contract from a template to the specified network.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "contract-templates",
+                ":templateId",
+                "deploy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "templateId",
+                  "description": "(Required) Contract template ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"networkId\": \"<string>\",\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"constructorParameters\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cdf608b5-10e5-4ee6-8f61-8bdd20725737",
+              "name": "deploy contract via workflow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkId\": \"<string>\",\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"constructorParameters\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"workflowResult\": {\n    \"workflowId\": \"string\",\n    \"operationId\": \"string\",\n    \"status\": \"already_running\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68bec69f-3d3d-4602-bd95-aeb27940f064",
+              "name": "Bad request or validation failed.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-010 | The request could not be processed. |\n| ERR-300 | Invalid input provided. |\n| ERR-106 | Failed to get transaction nonce. |\n| ERR-116 | Failed to get transaction fee data. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkId\": \"<string>\",\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"constructorParameters\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_010\",\n  \"message\": \"The request could not be processed.\",\n  \"category\": \"VALIDATION\",\n  \"statusCode\": 400,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b47b5df6-965a-4f48-afc4-76b3f61c08ae",
+              "name": "Unauthorized – invalid or missing token.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-008 | You need to sign in to continue. |\n| ERR-011 | Your session is invalid or expired. Please sign in again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkId\": \"<string>\",\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"constructorParameters\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_008\",\n  \"message\": \"You need to sign in to continue.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 401,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3cd830a9-e543-4528-b738-590de14bde72",
+              "name": "Forbidden – insufficient permissions.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-009 | You don't have permission to do that. |\n| ERR-410 | Error occurred |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkId\": \"<string>\",\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"constructorParameters\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_009\",\n  \"message\": \"You don't have permission to do that.\",\n  \"category\": \"AUTHORIZATION\",\n  \"statusCode\": 403,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd389db2-421b-44a0-8dce-8ad64cb131bb",
+              "name": "Resource not found.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-066 | Contract not found. |\n| ERR-096 | Address not found. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkId\": \"<string>\",\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"constructorParameters\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_066\",\n  \"message\": \"Contract not found.\",\n  \"category\": \"RESOURCE\",\n  \"statusCode\": 404,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "55980d86-b112-4176-a9e6-d2f11187482d",
+              "name": "Internal server error.\n\n**Applicable error codes and client messages**\n\nThe response body contains one of the following error codes and the corresponding client-facing message.\n\n| Code | Client message |\n|------|----------------|\n| ERR-019 | Something went wrong on our side. |\n| ERR-036 | Failed to send transaction. |\n| ERR-126 | Contract deployment failed. |\n| ERR-999 | An unexpected error occurred. Please try again. |",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "contract-templates",
+                    ":templateId",
+                    "deploy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "templateId",
+                      "description": "(Required) Contract template ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"networkId\": \"<string>\",\n  \"addressId\": \"<string>\",\n  \"clientShare\": \"<string>\",\n  \"constructorParameters\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"internalType\": \"<string>\",\n      \"components\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"description\": \"<string>\",\n          \"internalType\": \"<string>\"\n        }\n      ],\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"ERR_019\",\n  \"message\": \"Something went wrong on our side.\",\n  \"category\": \"SYSTEM\",\n  \"statusCode\": 500,\n  \"path\": \"/api/v1/example\",\n  \"timestamp\": \"2025-02-20T12:00:00.000Z\",\n  \"requestId\": \"req-example-id\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://sandbox.oumla.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "828f6057-34c2-4fba-a54e-1b5644b696df",
+    "name": "Oumla Core Server addresses contract-templates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.",
+      "type": "text/plain"
+    }
+  }
+}

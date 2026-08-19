@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oumla Core Server addresses workflows API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "workflows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Workflow status and result",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/workflows/:workflowId/status",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path",
+                "description": "Workflow ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get the status and result of a workflow by ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

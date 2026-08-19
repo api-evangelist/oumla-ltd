@@ -1,0 +1,298 @@
+{
+  "item": [
+    {
+      "id": "9b83b154-8a2a-4a86-887a-cae242c1e98d",
+      "name": "networks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "90aa6de0-c754-4de5-a50e-d4e4e5737db9",
+          "name": "Get all enabled networks",
+          "request": {
+            "name": "Get all enabled networks",
+            "description": {
+              "content": "Returns the enabled-networks catalog (ID, name, alias) from cache. Accessible to any authenticated user — exposes only non-sensitive metadata. On cache miss, rebuilds the index from the database.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "network",
+                "enabled"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3e6a2a6e-6931-4cde-92a1-e694808f2afc",
+              "name": "Enabled networks index",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "network",
+                    "enabled"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"networks\": [\n    {\n      \"networkId\": \"string\",\n      \"name\": \"string\",\n      \"alias\": \"string\"\n    },\n    {\n      \"networkId\": \"string\",\n      \"name\": \"string\",\n      \"alias\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e8b296e-746d-4f2d-8311-595d74cf1c3c",
+          "name": "Get networks available for your organization",
+          "request": {
+            "name": "Get networks available for your organization",
+            "description": {
+              "content": "Get networks available for your organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "network",
+                "organization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<boolean>",
+                  "description": "Filter by enabled status (true = only enabled networks)"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by network name"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) SDK version header",
+                "key": "x-sdk-version",
+                "value": "1.0.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0b67e1dc-b251-441f-b0ce-8501c876f756",
+              "name": "Your available networks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "network",
+                    "organization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) SDK version header",
+                    "key": "x-sdk-version",
+                    "value": "1.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"networks\": [\n    {\n      \"id\": \"string\",\n      \"enabled\": true,\n      \"name\": \"string\",\n      \"globalAccess\": false,\n      \"isMainnet\": false,\n      \"isGasless\": true,\n      \"addressFamily\": \"BITCOIN\",\n      \"decimals\": 7663.870480970897,\n      \"chainId\": 9827.166979283604,\n      \"createdAt\": \"2020-01-15T08:31:27.726Z\",\n      \"updatedAt\": \"2007-03-15T05:05:25.186Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"enabled\": true,\n      \"name\": \"string\",\n      \"globalAccess\": true,\n      \"isMainnet\": true,\n      \"isGasless\": false,\n      \"addressFamily\": \"STARKNET\",\n      \"decimals\": 6160.506826028397,\n      \"chainId\": 2524.893544211564,\n      \"createdAt\": \"1973-06-03T08:39:10.466Z\",\n      \"updatedAt\": \"1968-09-03T22:33:02.451Z\"\n    }\n  ],\n  \"pagination\": {\n    \"totalElements\": 100,\n    \"totalPages\": 10,\n    \"skip\": 0,\n    \"take\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://sandbox.oumla.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "79da9b5f-1329-409e-ab61-2745264592cf",
+    "name": "Oumla Core Server addresses networks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.",
+      "type": "text/plain"
+    }
+  }
+}

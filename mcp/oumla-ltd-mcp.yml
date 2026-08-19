@@ -2,257 +2,264 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: openapi/oumla-ltd-openapi-original.json
-note: >-
-  No official hosted/remote Oumla MCP server was found. This is a candidate
-  tool surface derived one-tool-per-operation from the Oumla Core OpenAPI (49 ops).
+note: No official hosted/remote Oumla MCP server was found. This is a candidate tool surface derived one-tool-per-operation
+  from the Oumla Core OpenAPI (49 ops).
 server:
   name: oumla
   transport: http
   base_url: https://sandbox.oumla.com
-  auth: {type: apiKey, header: x-api-key}
+  auth:
+    type: apiKey
+    header: x-api-key
 tools:
 - name: createAddress
-  description: "Create address"
+  description: Create address
   method: POST
   path: /api/v1/addresses/generate
   source_operation: openapi/oumla-ltd-openapi-original.json#createAddress
 - name: createAddressV2
-  description: "Generate wallet if not exists and create address (v2)"
+  description: Generate wallet if not exists and create address (v2)
   method: POST
   path: /api/v2/addresses/generate
   source_operation: openapi/oumla-ltd-openapi-original.json#createAddressV2
 - name: getAddressForOrganization
-  description: "List addresses for organization"
+  description: List addresses for organization
   method: GET
   path: /api/v1/addresses/organization
   source_operation: openapi/oumla-ltd-openapi-original.json#getAddressForOrganization
 - name: getAddressById
-  description: "Get address by ID"
+  description: Get address by ID
   method: GET
   path: /api/v1/addresses
   source_operation: openapi/oumla-ltd-openapi-original.json#getAddressById
 - name: getAddressForProfile
-  description: "List addresses for profile"
+  description: List addresses for profile
   method: GET
   path: /api/v1/addresses/{reference}
   source_operation: openapi/oumla-ltd-openapi-original.json#getAddressForProfile
 - name: getEnabledNetworks
-  description: "Get all enabled networks"
+  description: Get all enabled networks
   method: GET
   path: /api/v1/network/enabled
   source_operation: openapi/oumla-ltd-openapi-original.json#getEnabledNetworks
 - name: getNetworks
-  description: "Get networks available for your organization"
+  description: Get networks available for your organization
   method: GET
   path: /api/v1/network/organization
   source_operation: openapi/oumla-ltd-openapi-original.json#getNetworks
 - name: createWallet
-  description: "Create wallet"
+  description: Create wallet
   method: POST
   path: /api/v1/wallets/generate
   source_operation: openapi/oumla-ltd-openapi-original.json#createWallet
 - name: getWalletsByProfile
-  description: "List wallets for the profile"
+  description: List wallets for the profile
   method: GET
   path: /api/v1/wallets/profile/{reference}
   source_operation: openapi/oumla-ltd-openapi-original.json#getWalletsByProfile
 - name: getWalletsForOrganization
-  description: "List wallets for the organization"
+  description: List wallets for the organization
   method: GET
   path: /api/v1/wallets/organization
   source_operation: openapi/oumla-ltd-openapi-original.json#getWalletsForOrganization
 - name: getTransactionsByAddress
-  description: "List transactions by address"
+  description: List transactions by address
   method: GET
   path: /api/v1/transactions/address/{address}
   source_operation: openapi/oumla-ltd-openapi-original.json#getTransactionsByAddress
 - name: getTransactionsByMiniWallet
-  description: "List Transactions by mini wallet"
+  description: List Transactions by mini wallet
   method: GET
   path: /api/v1/transactions/wallet/{miniWalletId}
   source_operation: openapi/oumla-ltd-openapi-original.json#getTransactionsByMiniWallet
 - name: getTransactionsByOrganization
-  description: "List Transactions by organization"
+  description: List Transactions by organization
   method: GET
   path: /api/v1/transactions/organization
   source_operation: openapi/oumla-ltd-openapi-original.json#getTransactionsByOrganization
 - name: getTransactionsByProfile
-  description: "List Transactions by profile"
+  description: List Transactions by profile
   method: GET
   path: /api/v1/transactions/profile/{reference}
   source_operation: openapi/oumla-ltd-openapi-original.json#getTransactionsByProfile
 - name: createProfile
-  description: "Create Profile"
+  description: Create Profile
   method: POST
   path: /api/v1/profiles
   source_operation: openapi/oumla-ltd-openapi-original.json#createProfile
 - name: getProfiles
-  description: "List of profiles"
+  description: List of profiles
   method: GET
   path: /api/v1/profiles
   source_operation: openapi/oumla-ltd-openapi-original.json#getProfiles
 - name: createWithdraw
-  description: "Withdraw"
+  description: Withdraw
   method: POST
   path: /api/v1/withdraw
   source_operation: openapi/oumla-ltd-openapi-original.json#createWithdraw
 - name: issueNewToken
-  description: "Issue Token"
+  description: Issue Token
   method: POST
   path: /api/v1/tokenization/tokens
   source_operation: openapi/oumla-ltd-openapi-original.json#issueNewToken
 - name: getTokens
-  description: "List Tokens"
+  description: List Tokens
   method: GET
   path: /api/v1/tokenization/tokens
   source_operation: openapi/oumla-ltd-openapi-original.json#getTokens
 - name: linkContract
-  description: "Link Contract"
+  description: Link Contract
   method: POST
   path: /api/v1/tokenization/tokens/link
   source_operation: openapi/oumla-ltd-openapi-original.json#linkContract
 - name: createCollection
-  description: "Create new Collection"
+  description: Create new Collection
   method: POST
   path: /api/v1/tokenization/collections
   source_operation: openapi/oumla-ltd-openapi-original.json#createCollection
 - name: getCollections
-  description: "List Collections"
+  description: List Collections
   method: GET
   path: /api/v1/tokenization/collections
   source_operation: openapi/oumla-ltd-openapi-original.json#getCollections
 - name: getCollectionById
-  description: "Get collection by ID"
+  description: Get collection by ID
   method: GET
   path: /api/v1/tokenization/collections/{id}
   source_operation: openapi/oumla-ltd-openapi-original.json#getCollectionById
 - name: deleteCollection
-  description: "Delete collection by ID"
+  description: Delete collection by ID
   method: DELETE
   path: /api/v1/tokenization/collections/{id}
   source_operation: openapi/oumla-ltd-openapi-original.json#deleteCollection
 - name: getCollectionTokenDetails
-  description: "Get Collection token details"
+  description: Get Collection token details
   method: GET
   path: /api/v1/tokenization/collections/{id}/tokens/{tokenId}
   source_operation: openapi/oumla-ltd-openapi-original.json#getCollectionTokenDetails
 - name: mintToken
-  description: "Mint token"
+  description: Mint token
   method: POST
   path: /api/v1/tokenization/collections/{id}/tokens/mint
   source_operation: openapi/oumla-ltd-openapi-original.json#mintToken
 - name: getCollectionTokens
-  description: "Get collection tokens by ID or type"
+  description: Get collection tokens by ID or type
   method: GET
   path: /api/v1/tokenization/collection/tokens
   source_operation: openapi/oumla-ltd-openapi-original.json#getCollectionTokens
 - name: burnToken
-  description: "Burn token"
+  description: Burn token
   method: POST
   path: /api/v1/tokenization/collections/{id}/tokens/burn
   source_operation: openapi/oumla-ltd-openapi-original.json#burnToken
 - name: unlinkToken
-  description: "Unlink Token"
+  description: Unlink Token
   method: DELETE
   path: /api/v1/tokenization/tokens/{id}
   source_operation: openapi/oumla-ltd-openapi-original.json#unlinkToken
 - name: getLinkedToken
-  description: "Get linked token by ID"
+  description: Get linked token by ID
   method: GET
   path: /api/v1/tokenization/tokens/{id}
   source_operation: openapi/oumla-ltd-openapi-original.json#getLinkedToken
 - name: getDeployedContractAbi
-  description: "Get deployed contract ABI/functions"
+  description: Get deployed contract ABI/functions
   method: GET
   path: /api/v1/contract-interactions/network/{networkId}/contract-address/{contractAddress}/functions
   source_operation: openapi/oumla-ltd-openapi-original.json#getDeployedContractAbi
 - name: readCallFunction
-  description: "Call read function"
+  description: Call read function
   method: POST
   path: /api/v1/contract-interactions/network/{networkId}/contract-address/{contractAddress}/functions/read
   source_operation: openapi/oumla-ltd-openapi-original.json#readCallFunction
 - name: writeCallFunction
-  description: "Call write function"
+  description: Call write function
   method: POST
   path: /api/v1/contract-interactions/network/{networkId}/contract-address/{contractAddress}/functions/write
   source_operation: openapi/oumla-ltd-openapi-original.json#writeCallFunction
 - name: getTransactionReceipt
-  description: "Get transaction receipt"
+  description: Get transaction receipt
   method: GET
   path: /api/v1/contract-interactions/network/{networkId}/tx/{txId}
   source_operation: openapi/oumla-ltd-openapi-original.json#getTransactionReceipt
 - name: getAssets
-  description: "Retrieved assets for address"
+  description: Retrieved assets for address
   method: GET
   path: /api/v1/portfolio
   source_operation: openapi/oumla-ltd-openapi-original.json#getAssets
 - name: getNativeBalance
-  description: "Get Native balance for address"
+  description: Get Native balance for address
   method: GET
   path: /api/v1/portfolio/native-balance
   source_operation: openapi/oumla-ltd-openapi-original.json#getNativeBalance
 - name: getDeployedContracts
-  description: "List Deployed contracts"
+  description: List Deployed contracts
   method: GET
   path: /api/v1/deployed-contracts
   source_operation: openapi/oumla-ltd-openapi-original.json#getDeployedContracts
 - name: getDeployedContractById
-  description: "Get deployed contract by deployment ID"
+  description: Get deployed contract by deployment ID
   method: GET
   path: /api/v1/deployed-contracts/{deploymentId}
   source_operation: openapi/oumla-ltd-openapi-original.json#getDeployedContractById
 - name: getDeployedContractByAddress
-  description: "Get deployed contract by address and networkId"
+  description: Get deployed contract by address and networkId
   method: GET
   path: /api/v1/deployed-contracts/{contractAddress}/{networkId}
   source_operation: openapi/oumla-ltd-openapi-original.json#getDeployedContractByAddress
 - name: fetchContractAbi
-  description: "Fetch contract ABI"
+  description: Fetch contract ABI
   method: POST
   path: /api/v1/deployed-contracts/fetch-abi
   source_operation: openapi/oumla-ltd-openapi-original.json#fetchContractAbi
 - name: addContractAbi
-  description: "Add Contract ABI"
+  description: Add Contract ABI
   method: POST
   path: /api/v1/deployed-contracts/add-abi
   source_operation: openapi/oumla-ltd-openapi-original.json#addContractAbi
 - name: getContracts
-  description: "List contract templates"
+  description: List contract templates
   method: GET
   path: /api/v1/contract-templates
   source_operation: openapi/oumla-ltd-openapi-original.json#getContracts
 - name: createContract
-  description: "Create contract template"
+  description: Create contract template
   method: POST
   path: /api/v1/contract-templates
   source_operation: openapi/oumla-ltd-openapi-original.json#createContract
 - name: getContractById
-  description: "Get contract template by ID"
+  description: Get contract template by ID
   method: GET
   path: /api/v1/contract-templates/{templateId}
   source_operation: openapi/oumla-ltd-openapi-original.json#getContractById
 - name: deleteContract
-  description: "Delete contract template"
+  description: Delete contract template
   method: DELETE
   path: /api/v1/contract-templates/{templateId}
   source_operation: openapi/oumla-ltd-openapi-original.json#deleteContract
 - name: getContractConstructorById
-  description: "Get contract constructor by template ID"
+  description: Get contract constructor by template ID
   method: GET
   path: /api/v1/contract-templates/{templateId}/getConstructorInfo
   source_operation: openapi/oumla-ltd-openapi-original.json#getContractConstructorById
 - name: getContractFunctionById
-  description: "Get contract function by template ID"
+  description: Get contract function by template ID
   method: GET
   path: /api/v1/contract-templates/{templateId}/function
   source_operation: openapi/oumla-ltd-openapi-original.json#getContractFunctionById
 - name: deployContract
-  description: "Deploy Contract"
+  description: Deploy Contract
   method: POST
   path: /api/v1/contract-templates/{templateId}/deploy
   source_operation: openapi/oumla-ltd-openapi-original.json#deployContract
 - name: getWorkflowStatus
-  description: "Get Workflow status and result"
+  description: Get Workflow status and result
   method: GET
   path: /api/v1/workflows/{workflowId}/status
   source_operation: openapi/oumla-ltd-openapi-original.json#getWorkflowStatus
+deployment:
+  mode: none
+  verified: derived
+  tools: 49
+  checked: '2026-08-12'
+  source: catalog MCP census

@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oumla Core Server addresses assets API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "assets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieved assets for address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/portfolio",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "address",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "walletId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contractAddress",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tokenizationId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "network",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get asset balances for a given address, optionally filtered by network."
+        },
+        {
+          "info": {
+            "name": "Get Native balance for address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/portfolio/native-balance",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "address",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "walletId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "network",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get native (e.g. ETH/BTC) balance for a given address and optional network."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

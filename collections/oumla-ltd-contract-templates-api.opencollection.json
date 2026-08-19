@@ -1,0 +1,239 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oumla Core Server addresses contract-templates API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "contract-templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contract templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/contract-templates",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List contract templates for the organization with pagination."
+        },
+        {
+          "info": {
+            "name": "Create contract template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.oumla.com/api/v1/contract-templates",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a new contract template (ABI, bytecode, metadata)."
+        },
+        {
+          "info": {
+            "name": "Get contract template by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/contract-templates/:templateId",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "templateId",
+                "value": "",
+                "type": "path",
+                "description": "Contract template ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a contract template by its ID."
+        },
+        {
+          "info": {
+            "name": "Delete contract template",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://sandbox.oumla.com/api/v1/contract-templates/:templateId",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "templateId",
+                "value": "",
+                "type": "path",
+                "description": "Contract template ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a contract template by ID."
+        },
+        {
+          "info": {
+            "name": "Get contract constructor by template ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/contract-templates/:templateId/getConstructorInfo",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "templateId",
+                "value": "",
+                "type": "path",
+                "description": "Contract template ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get constructor info (params, ABI) for a contract template."
+        },
+        {
+          "info": {
+            "name": "Get contract function by template ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/contract-templates/:templateId/function",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "templateId",
+                "value": "",
+                "type": "path",
+                "description": "Contract template ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get function metadata/ABI for a contract template."
+        },
+        {
+          "info": {
+            "name": "Deploy Contract",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.oumla.com/api/v1/contract-templates/:templateId/deploy",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "templateId",
+                "value": "",
+                "type": "path",
+                "description": "Contract template ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Deploy a contract from a template to the specified network."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,190 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oumla Core Server addresses deployed-contracts API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "deployed-contracts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Deployed contracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/deployed-contracts",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contractAddress",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contractTemplateId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List deployed contracts with optional filters and pagination."
+        },
+        {
+          "info": {
+            "name": "Get deployed contract by deployment ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/deployed-contracts/:deploymentId",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "deploymentId",
+                "value": "",
+                "type": "path",
+                "description": "Deployment ID"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a deployed contract by its deployment ID."
+        },
+        {
+          "info": {
+            "name": "Get deployed contract by address and networkId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://sandbox.oumla.com/api/v1/deployed-contracts/:contractAddress/:networkId",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "contractAddress",
+                "value": "",
+                "type": "path",
+                "description": "Contract address"
+              },
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "Network Id"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a deployed contract by contract address and networkId."
+        },
+        {
+          "info": {
+            "name": "Fetch contract ABI",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.oumla.com/api/v1/deployed-contracts/fetch-abi",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Fetch contract ABI from chain/relayer by address and network."
+        },
+        {
+          "info": {
+            "name": "Add Contract ABI",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://sandbox.oumla.com/api/v1/deployed-contracts/add-abi",
+            "headers": [
+              {
+                "name": "x-sdk-version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Add or update ABI for a deployed contract."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
