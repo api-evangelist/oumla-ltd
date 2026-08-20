@@ -57,6 +57,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Addresses
+  tags_raw:
   - addresses
   properties:
   - type: OpenAPI
@@ -75,6 +77,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Assets
+  tags_raw:
   - assets
   properties:
   - type: OpenAPI
@@ -93,6 +97,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Contract Interactions
+  tags_raw:
   - contract-interactions
   properties:
   - type: OpenAPI
@@ -111,6 +117,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Contract Templates
+  tags_raw:
   - contract-templates
   properties:
   - type: OpenAPI
@@ -129,6 +137,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Deployed Contracts
+  tags_raw:
   - deployed-contracts
   properties:
   - type: OpenAPI
@@ -147,6 +157,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Networks
+  tags_raw:
   - networks
   properties:
   - type: OpenAPI
@@ -165,6 +177,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Profiles
+  tags_raw:
   - profiles
   properties:
   - type: OpenAPI
@@ -183,6 +197,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Tokenization
+  tags_raw:
   - tokenization
   properties:
   - type: OpenAPI
@@ -201,6 +217,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Transaction
+  tags_raw:
   - transactions
   properties:
   - type: OpenAPI
@@ -219,6 +237,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Wallets
+  tags_raw:
   - wallets
   properties:
   - type: OpenAPI
@@ -237,6 +257,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Withdraw
+  tags_raw:
   - withdraw
   properties:
   - type: OpenAPI
@@ -255,6 +277,8 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
+  - Workflows
+  tags_raw:
   - workflows
   properties:
   - type: OpenAPI
