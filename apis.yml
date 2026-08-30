@@ -109,7 +109,7 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
-  - Contract Interactions
+  - contract-interactions
   tags_raw:
   - contract-interactions
   properties:
@@ -129,7 +129,7 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
-  - Contract Templates
+  - contract-templates
   tags_raw:
   - contract-templates
   properties:
@@ -149,7 +149,7 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
-  - Deployed Contracts
+  - deployed-contracts
   tags_raw:
   - deployed-contracts
   properties:
@@ -169,7 +169,7 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
-  - Networks
+  - networks
   tags_raw:
   - networks
   properties:
@@ -209,7 +209,7 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
-  - Tokenization
+  - tokenization
   tags_raw:
   - tokenization
   properties:
@@ -269,7 +269,7 @@ apis:
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
   tags:
-  - Withdraw
+  - withdraw
   tags_raw:
   - withdraw
   properties:
