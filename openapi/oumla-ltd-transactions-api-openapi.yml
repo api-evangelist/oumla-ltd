@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Oumla Core Server addresses transactions API
+  title: Oumla Core Server Transactions API
   description: 'Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.'
   version: '1.0'
   contact: {}
@@ -9,7 +9,7 @@ servers:
   description: Mainnet
   x-fern-server-name: Mainnet
 tags:
-- name: transactions
+- name: Transactions
 paths:
   /api/v1/transactions/address/{address}:
     get:
@@ -245,7 +245,7 @@ paths:
       - x-api-key: []
       summary: List transactions by address
       tags:
-      - transactions
+      - Transactions
   /api/v1/transactions/wallet/{miniWalletId}:
     get:
       description: List transactions for a mini wallet with pagination.
@@ -480,7 +480,7 @@ paths:
       - x-api-key: []
       summary: List Transactions by mini wallet
       tags:
-      - transactions
+      - Transactions
   /api/v1/transactions/organization:
     get:
       description: List transactions for the authenticated user's organization with pagination.
@@ -672,7 +672,7 @@ paths:
       - x-api-key: []
       summary: List Transactions by organization
       tags:
-      - transactions
+      - Transactions
   /api/v1/transactions/profile/{reference}:
     get:
       description: List transactions for a profile by reference with pagination.
@@ -907,9 +907,59 @@ paths:
       - x-api-key: []
       summary: List Transactions by profile
       tags:
-      - transactions
+      - Transactions
 components:
   schemas:
+    TransactionItemDto:
+      type: object
+      properties:
+        addressFrom:
+          type: string
+        addressTo:
+          type: string
+        amount:
+          type: string
+        date:
+          type: string
+        isMempool:
+          type: boolean
+        isSpent:
+          type: boolean
+        status:
+          type: string
+        updatedAt:
+          type: string
+        createdAt:
+          type: string
+        type:
+          type: string
+        networkId:
+          type: string
+        txid:
+          type: string
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        txType:
+          type: string
+        fee:
+          type: string
+    GetTransactionListByProfileResponseBodyDTO:
+      type: object
+      properties:
+        transactions:
+          readOnly: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionItemDto'
+        pagination:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/PaginationMetaDto'
+      required:
+      - transactions
+      - pagination
     ApiErrorResponseDto:
       type: object
       properties:
@@ -1118,56 +1168,6 @@ components:
       - totalPages
       - skip
       - take
-    TransactionItemDto:
-      type: object
-      properties:
-        addressFrom:
-          type: string
-        addressTo:
-          type: string
-        amount:
-          type: string
-        date:
-          type: string
-        isMempool:
-          type: boolean
-        isSpent:
-          type: boolean
-        status:
-          type: string
-        updatedAt:
-          type: string
-        createdAt:
-          type: string
-        type:
-          type: string
-        networkId:
-          type: string
-        txid:
-          type: string
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        txType:
-          type: string
-        fee:
-          type: string
-    GetTransactionListByProfileResponseBodyDTO:
-      type: object
-      properties:
-        transactions:
-          readOnly: true
-          type: array
-          items:
-            $ref: '#/components/schemas/TransactionItemDto'
-        pagination:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/PaginationMetaDto'
-      required:
-      - transactions
-      - pagination
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

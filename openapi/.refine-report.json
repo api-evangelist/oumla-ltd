@@ -1,18 +1,7 @@
 {
   "provider": "oumla-ltd",
   "sources": [
-    "oumla-ltd-addresses-api-openapi.yml",
-    "oumla-ltd-assets-api-openapi.yml",
-    "oumla-ltd-contract-interactions-api-openapi.yml",
-    "oumla-ltd-contract-templates-api-openapi.yml",
-    "oumla-ltd-deployed-contracts-api-openapi.yml",
-    "oumla-ltd-networks-api-openapi.yml",
-    "oumla-ltd-profiles-api-openapi.yml",
-    "oumla-ltd-tokenization-api-openapi.yml",
-    "oumla-ltd-transactions-api-openapi.yml",
-    "oumla-ltd-wallets-api-openapi.yml",
-    "oumla-ltd-withdraw-api-openapi.yml",
-    "oumla-ltd-workflows-api-openapi.yml"
+    "_original/oumla-ltd-openapi-original.json"
   ],
   "outputs": [
     "oumla-ltd-addresses-api-openapi.yml",
@@ -31,6 +20,35 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "oumla-ltd-openapi-original.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "oumla-ltd-openapi-original.json: declared missing tag: addresses",
+    "oumla-ltd-openapi-original.json: declared missing tag: assets",
+    "oumla-ltd-openapi-original.json: declared missing tag: contract-interactions",
+    "oumla-ltd-openapi-original.json: declared missing tag: contract-templates",
+    "oumla-ltd-openapi-original.json: declared missing tag: deployed-contracts",
+    "oumla-ltd-openapi-original.json: declared missing tag: networks",
+    "oumla-ltd-openapi-original.json: declared missing tag: profiles",
+    "oumla-ltd-openapi-original.json: declared missing tag: tokenization",
+    "oumla-ltd-openapi-original.json: declared missing tag: transactions",
+    "oumla-ltd-openapi-original.json: declared missing tag: wallets",
+    "oumla-ltd-openapi-original.json: declared missing tag: withdraw",
+    "oumla-ltd-openapi-original.json: declared missing tag: workflows",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "oumla-ltd-addresses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-assets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-contract-interactions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-contract-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-deployed-contracts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-networks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-tokenization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-transactions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-wallets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-withdraw-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oumla-ltd-workflows-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

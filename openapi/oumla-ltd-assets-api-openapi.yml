@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Oumla Core Server addresses assets API
+  title: Oumla Core Server Assets API
   description: 'Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.'
   version: '1.0'
   contact: {}
@@ -9,7 +9,7 @@ servers:
   description: Mainnet
   x-fern-server-name: Mainnet
 tags:
-- name: assets
+- name: Assets
 paths:
   /api/v1/portfolio:
     get:
@@ -264,7 +264,7 @@ paths:
       - x-api-key: []
       summary: Retrieved assets for address
       tags:
-      - assets
+      - Assets
   /api/v1/portfolio/native-balance:
     get:
       description: Get native (e.g. ETH/BTC) balance for a given address and optional network.
@@ -513,27 +513,9 @@ paths:
       - x-api-key: []
       summary: Get Native balance for address
       tags:
-      - assets
+      - Assets
 components:
   schemas:
-    GetBalanceResponseDto:
-      type: object
-      properties:
-        balance:
-          type: array
-          items:
-            $ref: '#/components/schemas/NativeBalanceItemDto'
-        pagination:
-          $ref: '#/components/schemas/PortfolioPaginationDto'
-    GetAssetsResponseDto:
-      type: object
-      properties:
-        assets:
-          type: array
-          items:
-            $ref: '#/components/schemas/AssetItemDto'
-        pagination:
-          $ref: '#/components/schemas/PortfolioPaginationDto'
     ApiErrorResponseDto:
       type: object
       properties:
@@ -705,23 +687,28 @@ components:
       - statusCode
       - path
       - timestamp
-    NativeBalanceItemDto:
+    PortfolioPaginationDto:
       type: object
       properties:
-        id:
-          type: string
-        address:
-          type: string
-        walletId:
-          type: string
-        network:
-          type: string
-        balance:
-          type: string
-        createdAt:
-          type: string
-        updatedAt:
-          type: string
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
     AssetItemDto:
       type: object
       properties:
@@ -751,28 +738,41 @@ components:
           type: string
         type:
           type: string
-    PortfolioPaginationDto:
+    NativeBalanceItemDto:
       type: object
       properties:
-        totalElements:
-          type: number
-          example: 100
-          description: Total number of items
-        totalPages:
-          type: number
-          example: 10
-          description: Total number of pages
-        skip:
-          type: number
-          example: 0
-        take:
-          type: number
-          example: 10
-      required:
-      - totalElements
-      - totalPages
-      - skip
-      - take
+        id:
+          type: string
+        address:
+          type: string
+        walletId:
+          type: string
+        network:
+          type: string
+        balance:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    GetAssetsResponseDto:
+      type: object
+      properties:
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssetItemDto'
+        pagination:
+          $ref: '#/components/schemas/PortfolioPaginationDto'
+    GetBalanceResponseDto:
+      type: object
+      properties:
+        balance:
+          type: array
+          items:
+            $ref: '#/components/schemas/NativeBalanceItemDto'
+        pagination:
+          $ref: '#/components/schemas/PortfolioPaginationDto'
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

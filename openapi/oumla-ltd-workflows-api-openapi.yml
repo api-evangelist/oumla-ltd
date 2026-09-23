@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Oumla Core Server addresses workflows API
+  title: Oumla Core Server Workflows API
   description: 'Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.'
   version: '1.0'
   contact: {}
@@ -9,7 +9,7 @@ servers:
   description: Mainnet
   x-fern-server-name: Mainnet
 tags:
-- name: workflows
+- name: Workflows
 paths:
   /api/v1/workflows/{workflowId}/status:
     get:
@@ -229,7 +229,7 @@ paths:
       - x-api-key: []
       summary: Get Workflow status and result
       tags:
-      - workflows
+      - Workflows
 components:
   schemas:
     GetWorkflowStatusResponseDto:

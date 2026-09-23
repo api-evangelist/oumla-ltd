@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Oumla Core Server addresses contract-templates API
+  title: Oumla Core Server Contract Templates API
   description: 'Core API. Errors, request and response are documented per endpoint. Error response shape: code, category, message, statusCode, path, timestamp, requestId.'
   version: '1.0'
   contact: {}
@@ -9,7 +9,7 @@ servers:
   description: Mainnet
   x-fern-server-name: Mainnet
 tags:
-- name: contract-templates
+- name: Contract Templates
 paths:
   /api/v1/contract-templates:
     get:
@@ -202,7 +202,7 @@ paths:
       - x-api-key: []
       summary: List contract templates
       tags:
-      - contract-templates
+      - Contract Templates
     post:
       description: Create a new contract template (ABI, bytecode, metadata).
       operationId: createContract
@@ -422,7 +422,7 @@ paths:
       - x-api-key: []
       summary: Create contract template
       tags:
-      - contract-templates
+      - Contract Templates
   /api/v1/contract-templates/{templateId}:
     get:
       description: Get a contract template by its ID.
@@ -603,7 +603,7 @@ paths:
       - x-api-key: []
       summary: Get contract template by ID
       tags:
-      - contract-templates
+      - Contract Templates
     delete:
       description: Delete a contract template by ID.
       operationId: deleteContract
@@ -783,7 +783,7 @@ paths:
       - x-api-key: []
       summary: Delete contract template
       tags:
-      - contract-templates
+      - Contract Templates
   /api/v1/contract-templates/{templateId}/getConstructorInfo:
     get:
       description: Get constructor info (params, ABI) for a contract template.
@@ -964,7 +964,7 @@ paths:
       - x-api-key: []
       summary: Get contract constructor by template ID
       tags:
-      - contract-templates
+      - Contract Templates
   /api/v1/contract-templates/{templateId}/function:
     get:
       description: Get function metadata/ABI for a contract template.
@@ -1148,7 +1148,7 @@ paths:
       - x-api-key: []
       summary: Get contract function by template ID
       tags:
-      - contract-templates
+      - Contract Templates
   /api/v1/contract-templates/{templateId}/deploy:
     post:
       description: Deploy a contract from a template to the specified network.
@@ -1390,37 +1390,166 @@ paths:
       - x-api-key: []
       summary: Deploy Contract
       tags:
-      - contract-templates
+      - Contract Templates
 components:
   schemas:
-    ContractFunDto:
+    AttributeDtoContract:
+      type: object
+      properties:
+        useCases:
+          type: array
+          items:
+            type: string
+        standards:
+          type: array
+          items:
+            type: string
+        auditor:
+          allOf:
+          - $ref: '#/components/schemas/AuditorDto'
+    ContractConstructorAbiDto:
+      type: object
+      properties:
+        id:
+          type: string
+        stateMutability:
+          type: string
+        type:
+          type: string
+        inputs:
+          type: object
+        outputs:
+          type: object
+    MethodDto:
       type: object
       properties:
         name:
           type: string
-        stateMutability:
-          allOf:
-          - $ref: '#/components/schemas/ContractTemplateFunctionVisibilityType'
-        type:
-          allOf:
-          - $ref: '#/components/schemas/ContractTemplateFunctionType'
-        inputs:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/InputOutputDto'
-        outputs:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/InputOutputDto'
         description:
           type: string
-        anonymous:
-          type: boolean
+        params:
+          type: object
+          additionalProperties: true
+        returns:
+          type: object
+          additionalProperties: true
       required:
-      - type
-      - inputs
+      - name
+    GetContractsResponseDto:
+      type: object
+      properties:
+        result:
+          $ref: '#/components/schemas/GetContractsResultDto'
+    AuditorDto:
+      type: object
+      properties:
+        name:
+          type: string
+        imageURL:
+          type: string
+        link:
+          type: string
+      required:
+      - name
+      - imageURL
+      - link
+    DeployContractResponseDto:
+      type: object
+      properties:
+        workflowResult:
+          $ref: '#/components/schemas/WorkflowStartResultDto'
+      required:
+      - workflowResult
+    DeployContractRequestBodyDTO:
+      type: object
+      properties:
+        networkId:
+          type: string
+        addressId:
+          type: string
+        clientShare:
+          type: string
+        constructorParameters:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/ConstructorParameterDto'
+      required:
+      - networkId
+      - addressId
+      - clientShare
+    GetContractConstructorResponseDto:
+      type: object
+      properties:
+        contractConstructor:
+          $ref: '#/components/schemas/ContractConstructorAbiDto'
+    DocsDto:
+      type: object
+      properties:
+        details:
+          type: string
+        events:
+          type: string
+        kind:
+          type: string
+          enum:
+          - dev
+          - user
+        methods:
+          type: array
+          items:
+            $ref: '#/components/schemas/MethodDto'
+        version:
+          type: string
+      required:
+      - kind
+      - methods
+      - version
+    WorkflowStartResultDto:
+      type: object
+      properties:
+        workflowId:
+          type: string
+          description: Workflow ID
+        operationId:
+          type: string
+          description: Operation ID (e.g. deploymentId, collectionId, mintId, writeCallId)
+        status:
+          type: string
+          enum:
+          - started
+          - already_running
+          description: Workflow status
+        message:
+          type: string
+          description: Human-readable status message
+      required:
+      - workflowId
+      - operationId
+      - status
+      - message
+    ContractTemplateFunctionVisibilityType:
+      type: string
+      enum:
+      - pure
+      - view
+      - nonpayable
+      - payable
+    ContractFunctionAbiDto:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        stateMutability:
+          type: string
+        type:
+          type: string
+        inputs:
+          type: object
+        outputs:
+          type: object
     ApiErrorResponseDto:
       type: object
       properties:
@@ -1592,46 +1721,73 @@ components:
       - statusCode
       - path
       - timestamp
-    DeployContractResponseDto:
+    GetContractsResultDto:
       type: object
       properties:
-        workflowResult:
-          $ref: '#/components/schemas/WorkflowStartResultDto'
-      required:
-      - workflowResult
-    MethodDto:
+        data:
+          description: Contract templates
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractTemplateItemDto'
+        next:
+          type: object
+        count:
+          type: number
+    CreateContractResultDto:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        longDescription:
+          type: string
+        bytecode:
+          type: string
+        sourceCode:
+          type: string
+        type:
+          type: string
+        docs:
+          type: object
+    CreateContractRequestBodyDTO:
       type: object
       properties:
         name:
           type: string
         description:
           type: string
-        params:
-          type: object
-          additionalProperties: true
-        returns:
-          type: object
-          additionalProperties: true
-      required:
-      - name
-    GetContractByIdResponseDto:
-      type: object
-      properties:
-        result:
-          $ref: '#/components/schemas/ContractTemplateItemDto'
-    ContractConstructorAbiDto:
-      type: object
-      properties:
-        id:
+        bytecode:
           type: string
-        stateMutability:
+        abi:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/ContractFunDto'
+        longDescription:
+          type: string
+        sourceCode:
           type: string
         type:
           type: string
-        inputs:
-          type: object
-        outputs:
-          type: object
+        docs:
+          allOf:
+          - $ref: '#/components/schemas/DocsDto'
+        attributes:
+          allOf:
+          - $ref: '#/components/schemas/AttributeDtoContract'
+      required:
+      - name
+      - description
+      - bytecode
+      - abi
+    DeleteContractResponseDto:
+      type: object
+      properties:
+        success:
+          type: boolean
     GetContractFunctionResponseDto:
       type: object
       properties:
@@ -1639,6 +1795,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ContractFunctionAbiDto'
+    ContractTemplateItemDto:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        longDescription:
+          type: string
+        bytecode:
+          type: string
+        sourceCode:
+          type: string
+        type:
+          type: string
+        docs:
+          type: object
     ComponentDto:
       type: object
       properties:
@@ -1653,54 +1828,44 @@ components:
       required:
       - name
       - type
-    GetContractsResultDto:
+    CreateContractResponseDto:
       type: object
       properties:
-        data:
-          description: Contract templates
-          type: array
-          items:
-            $ref: '#/components/schemas/ContractTemplateItemDto'
-        next:
-          type: object
-        count:
-          type: number
-    AttributeDtoContract:
+        contract:
+          $ref: '#/components/schemas/CreateContractResultDto'
+    ContractFunDto:
       type: object
       properties:
-        useCases:
-          type: array
-          items:
-            type: string
-        standards:
-          type: array
-          items:
-            type: string
-        auditor:
+        name:
+          type: string
+        stateMutability:
           allOf:
-          - $ref: '#/components/schemas/AuditorDto'
-    DocsDto:
-      type: object
-      properties:
-        details:
-          type: string
-        events:
-          type: string
-        kind:
-          type: string
-          enum:
-          - dev
-          - user
-        methods:
+          - $ref: '#/components/schemas/ContractTemplateFunctionVisibilityType'
+        type:
+          allOf:
+          - $ref: '#/components/schemas/ContractTemplateFunctionType'
+        inputs:
           type: array
           items:
-            $ref: '#/components/schemas/MethodDto'
-        version:
+            allOf:
+            - $ref: '#/components/schemas/InputOutputDto'
+        outputs:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/InputOutputDto'
+        description:
           type: string
+        anonymous:
+          type: boolean
       required:
-      - kind
-      - methods
-      - version
+      - type
+      - inputs
+    GetContractByIdResponseDto:
+      type: object
+      properties:
+        result:
+          $ref: '#/components/schemas/ContractTemplateItemDto'
     InputOutputDto:
       type: object
       properties:
@@ -1734,92 +1899,6 @@ components:
       - error
       - fallback
       - receive
-    CreateContractResponseDto:
-      type: object
-      properties:
-        contract:
-          $ref: '#/components/schemas/CreateContractResultDto'
-    GetContractsResponseDto:
-      type: object
-      properties:
-        result:
-          $ref: '#/components/schemas/GetContractsResultDto'
-    ContractFunctionAbiDto:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        stateMutability:
-          type: string
-        type:
-          type: string
-        inputs:
-          type: object
-        outputs:
-          type: object
-    AuditorDto:
-      type: object
-      properties:
-        name:
-          type: string
-        imageURL:
-          type: string
-        link:
-          type: string
-      required:
-      - name
-      - imageURL
-      - link
-    DeployContractRequestBodyDTO:
-      type: object
-      properties:
-        networkId:
-          type: string
-        addressId:
-          type: string
-        clientShare:
-          type: string
-        constructorParameters:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/ConstructorParameterDto'
-      required:
-      - networkId
-      - addressId
-      - clientShare
-    WorkflowStartResultDto:
-      type: object
-      properties:
-        workflowId:
-          type: string
-          description: Workflow ID
-        operationId:
-          type: string
-          description: Operation ID (e.g. deploymentId, collectionId, mintId, writeCallId)
-        status:
-          type: string
-          enum:
-          - started
-          - already_running
-          description: Workflow status
-        message:
-          type: string
-          description: Human-readable status message
-      required:
-      - workflowId
-      - operationId
-      - status
-      - message
-    ContractTemplateFunctionVisibilityType:
-      type: string
-      enum:
-      - pure
-      - view
-      - nonpayable
-      - payable
     ConstructorParameterDto:
       type: object
       properties:
@@ -1841,85 +1920,6 @@ components:
       required:
       - name
       - type
-    CreateContractRequestBodyDTO:
-      type: object
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        bytecode:
-          type: string
-        abi:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/ContractFunDto'
-        longDescription:
-          type: string
-        sourceCode:
-          type: string
-        type:
-          type: string
-        docs:
-          allOf:
-          - $ref: '#/components/schemas/DocsDto'
-        attributes:
-          allOf:
-          - $ref: '#/components/schemas/AttributeDtoContract'
-      required:
-      - name
-      - description
-      - bytecode
-      - abi
-    CreateContractResultDto:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        longDescription:
-          type: string
-        bytecode:
-          type: string
-        sourceCode:
-          type: string
-        type:
-          type: string
-        docs:
-          type: object
-    DeleteContractResponseDto:
-      type: object
-      properties:
-        success:
-          type: boolean
-    ContractTemplateItemDto:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        longDescription:
-          type: string
-        bytecode:
-          type: string
-        sourceCode:
-          type: string
-        type:
-          type: string
-        docs:
-          type: object
-    GetContractConstructorResponseDto:
-      type: object
-      properties:
-        contractConstructor:
-          $ref: '#/components/schemas/ContractConstructorAbiDto'
   parameters:
     SdkVersionHeader:
       name: x-sdk-version
