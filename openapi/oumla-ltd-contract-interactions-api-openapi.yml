@@ -869,11 +869,20 @@ paths:
       - Contract Interactions
 components:
   schemas:
-    ReadCallResultResponseDto:
+    ComponentDto:
       type: object
       properties:
-        result:
-          $ref: '#/components/schemas/ReadCallResultDataDto'
+        name:
+          type: string
+        description:
+          type: string
+        internalType:
+          type: string
+        type:
+          type: string
+      required:
+      - name
+      - type
     WriteCallResultResponseDto:
       type: object
       properties:
@@ -904,55 +913,30 @@ components:
           type: number
         removed:
           type: boolean
-    GetTransactionReceiptResponseDto:
+    InputOutputDto:
       type: object
       properties:
-        receipt:
-          $ref: '#/components/schemas/TransactionReceiptDto'
-    WorkflowStartResultDto:
-      type: object
-      properties:
-        workflowId:
+        name:
           type: string
-          description: Workflow ID
-        operationId:
+        description:
           type: string
-          description: Operation ID (e.g. deploymentId, collectionId, mintId, writeCallId)
-        status:
+        internalType:
           type: string
-          enum:
-          - started
-          - already_running
-          description: Workflow status
-        message:
+        type:
           type: string
-          description: Human-readable status message
-      required:
-      - workflowId
-      - operationId
-      - status
-      - message
-    ReadCallDataDto:
-      type: object
-      properties:
-        result:
+        value:
           type: object
-          description: Decoded result of the read call
-        functionName:
-          type: string
-        contractAddress:
-          type: string
-        network:
-          type: string
-        encodedData:
-          type: string
-    ContractTemplateFunctionVisibilityType:
-      type: string
-      enum:
-      - pure
-      - view
-      - nonpayable
-      - payable
+        components:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/ComponentDto'
+        indexed:
+          type: boolean
+      required:
+      - name
+      - type
+      - value
     ApiErrorResponseDto:
       type: object
       properties:
@@ -1124,34 +1108,34 @@ components:
       - statusCode
       - path
       - timestamp
-    GetDeployedContractAbiResponseDto:
+    ContractTemplateFunctionType:
+      type: string
+      enum:
+      - function
+      - constructor
+      - event
+      - error
+      - fallback
+      - receive
+    ReadCallResultResponseDto:
       type: object
       properties:
-        contractAbi:
-          $ref: '#/components/schemas/ContractAbiResultDto'
-    ReadCallResultDataDto:
+        result:
+          $ref: '#/components/schemas/ReadCallResultDataDto'
+    ReadCallDataDto:
       type: object
       properties:
-        data:
-          $ref: '#/components/schemas/ReadCallDataDto'
-        success:
-          type: boolean
-        status:
-          type: number
-    ComponentDto:
-      type: object
-      properties:
-        name:
+        result:
+          type: object
+          description: Decoded result of the read call
+        functionName:
           type: string
-        description:
+        contractAddress:
           type: string
-        internalType:
+        network:
           type: string
-        type:
+        encodedData:
           type: string
-      required:
-      - name
-      - type
     WriteCallFunctionBody:
       type: object
       properties:
@@ -1201,13 +1185,18 @@ components:
       required:
       - type
       - inputs
-    ReadCallFunctionBody:
+    GetDeployedContractAbiResponseDto:
       type: object
       properties:
-        abiFunction:
-          $ref: '#/components/schemas/ContractFunDto'
-      required:
-      - abiFunction
+        contractAbi:
+          $ref: '#/components/schemas/ContractAbiResultDto'
+    ContractTemplateFunctionVisibilityType:
+      type: string
+      enum:
+      - pure
+      - view
+      - nonpayable
+      - payable
     TransactionReceiptDto:
       type: object
       properties:
@@ -1241,30 +1230,13 @@ components:
           type: number
         type:
           type: number
-    InputOutputDto:
+    ReadCallFunctionBody:
       type: object
       properties:
-        name:
-          type: string
-        description:
-          type: string
-        internalType:
-          type: string
-        type:
-          type: string
-        value:
-          type: object
-        components:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/ComponentDto'
-        indexed:
-          type: boolean
+        abiFunction:
+          $ref: '#/components/schemas/ContractFunDto'
       required:
-      - name
-      - type
-      - value
+      - abiFunction
     ContractAbiResultDto:
       type: object
       properties:
@@ -1283,15 +1255,43 @@ components:
           type: string
         source:
           type: string
-    ContractTemplateFunctionType:
-      type: string
-      enum:
-      - function
-      - constructor
-      - event
-      - error
-      - fallback
-      - receive
+    WorkflowStartResultDto:
+      type: object
+      properties:
+        workflowId:
+          type: string
+          description: Workflow ID
+        operationId:
+          type: string
+          description: Operation ID (e.g. deploymentId, collectionId, mintId, writeCallId)
+        status:
+          type: string
+          enum:
+          - started
+          - already_running
+          description: Workflow status
+        message:
+          type: string
+          description: Human-readable status message
+      required:
+      - workflowId
+      - operationId
+      - status
+      - message
+    ReadCallResultDataDto:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/ReadCallDataDto'
+        success:
+          type: boolean
+        status:
+          type: number
+    GetTransactionReceiptResponseDto:
+      type: object
+      properties:
+        receipt:
+          $ref: '#/components/schemas/TransactionReceiptDto'
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

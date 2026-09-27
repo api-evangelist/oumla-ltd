@@ -1,5 +1,5 @@
 aid: oumla-ltd
-name: Oumla Ltd
+name: Oumla
 description: >-
   Oumla is a Saudi-based provider of enterprise-grade digital asset infrastructure for
   regulated institutions. Its Core API delivers MPC-based wallet and address management,
@@ -66,7 +66,7 @@ maintainers:
   email: info@apis.io
 apis:
 - aid: oumla-ltd:oumla-ltd-addresses-api
-  name: Oumla Ltd addresses API
+  name: Oumla Ltd Addresses API
   description: The addresses API from Oumla Ltd — 5 operation(s) for addresses.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -86,7 +86,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-assets-api
-  name: Oumla Ltd assets API
+  name: Oumla Ltd Assets API
   description: The assets API from Oumla Ltd — 2 operation(s) for assets.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -106,7 +106,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-contract-interactions-api
-  name: Oumla Ltd contract-interactions API
+  name: Oumla Ltd Contract Interactions API
   description: The contract-interactions API from Oumla Ltd — 4 operation(s) for contract-interactions.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -126,7 +126,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-contract-templates-api
-  name: Oumla Ltd contract-templates API
+  name: Oumla Ltd Contract Templates API
   description: The contract-templates API from Oumla Ltd — 5 operation(s) for contract-templates.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -146,7 +146,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-deployed-contracts-api
-  name: Oumla Ltd deployed-contracts API
+  name: Oumla Ltd Deployed Contracts API
   description: The deployed-contracts API from Oumla Ltd — 5 operation(s) for deployed-contracts.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -166,7 +166,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-networks-api
-  name: Oumla Ltd networks API
+  name: Oumla Ltd Networks API
   description: The networks API from Oumla Ltd — 2 operation(s) for networks.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -186,7 +186,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-profiles-api
-  name: Oumla Ltd profiles API
+  name: Oumla Ltd Profiles API
   description: The profiles API from Oumla Ltd — 1 operation(s) for profiles.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -206,7 +206,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-tokenization-api
-  name: Oumla Ltd tokenization API
+  name: Oumla Ltd Tokenization API
   description: The tokenization API from Oumla Ltd — 9 operation(s) for tokenization.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -226,7 +226,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-transactions-api
-  name: Oumla Ltd transactions API
+  name: Oumla Ltd Transactions API
   description: The transactions API from Oumla Ltd — 4 operation(s) for transactions.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -246,7 +246,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-wallets-api
-  name: Oumla Ltd wallets API
+  name: Oumla Ltd Wallets API
   description: The wallets API from Oumla Ltd — 3 operation(s) for wallets.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -266,7 +266,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-withdraw-api
-  name: Oumla Ltd withdraw API
+  name: Oumla Ltd Withdraw API
   description: The withdraw API from Oumla Ltd — 1 operation(s) for withdraw.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -286,7 +286,7 @@ apis:
   - type: DataModel
     url: data-model/oumla-ltd-data-model.yml
 - aid: oumla-ltd:oumla-ltd-workflows-api
-  name: Oumla Ltd workflows API
+  name: Oumla Ltd Workflows API
   description: The workflows API from Oumla Ltd — 1 operation(s) for workflows.
   humanURL: https://docs.oumla.com/api-reference/introduction
   baseURL: https://sandbox.oumla.com
@@ -364,3 +364,4 @@ x-enrichment:
   status: enriched
   artifacts_added: 18
   pass: local-v1
+x-legal-name: Oumla Ltd

@@ -910,6 +910,28 @@ paths:
       - Transactions
 components:
   schemas:
+    PaginationMetaDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
     TransactionItemDto:
       type: object
       properties:
@@ -959,6 +981,21 @@ components:
           - $ref: '#/components/schemas/PaginationMetaDto'
       required:
       - transactions
+      - pagination
+    GetTransactionListResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionItemDto'
+        pagination:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/PaginationMetaDto'
+      required:
+      - data
       - pagination
     ApiErrorResponseDto:
       type: object
@@ -1131,43 +1168,6 @@ components:
       - statusCode
       - path
       - timestamp
-    GetTransactionListResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          type: array
-          items:
-            $ref: '#/components/schemas/TransactionItemDto'
-        pagination:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/PaginationMetaDto'
-      required:
-      - data
-      - pagination
-    PaginationMetaDto:
-      type: object
-      properties:
-        totalElements:
-          type: number
-          example: 100
-          description: Total number of items
-        totalPages:
-          type: number
-          example: 10
-          description: Total number of pages
-        skip:
-          type: number
-          example: 0
-        take:
-          type: number
-          example: 10
-      required:
-      - totalElements
-      - totalPages
-      - skip
-      - take
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

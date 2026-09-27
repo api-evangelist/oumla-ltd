@@ -1069,6 +1069,28 @@ paths:
       - Addresses
 components:
   schemas:
+    AddressListPaginationDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
     CreateAddressRequestBodyDTO:
       type: object
       properties:
@@ -1089,6 +1111,53 @@ components:
       - reference
       - networkId
       - clientShare
+    GetAddressByIdResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/AddressDataDTO'
+      required:
+      - data
+    CreateAddressResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/CreateAddressDataDTO'
+        message:
+          type: string
+          readOnly: true
+      required:
+      - data
+      - message
+    GetAddressListResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          type: array
+          items:
+            $ref: '#/components/schemas/AddressDataDTO'
+        pagination:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/AddressListPaginationDto'
+      required:
+      - data
+      - pagination
+    CreateAddressDataDTO:
+      type: object
+      properties:
+        id:
+          type: string
+        address:
+          type: string
+      required:
+      - id
+      - address
     ApiErrorResponseDto:
       type: object
       properties:
@@ -1260,62 +1329,6 @@ components:
       - statusCode
       - path
       - timestamp
-    CreateAddressDataDTO:
-      type: object
-      properties:
-        id:
-          type: string
-        address:
-          type: string
-      required:
-      - id
-      - address
-    GetAddressByIdResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/AddressDataDTO'
-      required:
-      - data
-    AddressListPaginationDto:
-      type: object
-      properties:
-        totalElements:
-          type: number
-          example: 100
-          description: Total number of items
-        totalPages:
-          type: number
-          example: 10
-          description: Total number of pages
-        skip:
-          type: number
-          example: 0
-        take:
-          type: number
-          example: 10
-      required:
-      - totalElements
-      - totalPages
-      - skip
-      - take
-    GetAddressListResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          type: array
-          items:
-            $ref: '#/components/schemas/AddressDataDTO'
-        pagination:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/AddressListPaginationDto'
-      required:
-      - data
-      - pagination
     AddressDataDTO:
       type: object
       properties:
@@ -1357,19 +1370,6 @@ components:
       - sub
       - balance
       - miniWalletId
-    CreateAddressResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/CreateAddressDataDTO'
-        message:
-          type: string
-          readOnly: true
-      required:
-      - data
-      - message
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

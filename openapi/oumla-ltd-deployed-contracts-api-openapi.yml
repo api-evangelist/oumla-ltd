@@ -1033,6 +1033,24 @@ paths:
       - Deployed Contracts
 components:
   schemas:
+    AddContractAbiRequestBodyDTO:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        networkId:
+          type: string
+        name:
+          type: string
+        abi:
+          type: array
+          items:
+            type: array
+      required:
+      - contractAddress
+      - networkId
+      - name
+      - abi
     AddContractAbiResponseDto:
       type: object
       properties:
@@ -1051,12 +1069,7 @@ components:
           type: number
         take:
           type: number
-    FetchContractAbiResponseDto:
-      type: object
-      properties:
-        contractAbi:
-          $ref: '#/components/schemas/FetchContractAbiResultDto'
-    DeployedContractByIdDto:
+    DeployedContractByAddressDto:
       type: object
       properties:
         id:
@@ -1067,8 +1080,59 @@ components:
           type: string
         contractTemplateId:
           type: string
-        deployerAddressId:
+        vauldAccountId:
           type: string
+    FetchContractAbiResponseDto:
+      type: object
+      properties:
+        contractAbi:
+          $ref: '#/components/schemas/FetchContractAbiResultDto'
+    AddContractAbiResultDto:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        network:
+          type: string
+        name:
+          type: string
+        abi:
+          type: object
+        status:
+          type: string
+        source:
+          type: string
+        message:
+          type: string
+        tenantId:
+          type: string
+        userId:
+          type: string
+    GetDeployedContractsResponseDto:
+      type: object
+      properties:
+        deployedContracts:
+          $ref: '#/components/schemas/GetDeployedContractsResultDto'
+    FetchContractAbiRequestBodyDTO:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        networkId:
+          type: string
+      required:
+      - contractAddress
+      - networkId
+    GetDeployedContractByAddressResponseDto:
+      type: object
+      properties:
+        deployedContract:
+          $ref: '#/components/schemas/DeployedContractByAddressDto'
+    GetDeployedContractByIdResponseDto:
+      type: object
+      properties:
+        deployedContract:
+          $ref: '#/components/schemas/DeployedContractByIdDto'
     ApiErrorResponseDto:
       type: object
       properties:
@@ -1240,6 +1304,30 @@ components:
       - statusCode
       - path
       - timestamp
+    DeployedContractItemDto:
+      type: object
+      properties:
+        id:
+          type: string
+        contractAddress:
+          type: string
+        network:
+          type: string
+        contractTemplateId:
+          type: string
+    DeployedContractByIdDto:
+      type: object
+      properties:
+        id:
+          type: string
+        contractAddress:
+          type: string
+        network:
+          type: string
+        contractTemplateId:
+          type: string
+        deployerAddressId:
+          type: string
     FetchContractAbiResultDto:
       type: object
       properties:
@@ -1258,94 +1346,6 @@ components:
           type: string
         userId:
           type: string
-    GetDeployedContractByAddressResponseDto:
-      type: object
-      properties:
-        deployedContract:
-          $ref: '#/components/schemas/DeployedContractByAddressDto'
-    DeployedContractItemDto:
-      type: object
-      properties:
-        id:
-          type: string
-        contractAddress:
-          type: string
-        network:
-          type: string
-        contractTemplateId:
-          type: string
-    DeployedContractByAddressDto:
-      type: object
-      properties:
-        id:
-          type: string
-        contractAddress:
-          type: string
-        network:
-          type: string
-        contractTemplateId:
-          type: string
-        vauldAccountId:
-          type: string
-    AddContractAbiResultDto:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        network:
-          type: string
-        name:
-          type: string
-        abi:
-          type: object
-        status:
-          type: string
-        source:
-          type: string
-        message:
-          type: string
-        tenantId:
-          type: string
-        userId:
-          type: string
-    AddContractAbiRequestBodyDTO:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        networkId:
-          type: string
-        name:
-          type: string
-        abi:
-          type: array
-          items:
-            type: array
-      required:
-      - contractAddress
-      - networkId
-      - name
-      - abi
-    GetDeployedContractsResponseDto:
-      type: object
-      properties:
-        deployedContracts:
-          $ref: '#/components/schemas/GetDeployedContractsResultDto'
-    FetchContractAbiRequestBodyDTO:
-      type: object
-      properties:
-        contractAddress:
-          type: string
-        networkId:
-          type: string
-      required:
-      - contractAddress
-      - networkId
-    GetDeployedContractByIdResponseDto:
-      type: object
-      properties:
-        deployedContract:
-          $ref: '#/components/schemas/DeployedContractByIdDto'
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

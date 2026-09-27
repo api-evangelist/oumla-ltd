@@ -74,16 +74,29 @@ paths:
       tags:
       - Networks
 components:
-  parameters:
-    SdkVersionHeader:
-      name: x-sdk-version
-      in: header
-      description: SDK version header
-      required: true
-      schema:
-        type: string
-        default: 1.0.0
   schemas:
+    PaginationMetaDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
     GetOrgNetworksResponseDto:
       type: object
       properties:
@@ -96,15 +109,6 @@ components:
       required:
       - networks
       - pagination
-    GetEnabledNetworksResponseDto:
-      type: object
-      properties:
-        networks:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnabledNetworkItemDto'
-      required:
-      - networks
     OrgNetworkItemDto:
       type: object
       properties:
@@ -151,28 +155,15 @@ components:
       - isGasless
       - addressFamily
       - decimals
-    PaginationMetaDto:
+    GetEnabledNetworksResponseDto:
       type: object
       properties:
-        totalElements:
-          type: number
-          example: 100
-          description: Total number of items
-        totalPages:
-          type: number
-          example: 10
-          description: Total number of pages
-        skip:
-          type: number
-          example: 0
-        take:
-          type: number
-          example: 10
+        networks:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnabledNetworkItemDto'
       required:
-      - totalElements
-      - totalPages
-      - skip
-      - take
+      - networks
     EnabledNetworkItemDto:
       type: object
       properties:
@@ -189,6 +180,15 @@ components:
       - networkId
       - name
       - alias
+  parameters:
+    SdkVersionHeader:
+      name: x-sdk-version
+      in: header
+      description: SDK version header
+      required: true
+      schema:
+        type: string
+        default: 1.0.0
   securitySchemes:
     x-api-key:
       type: apiKey

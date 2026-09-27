@@ -249,19 +249,37 @@ paths:
       - Withdraw
 components:
   schemas:
-    CreateWithdrawResponseDataDto:
+    CreateWithdrawResponseBodyDTO:
       type: object
       properties:
-        id:
-          type: string
-          description: Transaction or withdrawal ID
-        status:
-          type: string
-          example: pending
-          description: Status of the withdrawal
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/CreateWithdrawResponseDataDto'
       required:
-      - id
-      - status
+      - data
+    CreateWithdrawRequestBodyDTO:
+      type: object
+      properties:
+        to:
+          type: string
+        amount:
+          type: string
+        from:
+          description: Input UTXOs or addresses
+          type: array
+          items:
+            type: string
+        networkId:
+          type: string
+        clientShare:
+          type: string
+      required:
+      - to
+      - amount
+      - from
+      - networkId
+      - clientShare
     ApiErrorResponseDto:
       type: object
       properties:
@@ -433,37 +451,19 @@ components:
       - statusCode
       - path
       - timestamp
-    CreateWithdrawRequestBodyDTO:
+    CreateWithdrawResponseDataDto:
       type: object
       properties:
-        to:
+        id:
           type: string
-        amount:
+          description: Transaction or withdrawal ID
+        status:
           type: string
-        from:
-          description: Input UTXOs or addresses
-          type: array
-          items:
-            type: string
-        networkId:
-          type: string
-        clientShare:
-          type: string
+          example: pending
+          description: Status of the withdrawal
       required:
-      - to
-      - amount
-      - from
-      - networkId
-      - clientShare
-    CreateWithdrawResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/CreateWithdrawResponseDataDto'
-      required:
-      - data
+      - id
+      - status
   parameters:
     SdkVersionHeader:
       name: x-sdk-version
