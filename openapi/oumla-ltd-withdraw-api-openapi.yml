@@ -249,15 +249,6 @@ paths:
       - Withdraw
 components:
   schemas:
-    CreateWithdrawResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/CreateWithdrawResponseDataDto'
-      required:
-      - data
     CreateWithdrawRequestBodyDTO:
       type: object
       properties:
@@ -280,6 +271,28 @@ components:
       - from
       - networkId
       - clientShare
+    CreateWithdrawResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/CreateWithdrawResponseDataDto'
+      required:
+      - data
+    CreateWithdrawResponseDataDto:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Transaction or withdrawal ID
+        status:
+          type: string
+          example: pending
+          description: Status of the withdrawal
+      required:
+      - id
+      - status
     ApiErrorResponseDto:
       type: object
       properties:
@@ -451,19 +464,6 @@ components:
       - statusCode
       - path
       - timestamp
-    CreateWithdrawResponseDataDto:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Transaction or withdrawal ID
-        status:
-          type: string
-          example: pending
-          description: Status of the withdrawal
-      required:
-      - id
-      - status
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

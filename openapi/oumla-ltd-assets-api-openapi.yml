@@ -516,53 +516,6 @@ paths:
       - Assets
 components:
   schemas:
-    AssetItemDto:
-      type: object
-      properties:
-        id:
-          type: string
-        amount:
-          type: string
-        walletId:
-          type: string
-        addressId:
-          type: string
-        tokenizationId:
-          type: string
-        tokenId:
-          type: string
-        name:
-          type: string
-        symbol:
-          type: string
-        contractAddress:
-          type: string
-        updatedAt:
-          type: string
-        createdAt:
-          type: string
-        tokenizationTokenId:
-          type: string
-        type:
-          type: string
-    GetAssetsResponseDto:
-      type: object
-      properties:
-        assets:
-          type: array
-          items:
-            $ref: '#/components/schemas/AssetItemDto'
-        pagination:
-          $ref: '#/components/schemas/PortfolioPaginationDto'
-    GetBalanceResponseDto:
-      type: object
-      properties:
-        balance:
-          type: array
-          items:
-            $ref: '#/components/schemas/NativeBalanceItemDto'
-        pagination:
-          $ref: '#/components/schemas/PortfolioPaginationDto'
     PortfolioPaginationDto:
       type: object
       properties:
@@ -585,6 +538,41 @@ components:
       - totalPages
       - skip
       - take
+    GetBalanceResponseDto:
+      type: object
+      properties:
+        balance:
+          type: array
+          items:
+            $ref: '#/components/schemas/NativeBalanceItemDto'
+        pagination:
+          $ref: '#/components/schemas/PortfolioPaginationDto'
+    GetAssetsResponseDto:
+      type: object
+      properties:
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssetItemDto'
+        pagination:
+          $ref: '#/components/schemas/PortfolioPaginationDto'
+    NativeBalanceItemDto:
+      type: object
+      properties:
+        id:
+          type: string
+        address:
+          type: string
+        walletId:
+          type: string
+        network:
+          type: string
+        balance:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
     ApiErrorResponseDto:
       type: object
       properties:
@@ -756,22 +744,34 @@ components:
       - statusCode
       - path
       - timestamp
-    NativeBalanceItemDto:
+    AssetItemDto:
       type: object
       properties:
         id:
           type: string
-        address:
+        amount:
           type: string
         walletId:
           type: string
-        network:
+        addressId:
           type: string
-        balance:
+        tokenizationId:
+          type: string
+        tokenId:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+        contractAddress:
+          type: string
+        updatedAt:
           type: string
         createdAt:
           type: string
-        updatedAt:
+        tokenizationTokenId:
+          type: string
+        type:
           type: string
   parameters:
     SdkVersionHeader:

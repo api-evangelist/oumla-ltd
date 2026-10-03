@@ -621,6 +621,76 @@ paths:
       - Wallets
 components:
   schemas:
+    CreateWalletRequestBodyDTO:
+      type: object
+      properties:
+        reference:
+          type: string
+        networkId:
+          type: string
+      required:
+      - reference
+      - networkId
+    GetWalletsListResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          type: array
+          items:
+            $ref: '#/components/schemas/WalletDataDTO'
+        pagination:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/PaginationMetaDto'
+      required:
+      - data
+      - pagination
+    WalletDataDTO:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Wallet UUID
+        date:
+          type: string
+          format: date-time
+          description: Wallet creation timestamp
+        organizationId:
+          type: string
+          format: uuid
+          description: Owning organization UUID
+        reference:
+          type: string
+          description: Profile reference that owns this wallet
+        type:
+          type: string
+          description: Profile type (User | Department | Merchant)
+        networkId:
+          type: string
+          format: uuid
+          description: Network UUID
+        currentDeepIndex:
+          type: number
+        index:
+          type: number
+      required:
+      - id
+      - organizationId
+      - reference
+      - type
+      - networkId
+      - index
+    CreateWalletResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/CreateWalletDataDTO'
+      required:
+      - data
     PaginationMetaDto:
       type: object
       properties:
@@ -643,66 +713,6 @@ components:
       - totalPages
       - skip
       - take
-    CreateWalletResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/CreateWalletDataDTO'
-      required:
-      - data
-    CreateWalletRequestBodyDTO:
-      type: object
-      properties:
-        reference:
-          type: string
-        networkId:
-          type: string
-      required:
-      - reference
-      - networkId
-    CreateWalletDataDTO:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          description: Wallet UUID
-        reference:
-          type: string
-          description: Profile reference that owns this wallet
-        networkId:
-          type: string
-          format: uuid
-          description: Network UUID
-        type:
-          type: string
-          description: Profile type (User | Department | Merchant)
-        date:
-          type: string
-          format: date-time
-          description: Wallet creation timestamp
-      required:
-      - id
-      - reference
-      - networkId
-      - type
-    GetWalletsListResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          type: array
-          items:
-            $ref: '#/components/schemas/WalletDataDTO'
-        pagination:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/PaginationMetaDto'
-      required:
-      - data
-      - pagination
     ApiErrorResponseDto:
       type: object
       properties:
@@ -874,42 +884,32 @@ components:
       - statusCode
       - path
       - timestamp
-    WalletDataDTO:
+    CreateWalletDataDTO:
       type: object
       properties:
         id:
           type: string
           format: uuid
           description: Wallet UUID
-        date:
-          type: string
-          format: date-time
-          description: Wallet creation timestamp
-        organizationId:
-          type: string
-          format: uuid
-          description: Owning organization UUID
         reference:
           type: string
           description: Profile reference that owns this wallet
-        type:
-          type: string
-          description: Profile type (User | Department | Merchant)
         networkId:
           type: string
           format: uuid
           description: Network UUID
-        currentDeepIndex:
-          type: number
-        index:
-          type: number
+        type:
+          type: string
+          description: Profile type (User | Department | Merchant)
+        date:
+          type: string
+          format: date-time
+          description: Wallet creation timestamp
       required:
       - id
-      - organizationId
       - reference
-      - type
       - networkId
-      - index
+      - type
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

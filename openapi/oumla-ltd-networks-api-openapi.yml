@@ -75,6 +75,22 @@ paths:
       - Networks
 components:
   schemas:
+    EnabledNetworkItemDto:
+      type: object
+      properties:
+        networkId:
+          type: string
+          description: Network UUID
+        name:
+          type: string
+          description: Human-readable network name
+        alias:
+          type: string
+          description: Network alias used by event producers
+      required:
+      - networkId
+      - name
+      - alias
     PaginationMetaDto:
       type: object
       properties:
@@ -109,6 +125,15 @@ components:
       required:
       - networks
       - pagination
+    GetEnabledNetworksResponseDto:
+      type: object
+      properties:
+        networks:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnabledNetworkItemDto'
+      required:
+      - networks
     OrgNetworkItemDto:
       type: object
       properties:
@@ -155,31 +180,6 @@ components:
       - isGasless
       - addressFamily
       - decimals
-    GetEnabledNetworksResponseDto:
-      type: object
-      properties:
-        networks:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnabledNetworkItemDto'
-      required:
-      - networks
-    EnabledNetworkItemDto:
-      type: object
-      properties:
-        networkId:
-          type: string
-          description: Network UUID
-        name:
-          type: string
-          description: Human-readable network name
-        alias:
-          type: string
-          description: Network alias used by event producers
-      required:
-      - networkId
-      - name
-      - alias
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

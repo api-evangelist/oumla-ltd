@@ -499,6 +499,40 @@ paths:
       - Profiles
 components:
   schemas:
+    CreateProfileResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/ProfileDTO'
+      required:
+      - data
+    ProfileDTO:
+      type: object
+      properties:
+        type:
+          type: string
+        reference:
+          type: string
+      required:
+      - type
+      - reference
+    GetProfileListResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfileDTO'
+        pagination:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/PaginationMetaDto'
+      required:
+      - data
+      - pagination
     PaginationMetaDto:
       type: object
       properties:
@@ -531,21 +565,6 @@ components:
       required:
       - reference
       - type
-    GetProfileListResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          type: array
-          items:
-            $ref: '#/components/schemas/ProfileDTO'
-        pagination:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/PaginationMetaDto'
-      required:
-      - data
-      - pagination
     ApiErrorResponseDto:
       type: object
       properties:
@@ -717,25 +736,6 @@ components:
       - statusCode
       - path
       - timestamp
-    ProfileDTO:
-      type: object
-      properties:
-        type:
-          type: string
-        reference:
-          type: string
-      required:
-      - type
-      - reference
-    CreateProfileResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/ProfileDTO'
-      required:
-      - data
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

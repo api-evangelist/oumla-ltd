@@ -1069,28 +1069,19 @@ paths:
       - Addresses
 components:
   schemas:
-    AddressListPaginationDto:
+    CreateAddressResponseBodyDTO:
       type: object
       properties:
-        totalElements:
-          type: number
-          example: 100
-          description: Total number of items
-        totalPages:
-          type: number
-          example: 10
-          description: Total number of pages
-        skip:
-          type: number
-          example: 0
-        take:
-          type: number
-          example: 10
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/CreateAddressDataDTO'
+        message:
+          type: string
+          readOnly: true
       required:
-      - totalElements
-      - totalPages
-      - skip
-      - take
+      - data
+      - message
     CreateAddressRequestBodyDTO:
       type: object
       properties:
@@ -1111,53 +1102,47 @@ components:
       - reference
       - networkId
       - clientShare
-    GetAddressByIdResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/AddressDataDTO'
-      required:
-      - data
-    CreateAddressResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/CreateAddressDataDTO'
-        message:
-          type: string
-          readOnly: true
-      required:
-      - data
-      - message
-    GetAddressListResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          type: array
-          items:
-            $ref: '#/components/schemas/AddressDataDTO'
-        pagination:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/AddressListPaginationDto'
-      required:
-      - data
-      - pagination
-    CreateAddressDataDTO:
+    AddressDataDTO:
       type: object
       properties:
         id:
           type: string
+          format: uuid
         address:
           type: string
+          description: On-chain address string
+        reference:
+          type: string
+          description: Profile reference that owns this address
+        networkId:
+          type: string
+          format: uuid
+          description: Network UUID
+        date:
+          type: string
+          format: date-time
+          description: Address creation timestamp
+        label:
+          type: string
+          description: Optional human-readable label
+        sub:
+          type: string
+          description: Organization subject identifier
+        balance:
+          type: string
+          description: Native balance as a decimal string (wei / satoshi)
+        miniWalletId:
+          type: string
+          format: uuid
+          description: Parent wallet UUID
       required:
       - id
       - address
+      - reference
+      - date
+      - sub
+      - balance
+      - miniWalletId
     ApiErrorResponseDto:
       type: object
       properties:
@@ -1329,47 +1314,62 @@ components:
       - statusCode
       - path
       - timestamp
-    AddressDataDTO:
+    CreateAddressDataDTO:
       type: object
       properties:
         id:
           type: string
-          format: uuid
         address:
           type: string
-          description: On-chain address string
-        reference:
-          type: string
-          description: Profile reference that owns this address
-        networkId:
-          type: string
-          format: uuid
-          description: Network UUID
-        date:
-          type: string
-          format: date-time
-          description: Address creation timestamp
-        label:
-          type: string
-          description: Optional human-readable label
-        sub:
-          type: string
-          description: Organization subject identifier
-        balance:
-          type: string
-          description: Native balance as a decimal string (wei / satoshi)
-        miniWalletId:
-          type: string
-          format: uuid
-          description: Parent wallet UUID
       required:
       - id
       - address
-      - reference
-      - date
-      - sub
-      - balance
-      - miniWalletId
+    GetAddressByIdResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/AddressDataDTO'
+      required:
+      - data
+    GetAddressListResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          type: array
+          items:
+            $ref: '#/components/schemas/AddressDataDTO'
+        pagination:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/AddressListPaginationDto'
+      required:
+      - data
+      - pagination
+    AddressListPaginationDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
   parameters:
     SdkVersionHeader:
       name: x-sdk-version
