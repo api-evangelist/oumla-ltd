@@ -231,29 +231,16 @@ paths:
       tags:
       - Workflows
 components:
+  parameters:
+    SdkVersionHeader:
+      name: x-sdk-version
+      in: header
+      description: SDK version header
+      required: true
+      schema:
+        type: string
+        default: 1.0.0
   schemas:
-    GetWorkflowStatusResponseDto:
-      type: object
-      properties:
-        workflowId:
-          type: string
-        runId:
-          type: string
-        status:
-          type: string
-        startTime:
-          type: string
-        closeTime:
-          type: string
-        executionTime:
-          type: string
-        historyLength:
-          type: number
-        result:
-          type: object
-          description: Workflow result payload
-        error:
-          type: string
     ApiErrorResponseDto:
       type: object
       properties:
@@ -425,15 +412,28 @@ components:
       - statusCode
       - path
       - timestamp
-  parameters:
-    SdkVersionHeader:
-      name: x-sdk-version
-      in: header
-      description: SDK version header
-      required: true
-      schema:
-        type: string
-        default: 1.0.0
+    GetWorkflowStatusResponseDto:
+      type: object
+      properties:
+        workflowId:
+          type: string
+        runId:
+          type: string
+        status:
+          type: string
+        startTime:
+          type: string
+        closeTime:
+          type: string
+        executionTime:
+          type: string
+        historyLength:
+          type: number
+        result:
+          type: object
+          description: Workflow result payload
+        error:
+          type: string
   securitySchemes:
     x-api-key:
       type: apiKey

@@ -75,56 +75,6 @@ paths:
       - Networks
 components:
   schemas:
-    EnabledNetworkItemDto:
-      type: object
-      properties:
-        networkId:
-          type: string
-          description: Network UUID
-        name:
-          type: string
-          description: Human-readable network name
-        alias:
-          type: string
-          description: Network alias used by event producers
-      required:
-      - networkId
-      - name
-      - alias
-    PaginationMetaDto:
-      type: object
-      properties:
-        totalElements:
-          type: number
-          example: 100
-          description: Total number of items
-        totalPages:
-          type: number
-          example: 10
-          description: Total number of pages
-        skip:
-          type: number
-          example: 0
-        take:
-          type: number
-          example: 10
-      required:
-      - totalElements
-      - totalPages
-      - skip
-      - take
-    GetOrgNetworksResponseDto:
-      type: object
-      properties:
-        networks:
-          type: array
-          items:
-            $ref: '#/components/schemas/OrgNetworkItemDto'
-        pagination:
-          $ref: '#/components/schemas/PaginationMetaDto'
-      required:
-      - networks
-      - pagination
     GetEnabledNetworksResponseDto:
       type: object
       properties:
@@ -180,6 +130,56 @@ components:
       - isGasless
       - addressFamily
       - decimals
+    GetOrgNetworksResponseDto:
+      type: object
+      properties:
+        networks:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrgNetworkItemDto'
+        pagination:
+          $ref: '#/components/schemas/PaginationMetaDto'
+      required:
+      - networks
+      - pagination
+    PaginationMetaDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
+    EnabledNetworkItemDto:
+      type: object
+      properties:
+        networkId:
+          type: string
+          description: Network UUID
+        name:
+          type: string
+          description: Human-readable network name
+        alias:
+          type: string
+          description: Network alias used by event producers
+      required:
+      - networkId
+      - name
+      - alias
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

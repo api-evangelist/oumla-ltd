@@ -869,6 +869,115 @@ paths:
       - Contract Interactions
 components:
   schemas:
+    GetTransactionReceiptResponseDto:
+      type: object
+      properties:
+        receipt:
+          $ref: '#/components/schemas/TransactionReceiptDto'
+    WriteCallFunctionBody:
+      type: object
+      properties:
+        addressId:
+          type: string
+        clientShare:
+          type: string
+        abiFunction:
+          $ref: '#/components/schemas/ContractFunDto'
+        amount:
+          type: string
+        feeLevel:
+          type: string
+          enum:
+          - LOW
+          - MEDIUM
+          - HIGH
+      required:
+      - addressId
+      - clientShare
+      - abiFunction
+    ReadCallFunctionBody:
+      type: object
+      properties:
+        abiFunction:
+          $ref: '#/components/schemas/ContractFunDto'
+      required:
+      - abiFunction
+    ComponentDto:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        internalType:
+          type: string
+        type:
+          type: string
+      required:
+      - name
+      - type
+    TransactionReceiptLogDto:
+      type: object
+      properties:
+        address:
+          type: string
+        topics:
+          type: array
+          items:
+            type: string
+        data:
+          type: string
+        blockNumber:
+          type: string
+        transactionHash:
+          type: string
+        transactionIndex:
+          type: number
+        blockHash:
+          type: string
+        logIndex:
+          type: number
+        removed:
+          type: boolean
+    ContractAbiResultDto:
+      type: object
+      properties:
+        abi:
+          description: Contract ABI (array of function/event entries)
+          type: array
+          items:
+            type: string
+        contractAddress:
+          type: string
+        implementationAddress:
+          type: string
+        network:
+          type: string
+        status:
+          type: string
+        source:
+          type: string
+    ReadCallDataDto:
+      type: object
+      properties:
+        result:
+          type: object
+          description: Decoded result of the read call
+        functionName:
+          type: string
+        contractAddress:
+          type: string
+        network:
+          type: string
+        encodedData:
+          type: string
+    WriteCallResultResponseDto:
+      type: object
+      properties:
+        workflowResult:
+          $ref: '#/components/schemas/WorkflowStartResultDto'
+      required:
+      - workflowResult
     ReadCallResultDataDto:
       type: object
       properties:
@@ -911,32 +1020,6 @@ components:
           type: number
         type:
           type: number
-    WriteCallFunctionBody:
-      type: object
-      properties:
-        addressId:
-          type: string
-        clientShare:
-          type: string
-        abiFunction:
-          $ref: '#/components/schemas/ContractFunDto'
-        amount:
-          type: string
-        feeLevel:
-          type: string
-          enum:
-          - LOW
-          - MEDIUM
-          - HIGH
-      required:
-      - addressId
-      - clientShare
-      - abiFunction
-    GetTransactionReceiptResponseDto:
-      type: object
-      properties:
-        receipt:
-          $ref: '#/components/schemas/TransactionReceiptDto'
     ContractFunDto:
       type: object
       properties:
@@ -965,6 +1048,11 @@ components:
       required:
       - type
       - inputs
+    GetDeployedContractAbiResponseDto:
+      type: object
+      properties:
+        contractAbi:
+          $ref: '#/components/schemas/ContractAbiResultDto'
     WorkflowStartResultDto:
       type: object
       properties:
@@ -988,62 +1076,6 @@ components:
       - operationId
       - status
       - message
-    InputOutputDto:
-      type: object
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        internalType:
-          type: string
-        type:
-          type: string
-        value:
-          type: object
-        components:
-          type: array
-          items:
-            allOf:
-            - $ref: '#/components/schemas/ComponentDto'
-        indexed:
-          type: boolean
-      required:
-      - name
-      - type
-      - value
-    TransactionReceiptLogDto:
-      type: object
-      properties:
-        address:
-          type: string
-        topics:
-          type: array
-          items:
-            type: string
-        data:
-          type: string
-        blockNumber:
-          type: string
-        transactionHash:
-          type: string
-        transactionIndex:
-          type: number
-        blockHash:
-          type: string
-        logIndex:
-          type: number
-        removed:
-          type: boolean
-    ContractTemplateFunctionType:
-      type: string
-      enum:
-      - function
-      - constructor
-      - event
-      - error
-      - fallback
-      - receive
     ApiErrorResponseDto:
       type: object
       properties:
@@ -1215,6 +1247,39 @@ components:
       - statusCode
       - path
       - timestamp
+    InputOutputDto:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        internalType:
+          type: string
+        type:
+          type: string
+        value:
+          type: object
+        components:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/ComponentDto'
+        indexed:
+          type: boolean
+      required:
+      - name
+      - type
+      - value
+    ContractTemplateFunctionType:
+      type: string
+      enum:
+      - function
+      - constructor
+      - event
+      - error
+      - fallback
+      - receive
     ContractTemplateFunctionVisibilityType:
       type: string
       enum:
@@ -1227,71 +1292,6 @@ components:
       properties:
         result:
           $ref: '#/components/schemas/ReadCallResultDataDto'
-    GetDeployedContractAbiResponseDto:
-      type: object
-      properties:
-        contractAbi:
-          $ref: '#/components/schemas/ContractAbiResultDto'
-    WriteCallResultResponseDto:
-      type: object
-      properties:
-        workflowResult:
-          $ref: '#/components/schemas/WorkflowStartResultDto'
-      required:
-      - workflowResult
-    ReadCallDataDto:
-      type: object
-      properties:
-        result:
-          type: object
-          description: Decoded result of the read call
-        functionName:
-          type: string
-        contractAddress:
-          type: string
-        network:
-          type: string
-        encodedData:
-          type: string
-    ReadCallFunctionBody:
-      type: object
-      properties:
-        abiFunction:
-          $ref: '#/components/schemas/ContractFunDto'
-      required:
-      - abiFunction
-    ComponentDto:
-      type: object
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        internalType:
-          type: string
-        type:
-          type: string
-      required:
-      - name
-      - type
-    ContractAbiResultDto:
-      type: object
-      properties:
-        abi:
-          description: Contract ABI (array of function/event entries)
-          type: array
-          items:
-            type: string
-        contractAddress:
-          type: string
-        implementationAddress:
-          type: string
-        network:
-          type: string
-        status:
-          type: string
-        source:
-          type: string
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

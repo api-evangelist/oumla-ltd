@@ -516,46 +516,35 @@ paths:
       - Assets
 components:
   schemas:
-    PortfolioPaginationDto:
+    AssetItemDto:
       type: object
       properties:
-        totalElements:
-          type: number
-          example: 100
-          description: Total number of items
-        totalPages:
-          type: number
-          example: 10
-          description: Total number of pages
-        skip:
-          type: number
-          example: 0
-        take:
-          type: number
-          example: 10
-      required:
-      - totalElements
-      - totalPages
-      - skip
-      - take
-    GetBalanceResponseDto:
-      type: object
-      properties:
-        balance:
-          type: array
-          items:
-            $ref: '#/components/schemas/NativeBalanceItemDto'
-        pagination:
-          $ref: '#/components/schemas/PortfolioPaginationDto'
-    GetAssetsResponseDto:
-      type: object
-      properties:
-        assets:
-          type: array
-          items:
-            $ref: '#/components/schemas/AssetItemDto'
-        pagination:
-          $ref: '#/components/schemas/PortfolioPaginationDto'
+        id:
+          type: string
+        amount:
+          type: string
+        walletId:
+          type: string
+        addressId:
+          type: string
+        tokenizationId:
+          type: string
+        tokenId:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+        contractAddress:
+          type: string
+        updatedAt:
+          type: string
+        createdAt:
+          type: string
+        tokenizationTokenId:
+          type: string
+        type:
+          type: string
     NativeBalanceItemDto:
       type: object
       properties:
@@ -744,35 +733,46 @@ components:
       - statusCode
       - path
       - timestamp
-    AssetItemDto:
+    GetAssetsResponseDto:
       type: object
       properties:
-        id:
-          type: string
-        amount:
-          type: string
-        walletId:
-          type: string
-        addressId:
-          type: string
-        tokenizationId:
-          type: string
-        tokenId:
-          type: string
-        name:
-          type: string
-        symbol:
-          type: string
-        contractAddress:
-          type: string
-        updatedAt:
-          type: string
-        createdAt:
-          type: string
-        tokenizationTokenId:
-          type: string
-        type:
-          type: string
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssetItemDto'
+        pagination:
+          $ref: '#/components/schemas/PortfolioPaginationDto'
+    GetBalanceResponseDto:
+      type: object
+      properties:
+        balance:
+          type: array
+          items:
+            $ref: '#/components/schemas/NativeBalanceItemDto'
+        pagination:
+          $ref: '#/components/schemas/PortfolioPaginationDto'
+    PortfolioPaginationDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

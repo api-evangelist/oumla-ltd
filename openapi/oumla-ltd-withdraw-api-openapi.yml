@@ -248,51 +248,16 @@ paths:
       tags:
       - Withdraw
 components:
+  parameters:
+    SdkVersionHeader:
+      name: x-sdk-version
+      in: header
+      description: SDK version header
+      required: true
+      schema:
+        type: string
+        default: 1.0.0
   schemas:
-    CreateWithdrawRequestBodyDTO:
-      type: object
-      properties:
-        to:
-          type: string
-        amount:
-          type: string
-        from:
-          description: Input UTXOs or addresses
-          type: array
-          items:
-            type: string
-        networkId:
-          type: string
-        clientShare:
-          type: string
-      required:
-      - to
-      - amount
-      - from
-      - networkId
-      - clientShare
-    CreateWithdrawResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/CreateWithdrawResponseDataDto'
-      required:
-      - data
-    CreateWithdrawResponseDataDto:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Transaction or withdrawal ID
-        status:
-          type: string
-          example: pending
-          description: Status of the withdrawal
-      required:
-      - id
-      - status
     ApiErrorResponseDto:
       type: object
       properties:
@@ -464,15 +429,50 @@ components:
       - statusCode
       - path
       - timestamp
-  parameters:
-    SdkVersionHeader:
-      name: x-sdk-version
-      in: header
-      description: SDK version header
-      required: true
-      schema:
-        type: string
-        default: 1.0.0
+    CreateWithdrawResponseDataDto:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Transaction or withdrawal ID
+        status:
+          type: string
+          example: pending
+          description: Status of the withdrawal
+      required:
+      - id
+      - status
+    CreateWithdrawRequestBodyDTO:
+      type: object
+      properties:
+        to:
+          type: string
+        amount:
+          type: string
+        from:
+          description: Input UTXOs or addresses
+          type: array
+          items:
+            type: string
+        networkId:
+          type: string
+        clientShare:
+          type: string
+      required:
+      - to
+      - amount
+      - from
+      - networkId
+      - clientShare
+    CreateWithdrawResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/CreateWithdrawResponseDataDto'
+      required:
+      - data
   securitySchemes:
     x-api-key:
       type: apiKey

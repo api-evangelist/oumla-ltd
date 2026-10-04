@@ -1033,6 +1033,11 @@ paths:
       - Deployed Contracts
 components:
   schemas:
+    GetDeployedContractsResponseDto:
+      type: object
+      properties:
+        deployedContracts:
+          $ref: '#/components/schemas/GetDeployedContractsResultDto'
     FetchContractAbiResponseDto:
       type: object
       properties:
@@ -1048,24 +1053,6 @@ components:
       required:
       - contractAddress
       - networkId
-    DeployedContractByIdDto:
-      type: object
-      properties:
-        id:
-          type: string
-        contractAddress:
-          type: string
-        network:
-          type: string
-        contractTemplateId:
-          type: string
-        deployerAddressId:
-          type: string
-    GetDeployedContractsResponseDto:
-      type: object
-      properties:
-        deployedContracts:
-          $ref: '#/components/schemas/GetDeployedContractsResultDto'
     FetchContractAbiResultDto:
       type: object
       properties:
@@ -1084,12 +1071,7 @@ components:
           type: string
         userId:
           type: string
-    GetDeployedContractByAddressResponseDto:
-      type: object
-      properties:
-        deployedContract:
-          $ref: '#/components/schemas/DeployedContractByAddressDto'
-    DeployedContractByAddressDto:
+    DeployedContractByIdDto:
       type: object
       properties:
         id:
@@ -1100,31 +1082,7 @@ components:
           type: string
         contractTemplateId:
           type: string
-        vauldAccountId:
-          type: string
-    GetDeployedContractsResultDto:
-      type: object
-      properties:
-        contracts:
-          type: array
-          items:
-            $ref: '#/components/schemas/DeployedContractItemDto'
-        total:
-          type: number
-        skip:
-          type: number
-        take:
-          type: number
-    DeployedContractItemDto:
-      type: object
-      properties:
-        id:
-          type: string
-        contractAddress:
-          type: string
-        network:
-          type: string
-        contractTemplateId:
+        deployerAddressId:
           type: string
     ApiErrorResponseDto:
       type: object
@@ -1297,6 +1255,48 @@ components:
       - statusCode
       - path
       - timestamp
+    DeployedContractItemDto:
+      type: object
+      properties:
+        id:
+          type: string
+        contractAddress:
+          type: string
+        network:
+          type: string
+        contractTemplateId:
+          type: string
+    DeployedContractByAddressDto:
+      type: object
+      properties:
+        id:
+          type: string
+        contractAddress:
+          type: string
+        network:
+          type: string
+        contractTemplateId:
+          type: string
+        vauldAccountId:
+          type: string
+    AddContractAbiRequestBodyDTO:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+        networkId:
+          type: string
+        name:
+          type: string
+        abi:
+          type: array
+          items:
+            type: array
+      required:
+      - contractAddress
+      - networkId
+      - name
+      - abi
     AddContractAbiResponseDto:
       type: object
       properties:
@@ -1328,24 +1328,24 @@ components:
       properties:
         deployedContract:
           $ref: '#/components/schemas/DeployedContractByIdDto'
-    AddContractAbiRequestBodyDTO:
+    GetDeployedContractsResultDto:
       type: object
       properties:
-        contractAddress:
-          type: string
-        networkId:
-          type: string
-        name:
-          type: string
-        abi:
+        contracts:
           type: array
           items:
-            type: array
-      required:
-      - contractAddress
-      - networkId
-      - name
-      - abi
+            $ref: '#/components/schemas/DeployedContractItemDto'
+        total:
+          type: number
+        skip:
+          type: number
+        take:
+          type: number
+    GetDeployedContractByAddressResponseDto:
+      type: object
+      properties:
+        deployedContract:
+          $ref: '#/components/schemas/DeployedContractByAddressDto'
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

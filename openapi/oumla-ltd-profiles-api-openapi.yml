@@ -499,62 +499,6 @@ paths:
       - Profiles
 components:
   schemas:
-    CreateProfileResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/ProfileDTO'
-      required:
-      - data
-    ProfileDTO:
-      type: object
-      properties:
-        type:
-          type: string
-        reference:
-          type: string
-      required:
-      - type
-      - reference
-    GetProfileListResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          type: array
-          items:
-            $ref: '#/components/schemas/ProfileDTO'
-        pagination:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/PaginationMetaDto'
-      required:
-      - data
-      - pagination
-    PaginationMetaDto:
-      type: object
-      properties:
-        totalElements:
-          type: number
-          example: 100
-          description: Total number of items
-        totalPages:
-          type: number
-          example: 10
-          description: Total number of pages
-        skip:
-          type: number
-          example: 0
-        take:
-          type: number
-          example: 10
-      required:
-      - totalElements
-      - totalPages
-      - skip
-      - take
     CreateProfileRequestBodyDTO:
       type: object
       properties:
@@ -565,6 +509,16 @@ components:
       required:
       - reference
       - type
+    ProfileDTO:
+      type: object
+      properties:
+        type:
+          type: string
+        reference:
+          type: string
+      required:
+      - type
+      - reference
     ApiErrorResponseDto:
       type: object
       properties:
@@ -736,6 +690,52 @@ components:
       - statusCode
       - path
       - timestamp
+    PaginationMetaDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
+    CreateProfileResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/ProfileDTO'
+      required:
+      - data
+    GetProfileListResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfileDTO'
+        pagination:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/PaginationMetaDto'
+      required:
+      - data
+      - pagination
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

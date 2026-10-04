@@ -2810,6 +2810,26 @@ components:
           $ref: '#/components/schemas/MintOrBurnRecordSummaryDto'
         burnRecord:
           $ref: '#/components/schemas/MintOrBurnRecordSummaryDto'
+    CreateCollectionWorkflowResponseDto:
+      type: object
+      properties:
+        workflowResult:
+          $ref: '#/components/schemas/WorkflowStartResultDto'
+      required:
+      - workflowResult
+    ConstructorParam:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      required:
+      - name
+      - type
+      - value
     LinkContractBodyDto:
       type: object
       properties:
@@ -2826,132 +2846,32 @@ components:
       required:
       - networkId
       - contractAddress
-    TokenMintOrBurnItemDto:
-      type: object
-      properties:
-        id:
-          type: string
-        status:
-          type: string
-        type:
-          type: string
-        metaData:
-          type: object
-        addressId:
-          type: string
-        amount:
-          type: string
-        createdAt:
-          type: string
-        updatedAt:
-          type: string
-        transactionHash:
-          type: string
-        tokenId:
-          type: string
-    ConstructorParam:
+    TokenMetadataDto:
       type: object
       properties:
         name:
           type: string
-        type:
+        symbol:
           type: string
-        value:
-          type: string
-      required:
-      - name
-      - type
-      - value
-    BurnTokenBodyDto:
-      type: object
-      properties:
-        addressId:
-          type: string
-        clientShare:
-          type: string
-        tokenId:
-          type: string
-        amount:
-          type: string
-        from:
-          type: string
-      required:
-      - addressId
-      - clientShare
-      - tokenId
-    LinkContractResponseDto:
-      type: object
-      properties:
-        link:
-          $ref: '#/components/schemas/TokenResponseDto'
-    GetCollectionsResponseDto:
-      type: object
-      properties:
-        collections:
-          type: array
-          items:
-            $ref: '#/components/schemas/CollectionItemDto'
-        total:
+        decimals:
           type: number
-        message:
-          type: string
-    UnlinkTokenResultDto:
-      type: object
-      properties:
-        success:
-          type: boolean
-    GetCollectionByIdResponseDto:
-      type: object
-      properties:
-        collection:
-          $ref: '#/components/schemas/CollectionItemDto'
-    CollectionItemDto:
-      type: object
-      properties:
-        id:
-          type: string
-        status:
-          type: string
-        type:
-          type: string
-        displayName:
-          type: string
-        createdAt:
-          type: string
-        updatedAt:
+        standard:
           type: string
         network:
           type: string
-        collectionMetadata:
-          $ref: '#/components/schemas/CollectionMetadataDto'
-    WorkflowStartResultDto:
+        contractAddress:
+          type: string
+        contractTemplateId:
+          type: string
+        contractDeploymentId:
+          type: string
+        addressId:
+          type: string
+    UnlinkTokenResponseDto:
       type: object
       properties:
-        workflowId:
-          type: string
-          description: Workflow ID
-        operationId:
-          type: string
-          description: Operation ID (e.g. deploymentId, collectionId, mintId, writeCallId)
-        status:
-          type: string
-          enum:
-          - started
-          - already_running
-          description: Workflow status
-        message:
-          type: string
-          description: Human-readable status message
-      required:
-      - workflowId
-      - operationId
-      - status
-      - message
-    GetLinkedTokenResponseDto:
-      type: object
-      properties:
-        token:
-          $ref: '#/components/schemas/TokenResponseDto'
+        result:
+          $ref: '#/components/schemas/UnlinkTokenResultDto'
     CreateCollectionBodyDto:
       type: object
       properties:
@@ -2988,6 +2908,234 @@ components:
       - type
       - clientShare
       - createParams
+    UnlinkTokenResultDto:
+      type: object
+      properties:
+        success:
+          type: boolean
+    IssueNewTokenRequestBody:
+      type: object
+      properties:
+        networkId:
+          type: string
+        addressId:
+          type: string
+        clientShare:
+          type: string
+        createParams:
+          $ref: '#/components/schemas/CreateParams'
+        deploymentId:
+          type: string
+        displayName:
+          type: string
+        useGasless:
+          type: boolean
+        fee:
+          type: string
+        feeLevel:
+          type: string
+          enum:
+          - LOW
+          - MEDIUM
+          - HIGH
+      required:
+      - networkId
+      - addressId
+      - clientShare
+      - createParams
+      - deploymentId
+      - displayName
+      - useGasless
+      - fee
+    LinkContractResponseDto:
+      type: object
+      properties:
+        link:
+          $ref: '#/components/schemas/TokenResponseDto'
+    GetCollectionTokensResponseDto:
+      type: object
+      properties:
+        tokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/TokenMintOrBurnItemDto'
+        total:
+          type: number
+    CollectionMetadataDto:
+      type: object
+      properties:
+        name:
+          type: string
+        symbol:
+          type: string
+        standard:
+          type: string
+        contractAddress:
+          type: string
+    MintOrBurnRecordSummaryDto:
+      type: object
+      properties:
+        id:
+          type: string
+        amount:
+          type: string
+        note:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    MintTokenResponseDto:
+      type: object
+      properties:
+        workflowResult:
+          $ref: '#/components/schemas/WorkflowStartResultDto'
+      required:
+      - workflowResult
+    DeleteCollectionResponseDto:
+      type: object
+      properties:
+        success:
+          type: boolean
+    BurnTokenBodyDto:
+      type: object
+      properties:
+        addressId:
+          type: string
+        clientShare:
+          type: string
+        tokenId:
+          type: string
+        amount:
+          type: string
+        from:
+          type: string
+      required:
+      - addressId
+      - clientShare
+      - tokenId
+    WorkflowStartResultDto:
+      type: object
+      properties:
+        workflowId:
+          type: string
+          description: Workflow ID
+        operationId:
+          type: string
+          description: Operation ID (e.g. deploymentId, collectionId, mintId, writeCallId)
+        status:
+          type: string
+          enum:
+          - started
+          - already_running
+          description: Workflow status
+        message:
+          type: string
+          description: Human-readable status message
+      required:
+      - workflowId
+      - operationId
+      - status
+      - message
+    GetTokensResponseDto:
+      type: object
+      properties:
+        tokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/TokenResponseDto'
+        total:
+          type: number
+    MintTokenBodyDto:
+      type: object
+      properties:
+        addressId:
+          type: string
+        clientShare:
+          type: string
+        to:
+          type: string
+        tokenId:
+          type: string
+        amount:
+          type: string
+        metadataURI:
+          type: string
+          description: Required if metadata is not provided
+        metadata:
+          description: Required if metadataURI is not provided
+          allOf:
+          - $ref: '#/components/schemas/MetadataDto'
+      required:
+      - addressId
+      - clientShare
+      - to
+      - tokenId
+    CollectionTokenDetailMetadataDto:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        animation_url:
+          type: string
+        external_url:
+          type: string
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/MetadataAttributeDto'
+    IssueTokenWorkflowResponseDto:
+      type: object
+      properties:
+        workflowResult:
+          $ref: '#/components/schemas/WorkflowStartResultDto'
+      required:
+      - workflowResult
+    GetCollectionByIdResponseDto:
+      type: object
+      properties:
+        collection:
+          $ref: '#/components/schemas/CollectionItemDto'
+    TokenMintOrBurnItemDto:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+        type:
+          type: string
+        metaData:
+          type: object
+        addressId:
+          type: string
+        amount:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        transactionHash:
+          type: string
+        tokenId:
+          type: string
+    GetCollectionsResponseDto:
+      type: object
+      properties:
+        collections:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollectionItemDto'
+        total:
+          type: number
+        message:
+          type: string
     ApiErrorResponseDto:
       type: object
       properties:
@@ -3159,21 +3307,7 @@ components:
       - statusCode
       - path
       - timestamp
-    BurnTokenResponseDto:
-      type: object
-      properties:
-        workflowResult:
-          $ref: '#/components/schemas/WorkflowStartResultDto'
-      required:
-      - workflowResult
-    IssueTokenWorkflowResponseDto:
-      type: object
-      properties:
-        workflowResult:
-          $ref: '#/components/schemas/WorkflowStartResultDto'
-      required:
-      - workflowResult
-    TokenResponseDto:
+    CollectionItemDto:
       type: object
       properties:
         id:
@@ -3184,8 +3318,30 @@ components:
           type: string
         displayName:
           type: string
-        tokenMetadata:
-          $ref: '#/components/schemas/TokenMetadataDto'
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        network:
+          type: string
+        collectionMetadata:
+          $ref: '#/components/schemas/CollectionMetadataDto'
+    CreateParams:
+      type: object
+      properties:
+        initializeParams:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConstructorParam'
+      required:
+      - initializeParams
+    BurnTokenResponseDto:
+      type: object
+      properties:
+        workflowResult:
+          $ref: '#/components/schemas/WorkflowStartResultDto'
+      required:
+      - workflowResult
     MetadataDto:
       type: object
       properties:
@@ -3206,139 +3362,26 @@ components:
       required:
       - name
       - description
-    GetTokensResponseDto:
-      type: object
-      properties:
-        tokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/TokenResponseDto'
-        total:
-          type: number
-    CollectionTokenDetailMetadataDto:
-      type: object
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        image:
-          type: string
-        animation_url:
-          type: string
-        external_url:
-          type: string
-        attributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/MetadataAttributeDto'
-    MintOrBurnRecordSummaryDto:
+    TokenResponseDto:
       type: object
       properties:
         id:
           type: string
-        amount:
-          type: string
-        note:
-          type: string
         status:
           type: string
-        createdAt:
-          type: string
-        updatedAt:
-          type: string
-    CreateCollectionWorkflowResponseDto:
-      type: object
-      properties:
-        workflowResult:
-          $ref: '#/components/schemas/WorkflowStartResultDto'
-      required:
-      - workflowResult
-    MintTokenBodyDto:
-      type: object
-      properties:
-        addressId:
-          type: string
-        clientShare:
-          type: string
-        to:
-          type: string
-        tokenId:
-          type: string
-        amount:
-          type: string
-        metadataURI:
-          type: string
-          description: Required if metadata is not provided
-        metadata:
-          description: Required if metadataURI is not provided
-          allOf:
-          - $ref: '#/components/schemas/MetadataDto'
-      required:
-      - addressId
-      - clientShare
-      - to
-      - tokenId
-    GetCollectionTokensResponseDto:
-      type: object
-      properties:
-        tokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/TokenMintOrBurnItemDto'
-        total:
-          type: number
-    DeleteCollectionResponseDto:
-      type: object
-      properties:
-        success:
-          type: boolean
-    UnlinkTokenResponseDto:
-      type: object
-      properties:
-        result:
-          $ref: '#/components/schemas/UnlinkTokenResultDto'
-    IssueNewTokenRequestBody:
-      type: object
-      properties:
-        networkId:
-          type: string
-        addressId:
-          type: string
-        clientShare:
-          type: string
-        createParams:
-          $ref: '#/components/schemas/CreateParams'
-        deploymentId:
+        type:
           type: string
         displayName:
           type: string
-        useGasless:
-          type: boolean
-        fee:
-          type: string
-        feeLevel:
-          type: string
-          enum:
-          - LOW
-          - MEDIUM
-          - HIGH
-      required:
-      - networkId
-      - addressId
-      - clientShare
-      - createParams
-      - deploymentId
-      - displayName
-      - useGasless
-      - fee
-    MintTokenResponseDto:
+        tokenMetadata:
+          $ref: '#/components/schemas/TokenMetadataDto'
+    GetCollectionTokenDetailsResponseDto:
       type: object
       properties:
-        workflowResult:
-          $ref: '#/components/schemas/WorkflowStartResultDto'
-      required:
-      - workflowResult
+        collcetion:
+          description: 'Collection token details (key typo: collcetion)'
+          allOf:
+          - $ref: '#/components/schemas/CollectionTokenDetailDto'
     MetadataAttributeDto:
       type: object
       properties:
@@ -3351,54 +3394,11 @@ components:
       required:
       - trait_type
       - value
-    CreateParams:
+    GetLinkedTokenResponseDto:
       type: object
       properties:
-        initializeParams:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConstructorParam'
-      required:
-      - initializeParams
-    GetCollectionTokenDetailsResponseDto:
-      type: object
-      properties:
-        collcetion:
-          description: 'Collection token details (key typo: collcetion)'
-          allOf:
-          - $ref: '#/components/schemas/CollectionTokenDetailDto'
-    CollectionMetadataDto:
-      type: object
-      properties:
-        name:
-          type: string
-        symbol:
-          type: string
-        standard:
-          type: string
-        contractAddress:
-          type: string
-    TokenMetadataDto:
-      type: object
-      properties:
-        name:
-          type: string
-        symbol:
-          type: string
-        decimals:
-          type: number
-        standard:
-          type: string
-        network:
-          type: string
-        contractAddress:
-          type: string
-        contractTemplateId:
-          type: string
-        contractDeploymentId:
-          type: string
-        addressId:
-          type: string
+        token:
+          $ref: '#/components/schemas/TokenResponseDto'
   parameters:
     SdkVersionHeader:
       name: x-sdk-version

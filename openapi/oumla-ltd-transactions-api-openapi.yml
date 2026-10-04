@@ -909,64 +909,16 @@ paths:
       tags:
       - Transactions
 components:
+  parameters:
+    SdkVersionHeader:
+      name: x-sdk-version
+      in: header
+      description: SDK version header
+      required: true
+      schema:
+        type: string
+        default: 1.0.0
   schemas:
-    TransactionItemDto:
-      type: object
-      properties:
-        addressFrom:
-          type: string
-        addressTo:
-          type: string
-        amount:
-          type: string
-        date:
-          type: string
-        isMempool:
-          type: boolean
-        isSpent:
-          type: boolean
-        status:
-          type: string
-        updatedAt:
-          type: string
-        createdAt:
-          type: string
-        type:
-          type: string
-        networkId:
-          type: string
-        txid:
-          type: string
-        contractAddress:
-          type: string
-        tokenId:
-          type: string
-        txType:
-          type: string
-        fee:
-          type: string
-    PaginationMetaDto:
-      type: object
-      properties:
-        totalElements:
-          type: number
-          example: 100
-          description: Total number of items
-        totalPages:
-          type: number
-          example: 10
-          description: Total number of pages
-        skip:
-          type: number
-          example: 0
-        take:
-          type: number
-          example: 10
-      required:
-      - totalElements
-      - totalPages
-      - skip
-      - take
     ApiErrorResponseDto:
       type: object
       properties:
@@ -1138,21 +1090,41 @@ components:
       - statusCode
       - path
       - timestamp
-    GetTransactionListByProfileResponseBodyDTO:
+    TransactionItemDto:
       type: object
       properties:
-        transactions:
-          readOnly: true
-          type: array
-          items:
-            $ref: '#/components/schemas/TransactionItemDto'
-        pagination:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/PaginationMetaDto'
-      required:
-      - transactions
-      - pagination
+        addressFrom:
+          type: string
+        addressTo:
+          type: string
+        amount:
+          type: string
+        date:
+          type: string
+        isMempool:
+          type: boolean
+        isSpent:
+          type: boolean
+        status:
+          type: string
+        updatedAt:
+          type: string
+        createdAt:
+          type: string
+        type:
+          type: string
+        networkId:
+          type: string
+        txid:
+          type: string
+        contractAddress:
+          type: string
+        tokenId:
+          type: string
+        txType:
+          type: string
+        fee:
+          type: string
     GetTransactionListResponseBodyDTO:
       type: object
       properties:
@@ -1168,15 +1140,43 @@ components:
       required:
       - data
       - pagination
-  parameters:
-    SdkVersionHeader:
-      name: x-sdk-version
-      in: header
-      description: SDK version header
-      required: true
-      schema:
-        type: string
-        default: 1.0.0
+    PaginationMetaDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
+    GetTransactionListByProfileResponseBodyDTO:
+      type: object
+      properties:
+        transactions:
+          readOnly: true
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionItemDto'
+        pagination:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/PaginationMetaDto'
+      required:
+      - transactions
+      - pagination
   securitySchemes:
     x-api-key:
       type: apiKey

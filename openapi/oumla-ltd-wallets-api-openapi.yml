@@ -621,16 +621,6 @@ paths:
       - Wallets
 components:
   schemas:
-    CreateWalletRequestBodyDTO:
-      type: object
-      properties:
-        reference:
-          type: string
-        networkId:
-          type: string
-      required:
-      - reference
-      - networkId
     GetWalletsListResponseBodyDTO:
       type: object
       properties:
@@ -646,73 +636,16 @@ components:
       required:
       - data
       - pagination
-    WalletDataDTO:
+    CreateWalletRequestBodyDTO:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-          description: Wallet UUID
-        date:
-          type: string
-          format: date-time
-          description: Wallet creation timestamp
-        organizationId:
-          type: string
-          format: uuid
-          description: Owning organization UUID
         reference:
           type: string
-          description: Profile reference that owns this wallet
-        type:
-          type: string
-          description: Profile type (User | Department | Merchant)
         networkId:
           type: string
-          format: uuid
-          description: Network UUID
-        currentDeepIndex:
-          type: number
-        index:
-          type: number
       required:
-      - id
-      - organizationId
       - reference
-      - type
       - networkId
-      - index
-    CreateWalletResponseBodyDTO:
-      type: object
-      properties:
-        data:
-          readOnly: true
-          allOf:
-          - $ref: '#/components/schemas/CreateWalletDataDTO'
-      required:
-      - data
-    PaginationMetaDto:
-      type: object
-      properties:
-        totalElements:
-          type: number
-          example: 100
-          description: Total number of items
-        totalPages:
-          type: number
-          example: 10
-          description: Total number of pages
-        skip:
-          type: number
-          example: 0
-        take:
-          type: number
-          example: 10
-      required:
-      - totalElements
-      - totalPages
-      - skip
-      - take
     ApiErrorResponseDto:
       type: object
       properties:
@@ -884,6 +817,42 @@ components:
       - statusCode
       - path
       - timestamp
+    WalletDataDTO:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Wallet UUID
+        date:
+          type: string
+          format: date-time
+          description: Wallet creation timestamp
+        organizationId:
+          type: string
+          format: uuid
+          description: Owning organization UUID
+        reference:
+          type: string
+          description: Profile reference that owns this wallet
+        type:
+          type: string
+          description: Profile type (User | Department | Merchant)
+        networkId:
+          type: string
+          format: uuid
+          description: Network UUID
+        currentDeepIndex:
+          type: number
+        index:
+          type: number
+      required:
+      - id
+      - organizationId
+      - reference
+      - type
+      - networkId
+      - index
     CreateWalletDataDTO:
       type: object
       properties:
@@ -910,6 +879,37 @@ components:
       - reference
       - networkId
       - type
+    CreateWalletResponseBodyDTO:
+      type: object
+      properties:
+        data:
+          readOnly: true
+          allOf:
+          - $ref: '#/components/schemas/CreateWalletDataDTO'
+      required:
+      - data
+    PaginationMetaDto:
+      type: object
+      properties:
+        totalElements:
+          type: number
+          example: 100
+          description: Total number of items
+        totalPages:
+          type: number
+          example: 10
+          description: Total number of pages
+        skip:
+          type: number
+          example: 0
+        take:
+          type: number
+          example: 10
+      required:
+      - totalElements
+      - totalPages
+      - skip
+      - take
   parameters:
     SdkVersionHeader:
       name: x-sdk-version
