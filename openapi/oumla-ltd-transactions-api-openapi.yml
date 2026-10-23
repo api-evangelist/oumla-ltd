@@ -1183,3 +1183,9 @@ components:
       in: header
       name: x-api-key
       description: API key for authentication
+x-provenance:
+  method: harvested
+  publisher: Oumla
+  source: https://docs.oumla.com/api-reference/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
