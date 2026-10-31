@@ -1,4 +1,4 @@
-# Oumla Ltd
+# Oumla
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,6 +64,136 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Oumla Ltd is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Oumla is a Saudi-based provider of enterprise-grade digital asset infrastructure for regulated institutions. Its Core API delivers MPC-based wallet and address management, portfolio and native-balance queries, on-chain transaction tracking, smart-contract templates plus deployment and read/write interactions, and tokenization (collections, issue, mint, burn) for tokenized securities, fund units, sukuk, and NFTs. Products span Digital Assets Infrastructure (custody, policy engines, lifecycle), Capital Markets Tokenization, the Oumla Financial Chain for Shariah-compliant interbank settlement, and Bahith blockchain monitoring and compliance analytics built for Saudi data sovereignty. Authentication is via the x-api-key header; long-running mutations run as async workflows. Oumla is SOC 2 Type II and ISO 27001 certified.
 
-Backed by: 500-global — https://oumla.com
+**Areas:** Company · Blockchain · Digital Assets · Wallet Infrastructure · Custody · Tokenization · Smart Contracts · Web3 · Fintech · Saudi Arabia
+
+## Oumla on APIs.io
+
+Everything profiled for Oumla is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/oumla-ltd/](https://apis.io/providers/oumla-ltd/)** — or go straight to one of the APIs or properties below.
+
+### APIs (12)
+
+- [Oumla Ltd Addresses API](https://apis.io/apis/oumla-ltd/oumla-ltd-addresses-api/) — The addresses API from Oumla Ltd — 5 operation(s) for addresses.
+- [Oumla Ltd Assets API](https://apis.io/apis/oumla-ltd/oumla-ltd-assets-api/) — The assets API from Oumla Ltd — 2 operation(s) for assets.
+- [Oumla Ltd Contract Interactions API](https://apis.io/apis/oumla-ltd/oumla-ltd-contract-interactions-api/) — The contract-interactions API from Oumla Ltd — 4 operation(s) for contract-interactions.
+- [Oumla Ltd Contract Templates API](https://apis.io/apis/oumla-ltd/oumla-ltd-contract-templates-api/) — The contract-templates API from Oumla Ltd — 5 operation(s) for contract-templates.
+- [Oumla Ltd Deployed Contracts API](https://apis.io/apis/oumla-ltd/oumla-ltd-deployed-contracts-api/) — The deployed-contracts API from Oumla Ltd — 5 operation(s) for deployed-contracts.
+- [Oumla Ltd Networks API](https://apis.io/apis/oumla-ltd/oumla-ltd-networks-api/) — The networks API from Oumla Ltd — 2 operation(s) for networks.
+- [Oumla Ltd Profiles API](https://apis.io/apis/oumla-ltd/oumla-ltd-profiles-api/) — The profiles API from Oumla Ltd — 1 operation(s) for profiles.
+- [Oumla Ltd Tokenization API](https://apis.io/apis/oumla-ltd/oumla-ltd-tokenization-api/) — The tokenization API from Oumla Ltd — 9 operation(s) for tokenization.
+- [Oumla Ltd Transactions API](https://apis.io/apis/oumla-ltd/oumla-ltd-transactions-api/) — The transactions API from Oumla Ltd — 4 operation(s) for transactions.
+- [Oumla Ltd Wallets API](https://apis.io/apis/oumla-ltd/oumla-ltd-wallets-api/) — The wallets API from Oumla Ltd — 3 operation(s) for wallets.
+- [Oumla Ltd Withdraw API](https://apis.io/apis/oumla-ltd/oumla-ltd-withdraw-api/) — The withdraw API from Oumla Ltd — 1 operation(s) for withdraw.
+- [Oumla Ltd Workflows API](https://apis.io/apis/oumla-ltd/oumla-ltd-workflows-api/) — The workflows API from Oumla Ltd — 1 operation(s) for workflows.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [oumla](https://apis.io/servers/oumla-ltd/oumla/)
+
+#### Collections (12)
+
+Postman and Open Collection request collections.
+
+- [Oumla Core Server addresses API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-addresses-api/)
+- [Oumla Core Server addresses assets API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-assets-api/)
+- [Oumla Core Server addresses contract-interactions API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-contract-interactions-api/)
+- [Oumla Core Server addresses contract-templates API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-contract-templates-api/)
+- [Oumla Core Server addresses deployed-contracts API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-deployed-contracts-api/)
+- [Oumla Core Server addresses networks API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-networks-api/)
+- [Oumla Core Server addresses profiles API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-profiles-api/)
+- [Oumla Core Server addresses tokenization API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-tokenization-api/)
+- [Oumla Core Server addresses transactions API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-transactions-api/)
+- [Oumla Core Server addresses wallets API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-wallets-api/)
+- [Oumla Core Server addresses withdraw API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-withdraw-api/)
+- [Oumla Core Server addresses workflows API](https://apis.io/collections/oumla-ltd/open-oumla-ltd-workflows-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Oumla Ltd Openapi Overlay](https://apis.io/overlays/oumla-ltd/oumla-ltd-openapi-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Oumla Ltd Authentication](https://apis.io/security/oumla-ltd/oumla-ltd-authentication/)
+- [Oumla Ltd Domain Security](https://apis.io/security/oumla-ltd/oumla-ltd-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://oumla.com)
+- [Documentation](https://docs.oumla.com)
+- [Getting started](https://docs.oumla.com/guides/quickstart)
+- [API reference](https://docs.oumla.com/api-reference/introduction)
+- [Sign up](https://dashboard.oumla.com)
+- [Support](https://docs.oumla.com/guides/faqs)
+- [Changelog](https://docs.oumla.com/changelog)
+- [Blog](https://oumla.com/blog)
+- [Compliance](https://oumla.com/blog/oumla-achieves-soc-2-type-ii-certification)
+- [Privacy policy](https://oumla.com/privacy-policy)
+- [GitHub](https://github.com/oumla)
+
+## API Evangelist rating
+
+**Kin Score 45.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 51.3 |
+| Contract governance | 18.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 73.2 |
+| Access clarity | 31.6 |
+
+**Agent readiness 28.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 23.2** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/oumla-ltd/](https://apis.io/providers/oumla-ltd/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Oumla: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/oumla-ltd/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
